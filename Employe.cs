@@ -16,6 +16,25 @@ namespace HOTEL_MANAGMENT
 
         private void AddEmp_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(NomBox.Text) ||
+        string.IsNullOrWhiteSpace(PrenomBox.Text) ||
+        string.IsNullOrWhiteSpace(AdresseBox.Text) ||
+        string.IsNullOrWhiteSpace(CINBox.Text) ||
+        string.IsNullOrWhiteSpace(TelephoneBox.Text) ||
+        string.IsNullOrWhiteSpace(MotDePassBox.Text) ||
+        string.IsNullOrWhiteSpace(IdentifiantBox.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs !");
+                return;
+            }
+
+            if (!int.TryParse(TelephoneBox.Text, out int tele) ||
+       !int.TryParse(IdentifiantBox.Text, out int loginE))
+            {
+                MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
+                return;
+            }
+
             dt = DateRejoinBox.Value;
 
             cn = new SqlConnection(cnChaine);
@@ -82,6 +101,11 @@ namespace HOTEL_MANAGMENT
 
         private void DeleteEmp_Click(object sender, EventArgs e)
         {
+            if (listViewEmp.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner un employé dans la liste !");
+                return;
+            }
 
             try
             {
@@ -108,6 +132,25 @@ namespace HOTEL_MANAGMENT
         private void UpdateEmp_Click(object sender, EventArgs e)
 
         {
+
+            if(string.IsNullOrWhiteSpace(NomBox.Text) ||
+        string.IsNullOrWhiteSpace(PrenomBox.Text) ||
+        string.IsNullOrWhiteSpace(AdresseBox.Text) ||
+        string.IsNullOrWhiteSpace(CINBox.Text) ||
+        string.IsNullOrWhiteSpace(TelephoneBox.Text) ||
+        string.IsNullOrWhiteSpace(MotDePassBox.Text) ||
+        string.IsNullOrWhiteSpace(IdentifiantBox.Text))
+    {
+                MessageBox.Show("Veuillez remplir tous les champs !");
+                return;
+            }
+
+            if (!int.TryParse(TelephoneBox.Text, out int tele) ||
+                !int.TryParse(IdentifiantBox.Text, out int loginE))
+            {
+                MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
+                return;
+            }
             consulterButton.Visible = true;
             UpdateEmp.Visible = false;
             dt = DateRejoinBox.Value;
@@ -145,7 +188,11 @@ namespace HOTEL_MANAGMENT
 
         private void consulterButton_Click(object sender, EventArgs e)
         {
-
+            if (listViewEmp.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Veuillez sélectionner un employé dans la liste !");
+                return;
+            }
             UpdateEmp.Visible = true;
             consulterButton.Visible = false;
             string queryS = "select * from Employe where id=" + int.Parse(listViewEmp.SelectedItems[0].Text);

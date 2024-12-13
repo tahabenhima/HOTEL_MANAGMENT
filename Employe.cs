@@ -145,7 +145,7 @@ namespace HOTEL_MANAGMENT
 
         private void consulterButton_Click(object sender, EventArgs e)
         {
-            
+
             UpdateEmp.Visible = true;
             consulterButton.Visible = false;
             string queryS = "select * from Employe where id=" + int.Parse(listViewEmp.SelectedItems[0].Text);
@@ -160,15 +160,15 @@ namespace HOTEL_MANAGMENT
                 AdresseBox.Text = reader["Adresee"].ToString();
                 CINBox.Text = reader["CIN"].ToString();
                 TelephoneBox.Text = reader["Tele"].ToString();
-                DateRejoinBox.Value=dt ;
+                DateRejoinBox.Value = dt;
                 MotDePassBox.Text = reader["MotDePass"].ToString();
                 IdentifiantBox.Text = reader["loginE"].ToString();
-                
+
 
 
             }
             cn.Close();
-            
+
         }
 
 
@@ -184,8 +184,14 @@ namespace HOTEL_MANAGMENT
             IdentifiantBox.Clear();
         }
 
-       
+        private void Employe_Load(object sender, EventArgs e)
+        {
 
-  
+        }
+
+        private void Nom_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

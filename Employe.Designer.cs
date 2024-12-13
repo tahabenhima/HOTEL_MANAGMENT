@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Nom = new Label();
             Prenom = new Label();
             Adresse = new Label();
@@ -77,162 +77,180 @@
             // Nom
             // 
             Nom.AutoSize = true;
-            Nom.Location = new Point(12, 86);
+            Nom.Location = new Point(8, 52);
+            Nom.Margin = new Padding(2, 0, 2, 0);
             Nom.Name = "Nom";
-            Nom.Size = new Size(52, 25);
+            Nom.Size = new Size(34, 15);
             Nom.TabIndex = 1;
             Nom.Text = "Nom";
+            Nom.Click += Nom_Click;
             // 
             // Prenom
             // 
             Prenom.AutoSize = true;
-            Prenom.Location = new Point(525, 92);
+            Prenom.Location = new Point(368, 55);
+            Prenom.Margin = new Padding(2, 0, 2, 0);
             Prenom.Name = "Prenom";
-            Prenom.Size = new Size(74, 25);
+            Prenom.Size = new Size(49, 15);
             Prenom.TabIndex = 2;
             Prenom.Text = "Prenom";
             // 
             // Adresse
             // 
             Adresse.AutoSize = true;
-            Adresse.Location = new Point(972, 92);
+            Adresse.Location = new Point(680, 55);
+            Adresse.Margin = new Padding(2, 0, 2, 0);
             Adresse.Name = "Adresse";
-            Adresse.Size = new Size(75, 25);
+            Adresse.Size = new Size(48, 15);
             Adresse.TabIndex = 3;
             Adresse.Text = "Adresse";
             // 
             // Telephone
             // 
             Telephone.AutoSize = true;
-            Telephone.Location = new Point(12, 165);
+            Telephone.Location = new Point(8, 99);
+            Telephone.Margin = new Padding(2, 0, 2, 0);
             Telephone.Name = "Telephone";
-            Telephone.Size = new Size(92, 25);
+            Telephone.Size = new Size(61, 15);
             Telephone.TabIndex = 5;
             Telephone.Text = "Telephone";
             // 
             // DateRejoin
             // 
             DateRejoin.AutoSize = true;
-            DateRejoin.Location = new Point(494, 171);
+            DateRejoin.Location = new Point(346, 103);
+            DateRejoin.Margin = new Padding(2, 0, 2, 0);
             DateRejoin.Name = "DateRejoin";
-            DateRejoin.Size = new Size(127, 25);
+            DateRejoin.Size = new Size(83, 15);
             DateRejoin.TabIndex = 6;
             DateRejoin.Text = "Date de Rejoin";
             // 
             // loginE
             // 
             loginE.AutoSize = true;
-            loginE.Location = new Point(1421, 177);
+            loginE.Location = new Point(995, 106);
+            loginE.Margin = new Padding(2, 0, 2, 0);
             loginE.Name = "loginE";
-            loginE.Size = new Size(92, 25);
+            loginE.Size = new Size(61, 15);
             loginE.TabIndex = 7;
             loginE.Text = "Identifiant";
             // 
             // MotDePass
             // 
             MotDePass.AutoSize = true;
-            MotDePass.Location = new Point(961, 171);
+            MotDePass.Location = new Point(673, 103);
+            MotDePass.Margin = new Padding(2, 0, 2, 0);
             MotDePass.Name = "MotDePass";
-            MotDePass.Size = new Size(120, 25);
+            MotDePass.Size = new Size(78, 15);
             MotDePass.TabIndex = 8;
             MotDePass.Text = "Mot De Passe";
             // 
             // NomBox
             // 
-            NomBox.Location = new Point(147, 86);
+            NomBox.Location = new Point(103, 52);
+            NomBox.Margin = new Padding(2);
             NomBox.Name = "NomBox";
-            NomBox.Size = new Size(303, 31);
+            NomBox.Size = new Size(213, 23);
             NomBox.TabIndex = 9;
             // 
             // CINBox
             // 
-            CINBox.Location = new Point(1478, 89);
+            CINBox.Location = new Point(1035, 53);
+            CINBox.Margin = new Padding(2);
             CINBox.Name = "CINBox";
-            CINBox.Size = new Size(303, 31);
+            CINBox.Size = new Size(213, 23);
             CINBox.TabIndex = 11;
             // 
             // TelephoneBox
             // 
-            TelephoneBox.Location = new Point(147, 165);
+            TelephoneBox.Location = new Point(103, 99);
+            TelephoneBox.Margin = new Padding(2);
             TelephoneBox.Name = "TelephoneBox";
-            TelephoneBox.Size = new Size(303, 31);
+            TelephoneBox.Size = new Size(213, 23);
             TelephoneBox.TabIndex = 12;
             // 
             // MotDePassBox
             // 
-            MotDePassBox.Location = new Point(1087, 171);
+            MotDePassBox.Location = new Point(761, 103);
+            MotDePassBox.Margin = new Padding(2);
             MotDePassBox.Name = "MotDePassBox";
-            MotDePassBox.Size = new Size(303, 31);
+            MotDePassBox.Size = new Size(213, 23);
             MotDePassBox.TabIndex = 14;
             // 
             // IdentifiantBox
             // 
-            IdentifiantBox.Location = new Point(1519, 171);
+            IdentifiantBox.Location = new Point(1063, 103);
+            IdentifiantBox.Margin = new Padding(2);
             IdentifiantBox.Name = "IdentifiantBox";
-            IdentifiantBox.Size = new Size(303, 31);
+            IdentifiantBox.Size = new Size(213, 23);
             IdentifiantBox.TabIndex = 15;
             // 
             // AdresseBox
             // 
-            AdresseBox.Location = new Point(1069, 89);
+            AdresseBox.Location = new Point(748, 53);
+            AdresseBox.Margin = new Padding(2);
             AdresseBox.Name = "AdresseBox";
-            AdresseBox.Size = new Size(303, 31);
+            AdresseBox.Size = new Size(213, 23);
             AdresseBox.TabIndex = 16;
             // 
             // PrenomBox
             // 
-            PrenomBox.Location = new Point(627, 86);
+            PrenomBox.Location = new Point(439, 52);
+            PrenomBox.Margin = new Padding(2);
             PrenomBox.Name = "PrenomBox";
-            PrenomBox.Size = new Size(303, 31);
+            PrenomBox.Size = new Size(213, 23);
             PrenomBox.TabIndex = 17;
             // 
             // AddEmp
             // 
-            AddEmp.CustomizableEdges = customizableEdges25;
+            AddEmp.CustomizableEdges = customizableEdges13;
             AddEmp.DisabledState.BorderColor = Color.DarkGray;
             AddEmp.DisabledState.CustomBorderColor = Color.DarkGray;
             AddEmp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             AddEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             AddEmp.Font = new Font("Segoe UI", 9F);
             AddEmp.ForeColor = Color.White;
-            AddEmp.Location = new Point(114, 724);
+            AddEmp.Location = new Point(80, 434);
+            AddEmp.Margin = new Padding(2);
             AddEmp.Name = "AddEmp";
-            AddEmp.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            AddEmp.Size = new Size(246, 55);
+            AddEmp.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            AddEmp.Size = new Size(172, 33);
             AddEmp.TabIndex = 18;
             AddEmp.Text = "Ajouter Employe";
             AddEmp.Click += AddEmp_Click;
             // 
             // DeleteEmp
             // 
-            DeleteEmp.CustomizableEdges = customizableEdges27;
+            DeleteEmp.CustomizableEdges = customizableEdges15;
             DeleteEmp.DisabledState.BorderColor = Color.DarkGray;
             DeleteEmp.DisabledState.CustomBorderColor = Color.DarkGray;
             DeleteEmp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             DeleteEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             DeleteEmp.Font = new Font("Segoe UI", 9F);
             DeleteEmp.ForeColor = Color.White;
-            DeleteEmp.Location = new Point(1268, 724);
+            DeleteEmp.Location = new Point(789, 436);
+            DeleteEmp.Margin = new Padding(2);
             DeleteEmp.Name = "DeleteEmp";
-            DeleteEmp.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            DeleteEmp.Size = new Size(245, 57);
+            DeleteEmp.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            DeleteEmp.Size = new Size(172, 34);
             DeleteEmp.TabIndex = 19;
             DeleteEmp.Text = "Supprimer Employe";
             DeleteEmp.Click += DeleteEmp_Click;
             // 
             // UpdateEmp
             // 
-            UpdateEmp.CustomizableEdges = customizableEdges29;
+            UpdateEmp.CustomizableEdges = customizableEdges17;
             UpdateEmp.DisabledState.BorderColor = Color.DarkGray;
             UpdateEmp.DisabledState.CustomBorderColor = Color.DarkGray;
             UpdateEmp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             UpdateEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             UpdateEmp.Font = new Font("Segoe UI", 9F);
             UpdateEmp.ForeColor = Color.White;
-            UpdateEmp.Location = new Point(564, 726);
+            UpdateEmp.Location = new Point(395, 436);
+            UpdateEmp.Margin = new Padding(2);
             UpdateEmp.Name = "UpdateEmp";
-            UpdateEmp.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            UpdateEmp.Size = new Size(257, 55);
+            UpdateEmp.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            UpdateEmp.Size = new Size(180, 33);
             UpdateEmp.TabIndex = 20;
             UpdateEmp.Text = "Modifier Employe";
             UpdateEmp.Visible = false;
@@ -240,17 +258,18 @@
             // 
             // ReadEmp
             // 
-            ReadEmp.CustomizableEdges = customizableEdges31;
+            ReadEmp.CustomizableEdges = customizableEdges19;
             ReadEmp.DisabledState.BorderColor = Color.DarkGray;
             ReadEmp.DisabledState.CustomBorderColor = Color.DarkGray;
             ReadEmp.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ReadEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ReadEmp.Font = new Font("Segoe UI", 9F);
             ReadEmp.ForeColor = Color.White;
-            ReadEmp.Location = new Point(1607, 724);
+            ReadEmp.Location = new Point(1125, 434);
+            ReadEmp.Margin = new Padding(2);
             ReadEmp.Name = "ReadEmp";
-            ReadEmp.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            ReadEmp.Size = new Size(215, 57);
+            ReadEmp.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            ReadEmp.Size = new Size(150, 34);
             ReadEmp.TabIndex = 21;
             ReadEmp.Text = "Afficher Employe";
             ReadEmp.Click += ReadEmp_Click;
@@ -258,25 +277,27 @@
             // DateRejoinBox
             // 
             DateRejoinBox.Checked = true;
-            DateRejoinBox.CustomizableEdges = customizableEdges33;
+            DateRejoinBox.CustomizableEdges = customizableEdges21;
             DateRejoinBox.FillColor = Color.FromArgb(94, 148, 255);
             DateRejoinBox.Font = new Font("Segoe UI", 9F);
             DateRejoinBox.Format = DateTimePickerFormat.Long;
-            DateRejoinBox.Location = new Point(627, 165);
+            DateRejoinBox.Location = new Point(439, 99);
+            DateRejoinBox.Margin = new Padding(2);
             DateRejoinBox.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateRejoinBox.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateRejoinBox.Name = "DateRejoinBox";
-            DateRejoinBox.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            DateRejoinBox.Size = new Size(303, 45);
+            DateRejoinBox.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            DateRejoinBox.Size = new Size(212, 27);
             DateRejoinBox.TabIndex = 22;
             DateRejoinBox.Value = new DateTime(2024, 12, 12, 22, 29, 45, 104);
             // 
             // listViewEmp
             // 
             listViewEmp.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
-            listViewEmp.Location = new Point(21, 281);
+            listViewEmp.Location = new Point(15, 169);
+            listViewEmp.Margin = new Padding(2);
             listViewEmp.Name = "listViewEmp";
-            listViewEmp.Size = new Size(1891, 355);
+            listViewEmp.Size = new Size(1325, 215);
             listViewEmp.TabIndex = 23;
             listViewEmp.UseCompatibleStateImageBehavior = false;
             listViewEmp.View = View.Details;
@@ -329,25 +350,27 @@
             // CIN
             // 
             CIN.AutoSize = true;
-            CIN.Location = new Point(1421, 95);
+            CIN.Location = new Point(995, 57);
+            CIN.Margin = new Padding(2, 0, 2, 0);
             CIN.Name = "CIN";
-            CIN.Size = new Size(41, 25);
+            CIN.Size = new Size(27, 15);
             CIN.TabIndex = 24;
             CIN.Text = "CIN";
             // 
             // consulterButton
             // 
-            consulterButton.CustomizableEdges = customizableEdges35;
+            consulterButton.CustomizableEdges = customizableEdges23;
             consulterButton.DisabledState.BorderColor = Color.DarkGray;
             consulterButton.DisabledState.CustomBorderColor = Color.DarkGray;
             consulterButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             consulterButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             consulterButton.Font = new Font("Segoe UI", 9F);
             consulterButton.ForeColor = Color.White;
-            consulterButton.Location = new Point(564, 726);
+            consulterButton.Location = new Point(395, 436);
+            consulterButton.Margin = new Padding(2);
             consulterButton.Name = "consulterButton";
-            consulterButton.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            consulterButton.Size = new Size(257, 55);
+            consulterButton.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            consulterButton.Size = new Size(180, 33);
             consulterButton.TabIndex = 25;
             consulterButton.Text = "Cosulter Employe";
             consulterButton.Click += consulterButton_Click;
@@ -355,18 +378,19 @@
             // getid
             // 
             getid.AutoSize = true;
-            getid.Location = new Point(73, 241);
+            getid.Location = new Point(51, 145);
+            getid.Margin = new Padding(2, 0, 2, 0);
             getid.Name = "getid";
-            getid.Size = new Size(27, 25);
+            getid.Size = new Size(17, 15);
             getid.TabIndex = 26;
             getid.Text = "id";
             getid.Visible = false;
             // 
             // Employe
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 835);
+            ClientSize = new Size(1123, 501);
             Controls.Add(getid);
             Controls.Add(consulterButton);
             Controls.Add(CIN);
@@ -390,10 +414,12 @@
             Controls.Add(Adresse);
             Controls.Add(Prenom);
             Controls.Add(Nom);
-            Margin = new Padding(4);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Employe";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
+            Load += Employe_Load;
             ResumeLayout(false);
             PerformLayout();
         }

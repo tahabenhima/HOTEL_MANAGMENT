@@ -5,29 +5,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HOTEL_MANAGMENT
+namespace HOTEL_MANAGMENT.Classes
 {
-     internal class ClientClass
+    internal class ClientClass
     {
-        static string cnChaine = "Data Source=DESKTOP;Initial Catalog=Gestion_Hotel;Integrated Security=True;";
-        static SqlConnection cn;
-        static SqlCommand cmd;
-        public ClientClass() { }
+        string Nom { get; set; }
+        string Prenom { get; set; }
+        string Adresse { get; set; }
+        string CIN { get; set; }
+        int Tele { get; set; }
+        DateTime DateRejoin { get; set; }
+        static private SqlCommand cmd;
+        static private Connection_Classe cn;
+        public ClientClass(string Nom, string Prenom, string Adresse, string CIN, int Tele, DateTime DateRejoin)
+        {
+            this.Nom = Nom;
+            this.Prenom = Prenom;
+            this.Adresse = Adresse;
+            this.CIN = CIN;
+            this.Tele = Tele;
+            this.DateRejoin = DateRejoin;
 
+            cn = new Connection_Classe();
+        }
 
         static public Boolean DeleteClient(int e)
         {
-            //ook
             try
             {
-                string query3 = "delete  from Employe where id=@id";
-                cn = new SqlConnection(cnChaine);
-                cmd = new SqlCommand(query3, cn);
+                string query = "delete from Client where id=@id";
+                SqlConnection cnx = cn.GetConnection();
+
+                cmd = new SqlCommand(query, cnx);
                 cmd.Parameters.AddWithValue("@id", e);
-                cn.Open();
+                cnx.Open();
                 int row = cmd.ExecuteNonQuery();
-                MessageBox.Show("Employe suprime");
-                cn.Close();
+                cnx.Close();
+
+                return row > 0;
+
 
             }
             catch (Exception ex)
@@ -37,17 +53,20 @@ namespace HOTEL_MANAGMENT
             return false;
         }
 
-
+//
         static public ListView ReadClient()
         {
+           
             ListView list = new ListView();
-            String query2 = "select * from Employe ";
-            cn = new SqlConnection(cnChaine);
-            cmd = new SqlCommand(query2, cn);
             try
             {
+                cn = new Connection_Classe();
+                SqlConnection cnx = cn.GetConnection();
+            String query = "select * from Client ";
+            cmd = new SqlCommand(query, cnx);
+
                 list.Items.Clear();
-                cn.Open();
+                cnx.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -63,13 +82,16 @@ namespace HOTEL_MANAGMENT
                     list.Items.Add(items);
 
                 }
-                cn.Close();
+                cnx.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERREUR Affichage " + ex);
+                MessageBox.Show("ERREUR Affichage " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return list;
         }
     }
 }
+
+
+

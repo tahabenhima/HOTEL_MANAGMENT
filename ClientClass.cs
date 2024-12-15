@@ -17,7 +17,7 @@ namespace HOTEL_MANAGMENT
 
         static public Boolean DeleteClient(int e)
         {
-
+            //ook
             try
             {
                 string query3 = "delete  from Employe where id=@id";

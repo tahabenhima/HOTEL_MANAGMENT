@@ -4,10 +4,10 @@ namespace HOTEL_MANAGMENT
 {
     public partial class Employe : Form
     {
-        string cnChaine = "Data Source=DESKTOP;Initial Catalog=Gestion_Hotel;Integrated Security=True;";
-        SqlConnection cn;
+        
         SqlCommand cmd;
         DateTime dt;
+        private static Connection_Classe cn=new Connection_Classe();
         public Employe()
         {
             InitializeComponent();
@@ -38,41 +38,28 @@ namespace HOTEL_MANAGMENT
             
             dt = DateRejoinBox.Value;
             Employe_Classe EMP = new Employe_Classe(NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, int.Parse(TelephoneBox.Text), dt, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
-            cn = new SqlConnection(cnChaine);
-           
+            SqlConnection cnx = cn.GetConnection();
+
             EMP.Ajouter_Emp();
             
       
 
         }
-
+////////////////////AFFICHER//////////////////////////////////////////////////////
         private void ReadEmp_Click(object sender, EventArgs e)
         {
-            String query2 = "select * from Employe ";
-            cn = new SqlConnection(cnChaine);
-            cmd = new SqlCommand(query2, cn);
+            
+            
             try
             {
                 listViewEmp.Items.Clear();
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                Employe_Classe.Afficher();
+
+                for(int i= 0;i< Employe_Classe.Afficher().Items.Count; i++)
                 {
-
-
-                    ListViewItem items = new ListViewItem(reader["id"].ToString());
-                    items.SubItems.Add(reader["Nom"].ToString());
-                    items.SubItems.Add(reader["Prenom"].ToString());
-                    items.SubItems.Add(reader["Adresee"].ToString());
-                    items.SubItems.Add(reader["CIN"].ToString());
-                    items.SubItems.Add(reader["Tele"].ToString());
-                    items.SubItems.Add(reader["DateRejoin"].ToString());
-                    items.SubItems.Add(reader["MotDePass"].ToString());
-                    items.SubItems.Add(reader["loginE"].ToString());
-                    listViewEmp.Items.Add(items);
-
+                    listViewEmp.Items.Add((ListViewItem)Employe_Classe.Afficher().Items[i].Clone()); 
                 }
-                cn.Close();
+ 
                 vider();
             }
             catch (Exception ex)
@@ -80,7 +67,10 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("ERREUR Affichage " + ex);
             }
         }
+//////////////////////////////////////////////////////////////////////////
 
+
+//////////SUPPRIMER////////////////////////////////////////////////////////
         private void DeleteEmp_Click(object sender, EventArgs e)
         {
             if (listViewEmp.SelectedItems.Count == 0)
@@ -91,14 +81,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                string query3 = "delete  from Employe where id=@id";
-                cn = new SqlConnection(cnChaine);
-                cmd = new SqlCommand(query3, cn);
-                cmd.Parameters.AddWithValue("@id", int.Parse(listViewEmp.SelectedItems[0].Text));
-                cn.Open();
-                int row = cmd.ExecuteNonQuery();
-                MessageBox.Show("Employe suprime");
-                cn.Close();
+                Employe_Classe.Supprimer_Emp(int.Parse(listViewEmp.SelectedItems[0].Text));
                 vider();
                 ReadEmp_Click(sender, e);
 
@@ -110,6 +93,9 @@ namespace HOTEL_MANAGMENT
 
 
         }
+//////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////MODIFIER-----UPDATE/////////////////////////////////////////////
 
         private void UpdateEmp_Click(object sender, EventArgs e)
 
@@ -133,30 +119,13 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
                 return;
             }
+
+
             consulterButton.Visible = true;
             UpdateEmp.Visible = false;
-            dt = DateRejoinBox.Value;
-            string query4 = "UPDATE Employe set Nom=@Nom,Prenom=@Prenom,Adresee=@Adresee,CIN=@CIN,Tele=@Tele,DateRejoin=@DateRejoin,MotDePass=@MotDePass,loginE=@loginE  where id=@id";
-
-
-            cmd = new SqlCommand(query4, cn);
-            cmd.Parameters.AddWithValue("@id", int.Parse(getid.Text));
-            cmd.Parameters.AddWithValue("@Nom", NomBox.Text);
-            cmd.Parameters.AddWithValue("@Prenom", PrenomBox.Text);
-            cmd.Parameters.AddWithValue("@Adresee", AdresseBox.Text);
-            cmd.Parameters.AddWithValue("@CIN", CINBox.Text);
-            cmd.Parameters.AddWithValue("@Tele", int.Parse(TelephoneBox.Text));
-            cmd.Parameters.AddWithValue("@DateRejoin", dt);
-            cmd.Parameters.AddWithValue("@MotDePass", MotDePassBox.Text);
-            cmd.Parameters.AddWithValue("@loginE", int.Parse(IdentifiantBox.Text));
             try
             {
-
-                cn.Open();
-                int row = cmd.ExecuteNonQuery();
-                MessageBox.Show("Employe modifie!");
-
-                cn.Close();
+                Employe_Classe.Modifier(int.Parse(getid.Text),NomBox.Text,PrenomBox.Text,AdresseBox.Text,CINBox.Text,int.Parse(TelephoneBox.Text),DateRejoinBox.Value,MotDePassBox.Text,int.Parse(IdentifiantBox.Text));
                 vider();
                 ReadEmp_Click(sender, e);
 
@@ -168,6 +137,12 @@ namespace HOTEL_MANAGMENT
 
         }
 
+
+
+        /////////////////////////////////////////////////////////////////////////////////
+        
+            
+
         private void consulterButton_Click(object sender, EventArgs e)
         {
             if (listViewEmp.SelectedItems.Count == 0)
@@ -178,7 +153,10 @@ namespace HOTEL_MANAGMENT
             UpdateEmp.Visible = true;
             consulterButton.Visible = false;
             string queryS = "select * from Employe where id=" + int.Parse(listViewEmp.SelectedItems[0].Text);
-            cn.Open();
+            SqlConnection cnx = cn.GetConnection();
+            cmd = new SqlCommand(queryS, cnx);
+            
+            cnx.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             getid.Text = listViewEmp.SelectedItems[0].Text;
             while (reader.Read())
@@ -196,7 +174,7 @@ namespace HOTEL_MANAGMENT
 
 
             }
-            cn.Close();
+            cnx.Close();
 
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Collections;
 namespace HOTEL_MANAGMENT.Classes
 {
     internal class Employe_Classe
@@ -16,8 +17,8 @@ namespace HOTEL_MANAGMENT.Classes
         DateTime DateRejoin { get; set; }
         string MotDePass { get; set; }
         int LoginE { get; set; }
-        private SqlCommand cmd;
-        private Connection_Classe cn;
+        private static SqlCommand cmd;
+        private static Connection_Classe cn;
 
         public Employe_Classe(string Nom, string Prenom, string Adresee, string CIN, int Tele, DateTime DateRejoin, string MotDePass, int loginE)
         {
@@ -66,13 +67,118 @@ namespace HOTEL_MANAGMENT.Classes
             cnx.Close();
         }
 
-       /* public void Supprimer_Emp()
+
+///////SUPPRIMER EMPLOYE////////
+       public static void Supprimer_Emp(int id)
         {
+            cn = new Connection_Classe();
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
             string query1 = "delete  from Employe where id=@id";
-       
-        }*/
+            cmd = new SqlCommand(query1, cnx);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            //le processus de suppression
+            try
+            {
+
+                int row = cmd.ExecuteNonQuery();
+                MessageBox.Show("Employe Suprimme!");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR" + ex);
+
+            }
+            cnx.Close();
+
+
+        }
+
+///////////AFFICHER/////////////
+
+        public static ListView Afficher()
+        {
+            ListView l=new ListView { };
+            cn = new Connection_Classe();
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query2 = "select * from Employe";
+            cmd = new SqlCommand(query2, cnx);
+            try
+            {
+                
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+
+                    ListViewItem items = new ListViewItem(reader["id"].ToString());
+                    items.SubItems.Add(reader["Nom"].ToString());
+                    items.SubItems.Add(reader["Prenom"].ToString());
+                    items.SubItems.Add(reader["Adresee"].ToString());
+                    items.SubItems.Add(reader["CIN"].ToString());
+                    items.SubItems.Add(reader["Tele"].ToString());
+                    items.SubItems.Add(reader["DateRejoin"].ToString());
+                    items.SubItems.Add(reader["MotDePass"].ToString());
+                    items.SubItems.Add(reader["loginE"].ToString());
+                    l.Items.Add(items);
+                    
+
+                }
+                
+                
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERREUR " + ex);
+            }
+            cnx.Close();
+            return l;
+
+        }
+///////////MODIFIER/////////////////////////////
+
+        public static void Modifier(int id, string nom, string prenom, string adresse, string cin, int tele, DateTime dt, string motDePass, int loginE)
+        {
+
+            //DateTime dt = DateRejoinBox.Value;
+            cn = new Connection_Classe();
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query3 = "UPDATE Employe set Nom=@Nom,Prenom=@Prenom,Adresee=@Adresee,CIN=@CIN,Tele=@Tele,DateRejoin=@DateRejoin,MotDePass=@MotDePass,loginE=@loginE  where id=@id";
+            cmd = new SqlCommand(query3, cnx);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@Nom", nom);
+            cmd.Parameters.AddWithValue("@Prenom", prenom);
+            cmd.Parameters.AddWithValue("@Adresee", adresse);
+            cmd.Parameters.AddWithValue("@CIN", cin);
+            cmd.Parameters.AddWithValue("@Tele", tele);
+            cmd.Parameters.AddWithValue("@DateRejoin", dt);
+            cmd.Parameters.AddWithValue("@MotDePass", motDePass);
+            cmd.Parameters.AddWithValue("@loginE", loginE);
+            try
+            {
+
+                
+                int row = cmd.ExecuteNonQuery();
+                MessageBox.Show("Employe modifie!");
+
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR" + ex);
+            }
+
+            cnx.Close();
+        }
 
     }
 }

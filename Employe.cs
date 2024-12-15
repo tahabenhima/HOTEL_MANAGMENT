@@ -1,3 +1,4 @@
+using HOTEL_MANAGMENT.Classes;
 using System.Data.SqlClient;
 namespace HOTEL_MANAGMENT
 {
@@ -34,33 +35,14 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
                 return;
             }
-
+            
             dt = DateRejoinBox.Value;
-
+            Employe_Classe EMP = new Employe_Classe(NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, int.Parse(TelephoneBox.Text), dt, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
             cn = new SqlConnection(cnChaine);
-            string query = "insert into Employe (Nom,Prenom,Adresee,CIN,Tele,DateRejoin,MotDePass,loginE) values(@Nom,@Prenom,@Adresee,@CIN,@Tele,@DateRejoin,@MotDePass,@loginE)";
-            cmd = new SqlCommand(query, cn);
-            cmd.Parameters.AddWithValue("@Nom", NomBox.Text);
-            cmd.Parameters.AddWithValue("@Prenom", PrenomBox.Text);
-            cmd.Parameters.AddWithValue("@Adresee", AdresseBox.Text);
-            cmd.Parameters.AddWithValue("@CIN", CINBox.Text);
-            cmd.Parameters.AddWithValue("@Tele", int.Parse(TelephoneBox.Text));
-            cmd.Parameters.AddWithValue("@DateRejoin", dt);
-            cmd.Parameters.AddWithValue("@MotDePass", MotDePassBox.Text);
-            cmd.Parameters.AddWithValue("@loginE", int.Parse(IdentifiantBox.Text));
-            try
-            {
-                cn.Open();
-                int row = cmd.ExecuteNonQuery();
-                MessageBox.Show("Employe insere!");
-                cn.Close();
-                vider();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERREUR" + ex);
-            }
+           
+            EMP.Ajouter_Emp();
+            
+      
 
         }
 

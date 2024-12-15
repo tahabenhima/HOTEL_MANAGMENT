@@ -62,12 +62,15 @@
             ClientsHomeBtn = new Guna.UI2.WinForms.Guna2Button();
             EmployesHomeBtn = new Guna.UI2.WinForms.Guna2Button();
             ControlsPanel = new Panel();
+            labelWelcom = new Label();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(labelWelcom);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -111,7 +114,7 @@
             ExitHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ExitHomeBtn.Font = new Font("Segoe UI", 9F);
             ExitHomeBtn.ForeColor = Color.White;
-            ExitHomeBtn.Location = new Point(0, 389);
+            ExitHomeBtn.Location = new Point(0, 489);
             ExitHomeBtn.Name = "ExitHomeBtn";
             ExitHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges22;
             ExitHomeBtn.Size = new Size(121, 36);
@@ -275,6 +278,16 @@
             ControlsPanel.Size = new Size(1398, 537);
             ControlsPanel.TabIndex = 2;
             // 
+            // labelWelcom
+            // 
+            labelWelcom.AutoSize = true;
+            labelWelcom.Font = new Font("Tempus Sans ITC", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelWelcom.Location = new Point(616, 3);
+            labelWelcom.Name = "labelWelcom";
+            labelWelcom.Size = new Size(70, 19);
+            labelWelcom.TabIndex = 0;
+            labelWelcom.Text = "Welcome";
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -287,6 +300,8 @@
             Name = "HomePage";
             Text = "HomePage";
             WindowState = FormWindowState.Maximized;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -308,5 +323,6 @@
         private Guna.UI2.WinForms.Guna2Button CarRentalHomeBtn;
         private Panel ControlsPanel;
         private Guna.UI2.WinForms.Guna2Button ExitHomeBtn;
+        private Label labelWelcom;
     }
 }

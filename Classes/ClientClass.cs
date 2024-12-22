@@ -79,6 +79,7 @@ namespace HOTEL_MANAGMENT.Classes
                     items.SubItems.Add(reader["CIN"].ToString());
                     items.SubItems.Add(reader["Tele"].ToString());
                     items.SubItems.Add(reader["DateRejoin"].ToString());
+
                     list.Items.Add(items);
 
                 }

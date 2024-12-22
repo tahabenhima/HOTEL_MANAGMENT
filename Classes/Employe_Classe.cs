@@ -13,14 +13,14 @@ namespace HOTEL_MANAGMENT.Classes
         string Prenom { get; set; }
         string Adresee { get; set; }
         string CIN { get; set; }
-        int Tele { get; set; }
+        string Tele { get; set; }
         DateTime DateRejoin { get; set; }
         string MotDePass { get; set; }
         int LoginE { get; set; }
         private static SqlCommand cmd;
         private static Connection_Classe cn;
 
-        public Employe_Classe(string Nom, string Prenom, string Adresee, string CIN, int Tele, DateTime DateRejoin, string MotDePass, int loginE)
+        public Employe_Classe(string Nom, string Prenom, string Adresee, string CIN, string Tele, DateTime DateRejoin, string MotDePass, int loginE)
         {
             this.Nom = Nom;
             this.Prenom = Prenom;
@@ -46,7 +46,7 @@ namespace HOTEL_MANAGMENT.Classes
             cmd.Parameters.AddWithValue("@Prenom", Prenom);
             cmd.Parameters.AddWithValue("@Adresee", Adresee);
             cmd.Parameters.AddWithValue("@CIN", CIN);
-            cmd.Parameters.AddWithValue("@Tele", (Tele));
+            cmd.Parameters.AddWithValue("@Tele", Tele);
             cmd.Parameters.AddWithValue("@DateRejoin", DateRejoin);
             cmd.Parameters.AddWithValue("@MotDePass", MotDePass);
             cmd.Parameters.AddWithValue("@loginE", (LoginE));
@@ -143,7 +143,7 @@ namespace HOTEL_MANAGMENT.Classes
         }
 ///////////MODIFIER/////////////////////////////
 
-        public static void Modifier(int id, string nom, string prenom, string adresse, string cin, int tele, DateTime dt, string motDePass, int loginE)
+        public static void Modifier(int id, string nom, string prenom, string adresse, string cin, string tele, DateTime dt, string motDePass, int loginE)
         {
 
             //DateTime dt = DateRejoinBox.Value;

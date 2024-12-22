@@ -7,10 +7,14 @@ namespace HOTEL_MANAGMENT
         
         SqlCommand cmd;
         DateTime dt;
+        object se=new object();
+
+        EventArgs ev=new EventArgs();    
         private static Connection_Classe cn=new Connection_Classe();
         public Employe()
         {
             InitializeComponent();
+            ReadEmp_Click(se,  ev);
         }
 
 
@@ -29,20 +33,20 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            if (!int.TryParse(TelephoneBox.Text, out int tele) ||
-       !int.TryParse(IdentifiantBox.Text, out int loginE))
+            if ( !int.TryParse(IdentifiantBox.Text, out int loginE))
             {
                 MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
                 return;
             }
             
             dt = DateRejoinBox.Value;
-            Employe_Classe EMP = new Employe_Classe(NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, int.Parse(TelephoneBox.Text), dt, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
+            Employe_Classe EMP = new Employe_Classe(NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, TelephoneBox.Text, dt, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
             SqlConnection cnx = cn.GetConnection();
 
             EMP.Ajouter_Emp();
-            
-      
+            vider();
+            ReadEmp_Click(sender, e);
+
 
         }
 ////////////////////AFFICHER//////////////////////////////////////////////////////
@@ -113,7 +117,7 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            if (!int.TryParse(TelephoneBox.Text, out int tele) ||
+            if (
                 !int.TryParse(IdentifiantBox.Text, out int loginE))
             {
                 MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
@@ -125,7 +129,7 @@ namespace HOTEL_MANAGMENT
             UpdateEmp.Visible = false;
             try
             {
-                Employe_Classe.Modifier(int.Parse(getid.Text),NomBox.Text,PrenomBox.Text,AdresseBox.Text,CINBox.Text,int.Parse(TelephoneBox.Text),DateRejoinBox.Value,MotDePassBox.Text,int.Parse(IdentifiantBox.Text));
+                Employe_Classe.Modifier(int.Parse(getid.Text),NomBox.Text,PrenomBox.Text,AdresseBox.Text,CINBox.Text,TelephoneBox.Text,DateRejoinBox.Value,MotDePassBox.Text,int.Parse(IdentifiantBox.Text));
                 vider();
                 ReadEmp_Click(sender, e);
 

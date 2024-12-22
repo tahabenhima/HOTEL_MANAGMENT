@@ -77,10 +77,10 @@
             // Nom
             // 
             Nom.AutoSize = true;
-            Nom.Location = new Point(9, 69);
+            Nom.Location = new Point(11, 86);
             Nom.Margin = new Padding(2, 0, 2, 0);
             Nom.Name = "Nom";
-            Nom.Size = new Size(42, 20);
+            Nom.Size = new Size(52, 25);
             Nom.TabIndex = 1;
             Nom.Text = "Nom";
             Nom.Click += Nom_Click;
@@ -88,107 +88,108 @@
             // Prenom
             // 
             Prenom.AutoSize = true;
-            Prenom.Location = new Point(421, 73);
+            Prenom.Location = new Point(526, 91);
             Prenom.Margin = new Padding(2, 0, 2, 0);
             Prenom.Name = "Prenom";
-            Prenom.Size = new Size(60, 20);
+            Prenom.Size = new Size(74, 25);
             Prenom.TabIndex = 2;
             Prenom.Text = "Prenom";
             // 
             // Adresse
             // 
             Adresse.AutoSize = true;
-            Adresse.Location = new Point(777, 73);
+            Adresse.Location = new Point(971, 91);
             Adresse.Margin = new Padding(2, 0, 2, 0);
             Adresse.Name = "Adresse";
-            Adresse.Size = new Size(61, 20);
+            Adresse.Size = new Size(75, 25);
             Adresse.TabIndex = 3;
             Adresse.Text = "Adresse";
             // 
             // Telephone
             // 
             Telephone.AutoSize = true;
-            Telephone.Location = new Point(9, 132);
+            Telephone.Location = new Point(11, 165);
             Telephone.Margin = new Padding(2, 0, 2, 0);
             Telephone.Name = "Telephone";
-            Telephone.Size = new Size(78, 20);
+            Telephone.Size = new Size(92, 25);
             Telephone.TabIndex = 5;
             Telephone.Text = "Telephone";
             // 
             // DateRejoin
             // 
             DateRejoin.AutoSize = true;
-            DateRejoin.Location = new Point(395, 137);
+            DateRejoin.Location = new Point(494, 171);
             DateRejoin.Margin = new Padding(2, 0, 2, 0);
             DateRejoin.Name = "DateRejoin";
-            DateRejoin.Size = new Size(108, 20);
+            DateRejoin.Size = new Size(127, 25);
             DateRejoin.TabIndex = 6;
             DateRejoin.Text = "Date de Rejoin";
             // 
             // loginE
             // 
             loginE.AutoSize = true;
-            loginE.Location = new Point(1137, 141);
+            loginE.Location = new Point(1421, 176);
             loginE.Margin = new Padding(2, 0, 2, 0);
             loginE.Name = "loginE";
-            loginE.Size = new Size(77, 20);
+            loginE.Size = new Size(92, 25);
             loginE.TabIndex = 7;
             loginE.Text = "Identifiant";
             // 
             // NomBox
             // 
-            NomBox.Location = new Point(118, 69);
-            NomBox.Margin = new Padding(2, 3, 2, 3);
+            NomBox.Location = new Point(148, 86);
+            NomBox.Margin = new Padding(2, 4, 2, 4);
             NomBox.Name = "NomBox";
-            NomBox.Size = new Size(243, 27);
+            NomBox.Size = new Size(303, 31);
             NomBox.TabIndex = 9;
+            NomBox.TextChanged += NomBox_TextChanged;
             // 
             // CINBox
             // 
-            CINBox.Location = new Point(1183, 71);
-            CINBox.Margin = new Padding(2, 3, 2, 3);
+            CINBox.Location = new Point(1479, 89);
+            CINBox.Margin = new Padding(2, 4, 2, 4);
             CINBox.Name = "CINBox";
-            CINBox.Size = new Size(243, 27);
+            CINBox.Size = new Size(303, 31);
             CINBox.TabIndex = 11;
             // 
             // TelephoneBox
             // 
-            TelephoneBox.Location = new Point(118, 132);
-            TelephoneBox.Margin = new Padding(2, 3, 2, 3);
+            TelephoneBox.Location = new Point(148, 165);
+            TelephoneBox.Margin = new Padding(2, 4, 2, 4);
             TelephoneBox.Name = "TelephoneBox";
-            TelephoneBox.Size = new Size(243, 27);
+            TelephoneBox.Size = new Size(303, 31);
             TelephoneBox.TabIndex = 12;
             // 
             // MotDePassBox
             // 
-            MotDePassBox.Location = new Point(870, 137);
-            MotDePassBox.Margin = new Padding(2, 3, 2, 3);
+            MotDePassBox.Location = new Point(1088, 171);
+            MotDePassBox.Margin = new Padding(2, 4, 2, 4);
             MotDePassBox.Name = "MotDePassBox";
-            MotDePassBox.Size = new Size(243, 27);
+            MotDePassBox.Size = new Size(303, 31);
             MotDePassBox.TabIndex = 14;
             // 
             // IdentifiantBox
             // 
-            IdentifiantBox.Location = new Point(1215, 137);
-            IdentifiantBox.Margin = new Padding(2, 3, 2, 3);
+            IdentifiantBox.Location = new Point(1519, 171);
+            IdentifiantBox.Margin = new Padding(2, 4, 2, 4);
             IdentifiantBox.Name = "IdentifiantBox";
-            IdentifiantBox.Size = new Size(243, 27);
+            IdentifiantBox.Size = new Size(303, 31);
             IdentifiantBox.TabIndex = 15;
             // 
             // AdresseBox
             // 
-            AdresseBox.Location = new Point(855, 71);
-            AdresseBox.Margin = new Padding(2, 3, 2, 3);
+            AdresseBox.Location = new Point(1069, 89);
+            AdresseBox.Margin = new Padding(2, 4, 2, 4);
             AdresseBox.Name = "AdresseBox";
-            AdresseBox.Size = new Size(243, 27);
+            AdresseBox.Size = new Size(303, 31);
             AdresseBox.TabIndex = 16;
             // 
             // PrenomBox
             // 
-            PrenomBox.Location = new Point(502, 69);
-            PrenomBox.Margin = new Padding(2, 3, 2, 3);
+            PrenomBox.Location = new Point(628, 86);
+            PrenomBox.Margin = new Padding(2, 4, 2, 4);
             PrenomBox.Name = "PrenomBox";
-            PrenomBox.Size = new Size(243, 27);
+            PrenomBox.Size = new Size(303, 31);
             PrenomBox.TabIndex = 17;
             // 
             // AddEmp
@@ -200,11 +201,11 @@
             AddEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             AddEmp.Font = new Font("Segoe UI", 9F);
             AddEmp.ForeColor = Color.White;
-            AddEmp.Location = new Point(91, 579);
-            AddEmp.Margin = new Padding(2, 3, 2, 3);
+            AddEmp.Location = new Point(114, 724);
+            AddEmp.Margin = new Padding(2, 4, 2, 4);
             AddEmp.Name = "AddEmp";
             AddEmp.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            AddEmp.Size = new Size(197, 44);
+            AddEmp.Size = new Size(246, 55);
             AddEmp.TabIndex = 18;
             AddEmp.Text = "Ajouter Employe";
             AddEmp.Click += AddEmp_Click;
@@ -218,11 +219,11 @@
             DeleteEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             DeleteEmp.Font = new Font("Segoe UI", 9F);
             DeleteEmp.ForeColor = Color.White;
-            DeleteEmp.Location = new Point(902, 581);
-            DeleteEmp.Margin = new Padding(2, 3, 2, 3);
+            DeleteEmp.Location = new Point(1128, 726);
+            DeleteEmp.Margin = new Padding(2, 4, 2, 4);
             DeleteEmp.Name = "DeleteEmp";
             DeleteEmp.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DeleteEmp.Size = new Size(197, 45);
+            DeleteEmp.Size = new Size(246, 56);
             DeleteEmp.TabIndex = 19;
             DeleteEmp.Text = "Supprimer Employe";
             DeleteEmp.Click += DeleteEmp_Click;
@@ -236,11 +237,11 @@
             UpdateEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             UpdateEmp.Font = new Font("Segoe UI", 9F);
             UpdateEmp.ForeColor = Color.White;
-            UpdateEmp.Location = new Point(451, 581);
-            UpdateEmp.Margin = new Padding(2, 3, 2, 3);
+            UpdateEmp.Location = new Point(564, 726);
+            UpdateEmp.Margin = new Padding(2, 4, 2, 4);
             UpdateEmp.Name = "UpdateEmp";
             UpdateEmp.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            UpdateEmp.Size = new Size(206, 44);
+            UpdateEmp.Size = new Size(258, 55);
             UpdateEmp.TabIndex = 20;
             UpdateEmp.Text = "Modifier Employe";
             UpdateEmp.Visible = false;
@@ -255,11 +256,11 @@
             ReadEmp.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ReadEmp.Font = new Font("Segoe UI", 9F);
             ReadEmp.ForeColor = Color.White;
-            ReadEmp.Location = new Point(1286, 579);
-            ReadEmp.Margin = new Padding(2, 3, 2, 3);
+            ReadEmp.Location = new Point(1608, 724);
+            ReadEmp.Margin = new Padding(2, 4, 2, 4);
             ReadEmp.Name = "ReadEmp";
             ReadEmp.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            ReadEmp.Size = new Size(171, 45);
+            ReadEmp.Size = new Size(214, 56);
             ReadEmp.TabIndex = 21;
             ReadEmp.Text = "Afficher Employe";
             ReadEmp.Click += ReadEmp_Click;
@@ -271,23 +272,23 @@
             DateRejoinBox.FillColor = Color.FromArgb(94, 148, 255);
             DateRejoinBox.Font = new Font("Segoe UI", 9F);
             DateRejoinBox.Format = DateTimePickerFormat.Long;
-            DateRejoinBox.Location = new Point(502, 132);
-            DateRejoinBox.Margin = new Padding(2, 3, 2, 3);
+            DateRejoinBox.Location = new Point(628, 165);
+            DateRejoinBox.Margin = new Padding(2, 4, 2, 4);
             DateRejoinBox.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateRejoinBox.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateRejoinBox.Name = "DateRejoinBox";
             DateRejoinBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            DateRejoinBox.Size = new Size(242, 36);
+            DateRejoinBox.Size = new Size(302, 45);
             DateRejoinBox.TabIndex = 22;
             DateRejoinBox.Value = new DateTime(2024, 12, 12, 22, 29, 45, 104);
             // 
             // listViewEmp
             // 
             listViewEmp.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
-            listViewEmp.Location = new Point(17, 225);
-            listViewEmp.Margin = new Padding(2, 3, 2, 3);
+            listViewEmp.Location = new Point(-38, 270);
+            listViewEmp.Margin = new Padding(2, 4, 2, 4);
             listViewEmp.Name = "listViewEmp";
-            listViewEmp.Size = new Size(1514, 285);
+            listViewEmp.Size = new Size(1892, 355);
             listViewEmp.TabIndex = 23;
             listViewEmp.UseCompatibleStateImageBehavior = false;
             listViewEmp.View = View.Details;
@@ -340,10 +341,10 @@
             // CIN
             // 
             CIN.AutoSize = true;
-            CIN.Location = new Point(1137, 76);
+            CIN.Location = new Point(1421, 95);
             CIN.Margin = new Padding(2, 0, 2, 0);
             CIN.Name = "CIN";
-            CIN.Size = new Size(33, 20);
+            CIN.Size = new Size(41, 25);
             CIN.TabIndex = 24;
             CIN.Text = "CIN";
             // 
@@ -356,11 +357,11 @@
             consulterButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             consulterButton.Font = new Font("Segoe UI", 9F);
             consulterButton.ForeColor = Color.White;
-            consulterButton.Location = new Point(451, 612);
-            consulterButton.Margin = new Padding(2, 3, 2, 3);
+            consulterButton.Location = new Point(564, 767);
+            consulterButton.Margin = new Padding(2, 4, 2, 4);
             consulterButton.Name = "consulterButton";
             consulterButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            consulterButton.Size = new Size(206, 44);
+            consulterButton.Size = new Size(258, 55);
             consulterButton.TabIndex = 25;
             consulterButton.Text = "Cosulter Employe";
             consulterButton.Click += consulterButton_Click;
@@ -368,10 +369,10 @@
             // getid
             // 
             getid.AutoSize = true;
-            getid.Location = new Point(58, 193);
+            getid.Location = new Point(72, 241);
             getid.Margin = new Padding(2, 0, 2, 0);
             getid.Name = "getid";
-            getid.Size = new Size(22, 20);
+            getid.Size = new Size(27, 25);
             getid.TabIndex = 26;
             getid.Text = "id";
             getid.Visible = false;
@@ -379,18 +380,18 @@
             // MotDePass
             // 
             MotDePass.AutoSize = true;
-            MotDePass.Location = new Point(765, 148);
+            MotDePass.Location = new Point(956, 185);
             MotDePass.Margin = new Padding(2, 0, 2, 0);
             MotDePass.Name = "MotDePass";
-            MotDePass.Size = new Size(98, 20);
+            MotDePass.Size = new Size(120, 25);
             MotDePass.TabIndex = 27;
             MotDePass.Text = "Mot De Passe";
             // 
             // Employe
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1485, 668);
+            ClientSize = new Size(1856, 835);
             Controls.Add(MotDePass);
             Controls.Add(getid);
             Controls.Add(consulterButton);
@@ -415,6 +416,7 @@
             Controls.Add(Prenom);
             Controls.Add(Nom);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "Employe";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;

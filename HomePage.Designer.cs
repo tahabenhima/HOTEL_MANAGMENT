@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -70,8 +70,9 @@
             // 
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1519, 25);
+            panel1.Size = new Size(1946, 42);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -79,9 +80,10 @@
             panel2.BackColor = Color.AliceBlue;
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 25);
+            panel2.Location = new Point(0, 42);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(121, 537);
+            panel2.Size = new Size(173, 895);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -98,160 +100,171 @@
             panel3.Controls.Add(EmployesHomeBtn);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(4, 5, 4, 5);
             panel3.Name = "panel3";
-            panel3.Size = new Size(121, 537);
+            panel3.Size = new Size(173, 895);
             panel3.TabIndex = 0;
             // 
             // ExitHomeBtn
             // 
-            ExitHomeBtn.CustomizableEdges = customizableEdges21;
+            ExitHomeBtn.CustomizableEdges = customizableEdges1;
             ExitHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             ExitHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             ExitHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ExitHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ExitHomeBtn.Font = new Font("Segoe UI", 9F);
             ExitHomeBtn.ForeColor = Color.White;
-            ExitHomeBtn.Location = new Point(0, 389);
+            ExitHomeBtn.Location = new Point(0, 648);
+            ExitHomeBtn.Margin = new Padding(4, 5, 4, 5);
             ExitHomeBtn.Name = "ExitHomeBtn";
-            ExitHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            ExitHomeBtn.Size = new Size(121, 36);
+            ExitHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            ExitHomeBtn.Size = new Size(173, 60);
             ExitHomeBtn.TabIndex = 9;
             ExitHomeBtn.Text = "Exit";
             ExitHomeBtn.Click += ExitHomeBtn_Click;
             // 
             // CarRentalHomeBtn
             // 
-            CarRentalHomeBtn.CustomizableEdges = customizableEdges23;
+            CarRentalHomeBtn.CustomizableEdges = customizableEdges3;
             CarRentalHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             CarRentalHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             CarRentalHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             CarRentalHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             CarRentalHomeBtn.Font = new Font("Segoe UI", 9F);
             CarRentalHomeBtn.ForeColor = Color.White;
-            CarRentalHomeBtn.Location = new Point(0, 340);
+            CarRentalHomeBtn.Location = new Point(0, 567);
+            CarRentalHomeBtn.Margin = new Padding(4, 5, 4, 5);
             CarRentalHomeBtn.Name = "CarRentalHomeBtn";
-            CarRentalHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            CarRentalHomeBtn.Size = new Size(121, 36);
+            CarRentalHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            CarRentalHomeBtn.Size = new Size(173, 60);
             CarRentalHomeBtn.TabIndex = 8;
             CarRentalHomeBtn.Text = "Car rental";
             // 
             // SpaHomeBtn
             // 
-            SpaHomeBtn.CustomizableEdges = customizableEdges25;
+            SpaHomeBtn.CustomizableEdges = customizableEdges5;
             SpaHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             SpaHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             SpaHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             SpaHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             SpaHomeBtn.Font = new Font("Segoe UI", 9F);
             SpaHomeBtn.ForeColor = Color.White;
-            SpaHomeBtn.Location = new Point(-3, 298);
+            SpaHomeBtn.Location = new Point(-4, 497);
+            SpaHomeBtn.Margin = new Padding(4, 5, 4, 5);
             SpaHomeBtn.Name = "SpaHomeBtn";
-            SpaHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            SpaHomeBtn.Size = new Size(121, 36);
+            SpaHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            SpaHomeBtn.Size = new Size(173, 60);
             SpaHomeBtn.TabIndex = 7;
             SpaHomeBtn.Text = "Spa";
+            SpaHomeBtn.Click += SpaHomeBtn_Click;
             // 
             // FoodHomeBtn
             // 
-            FoodHomeBtn.CustomizableEdges = customizableEdges27;
+            FoodHomeBtn.CustomizableEdges = customizableEdges7;
             FoodHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             FoodHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             FoodHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             FoodHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             FoodHomeBtn.Font = new Font("Segoe UI", 9F);
             FoodHomeBtn.ForeColor = Color.White;
-            FoodHomeBtn.Location = new Point(-3, 256);
+            FoodHomeBtn.Location = new Point(-4, 427);
+            FoodHomeBtn.Margin = new Padding(4, 5, 4, 5);
             FoodHomeBtn.Name = "FoodHomeBtn";
-            FoodHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            FoodHomeBtn.Size = new Size(121, 36);
+            FoodHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            FoodHomeBtn.Size = new Size(173, 60);
             FoodHomeBtn.TabIndex = 6;
             FoodHomeBtn.Text = "Food";
             // 
             // PayementsHomeBtn
             // 
-            PayementsHomeBtn.CustomizableEdges = customizableEdges29;
+            PayementsHomeBtn.CustomizableEdges = customizableEdges9;
             PayementsHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             PayementsHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             PayementsHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             PayementsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             PayementsHomeBtn.Font = new Font("Segoe UI", 9F);
             PayementsHomeBtn.ForeColor = Color.White;
-            PayementsHomeBtn.Location = new Point(0, 214);
+            PayementsHomeBtn.Location = new Point(0, 357);
+            PayementsHomeBtn.Margin = new Padding(4, 5, 4, 5);
             PayementsHomeBtn.Name = "PayementsHomeBtn";
-            PayementsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            PayementsHomeBtn.Size = new Size(121, 36);
+            PayementsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            PayementsHomeBtn.Size = new Size(173, 60);
             PayementsHomeBtn.TabIndex = 5;
             PayementsHomeBtn.Text = "Payements";
             // 
             // FacturesHomeBtn
             // 
-            FacturesHomeBtn.CustomizableEdges = customizableEdges31;
+            FacturesHomeBtn.CustomizableEdges = customizableEdges11;
             FacturesHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             FacturesHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             FacturesHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             FacturesHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             FacturesHomeBtn.Font = new Font("Segoe UI", 9F);
             FacturesHomeBtn.ForeColor = Color.White;
-            FacturesHomeBtn.Location = new Point(0, 172);
+            FacturesHomeBtn.Location = new Point(0, 287);
+            FacturesHomeBtn.Margin = new Padding(4, 5, 4, 5);
             FacturesHomeBtn.Name = "FacturesHomeBtn";
-            FacturesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            FacturesHomeBtn.Size = new Size(121, 36);
+            FacturesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            FacturesHomeBtn.Size = new Size(173, 60);
             FacturesHomeBtn.TabIndex = 4;
             FacturesHomeBtn.Text = "Factures";
             // 
             // ChambresHomeBtn
             // 
-            ChambresHomeBtn.CustomizableEdges = customizableEdges33;
+            ChambresHomeBtn.CustomizableEdges = customizableEdges13;
             ChambresHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             ChambresHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             ChambresHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ChambresHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ChambresHomeBtn.Font = new Font("Segoe UI", 9F);
             ChambresHomeBtn.ForeColor = Color.White;
-            ChambresHomeBtn.Location = new Point(0, 130);
+            ChambresHomeBtn.Location = new Point(0, 217);
+            ChambresHomeBtn.Margin = new Padding(4, 5, 4, 5);
             ChambresHomeBtn.Name = "ChambresHomeBtn";
-            ChambresHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            ChambresHomeBtn.Size = new Size(121, 36);
+            ChambresHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            ChambresHomeBtn.Size = new Size(173, 60);
             ChambresHomeBtn.TabIndex = 3;
             ChambresHomeBtn.Text = "Chambres";
             // 
             // ReservationsHomeBtn
             // 
-            ReservationsHomeBtn.CustomizableEdges = customizableEdges35;
+            ReservationsHomeBtn.CustomizableEdges = customizableEdges15;
             ReservationsHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             ReservationsHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             ReservationsHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ReservationsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ReservationsHomeBtn.Font = new Font("Segoe UI", 9F);
             ReservationsHomeBtn.ForeColor = Color.White;
-            ReservationsHomeBtn.Location = new Point(0, 88);
+            ReservationsHomeBtn.Location = new Point(0, 147);
+            ReservationsHomeBtn.Margin = new Padding(4, 5, 4, 5);
             ReservationsHomeBtn.Name = "ReservationsHomeBtn";
-            ReservationsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            ReservationsHomeBtn.Size = new Size(121, 36);
+            ReservationsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ReservationsHomeBtn.Size = new Size(173, 60);
             ReservationsHomeBtn.TabIndex = 2;
             ReservationsHomeBtn.Text = "Reservations";
             ReservationsHomeBtn.Click += guna2Button1_Click_1;
             // 
             // ClientsHomeBtn
             // 
-            ClientsHomeBtn.CustomizableEdges = customizableEdges37;
+            ClientsHomeBtn.CustomizableEdges = customizableEdges17;
             ClientsHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             ClientsHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             ClientsHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             ClientsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ClientsHomeBtn.Font = new Font("Segoe UI", 9F);
             ClientsHomeBtn.ForeColor = Color.White;
-            ClientsHomeBtn.Location = new Point(0, 42);
+            ClientsHomeBtn.Location = new Point(0, 70);
+            ClientsHomeBtn.Margin = new Padding(4, 5, 4, 5);
             ClientsHomeBtn.Name = "ClientsHomeBtn";
-            ClientsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            ClientsHomeBtn.Size = new Size(121, 36);
+            ClientsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ClientsHomeBtn.Size = new Size(173, 60);
             ClientsHomeBtn.TabIndex = 1;
             ClientsHomeBtn.Text = "Clients";
             ClientsHomeBtn.Click += guna2Button1_Click;
             // 
             // EmployesHomeBtn
             // 
-            EmployesHomeBtn.CustomizableEdges = customizableEdges39;
+            EmployesHomeBtn.CustomizableEdges = customizableEdges19;
             EmployesHomeBtn.DisabledState.BorderColor = Color.DarkGray;
             EmployesHomeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             EmployesHomeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -259,9 +272,10 @@
             EmployesHomeBtn.Font = new Font("Segoe UI", 9F);
             EmployesHomeBtn.ForeColor = Color.White;
             EmployesHomeBtn.Location = new Point(0, 0);
+            EmployesHomeBtn.Margin = new Padding(4, 5, 4, 5);
             EmployesHomeBtn.Name = "EmployesHomeBtn";
-            EmployesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            EmployesHomeBtn.Size = new Size(121, 36);
+            EmployesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            EmployesHomeBtn.Size = new Size(173, 60);
             EmployesHomeBtn.TabIndex = 0;
             EmployesHomeBtn.Text = "Employes";
             EmployesHomeBtn.Click += EmployesHomeBtn_Click;
@@ -270,20 +284,22 @@
             // 
             ControlsPanel.BackColor = SystemColors.ActiveBorder;
             ControlsPanel.Dock = DockStyle.Fill;
-            ControlsPanel.Location = new Point(121, 25);
+            ControlsPanel.Location = new Point(173, 42);
+            ControlsPanel.Margin = new Padding(4, 5, 4, 5);
             ControlsPanel.Name = "ControlsPanel";
-            ControlsPanel.Size = new Size(1398, 537);
+            ControlsPanel.Size = new Size(1773, 895);
             ControlsPanel.TabIndex = 2;
             // 
             // HomePage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1519, 562);
+            ClientSize = new Size(1946, 937);
             Controls.Add(ControlsPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "HomePage";
             Text = "HomePage";
             WindowState = FormWindowState.Maximized;

@@ -50,5 +50,10 @@ namespace HOTEL_MANAGMENT
         {
             this.Close();
         }
+
+        private void SpaHomeBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new Spa());
+        }
     }
 }

@@ -4,17 +4,17 @@ namespace HOTEL_MANAGMENT
 {
     public partial class Employe : Form
     {
-        
+
         SqlCommand cmd;
         DateTime dt;
-        object se=new object();
+        object se = new object();
 
-        EventArgs ev=new EventArgs();    
-        private static Connection_Classe cn=new Connection_Classe();
+        EventArgs ev = new EventArgs();
+        private static Connection_Classe cn = new Connection_Classe();
         public Employe()
         {
             InitializeComponent();
-            ReadEmp_Click(se,  ev);
+            ReadEmp_Click(se, ev);
         }
 
 
@@ -33,12 +33,12 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            if ( !int.TryParse(IdentifiantBox.Text, out int loginE))
+            if (!int.TryParse(IdentifiantBox.Text, out int loginE))
             {
                 MessageBox.Show("Le champ Téléphone et Identifiant doivent être des entiers !");
                 return;
             }
-            
+
             dt = DateRejoinBox.Value;
             Employe_Classe EMP = new Employe_Classe(NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, TelephoneBox.Text, dt, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
             SqlConnection cnx = cn.GetConnection();
@@ -49,21 +49,21 @@ namespace HOTEL_MANAGMENT
 
 
         }
-////////////////////AFFICHER//////////////////////////////////////////////////////
+        ////////////////////AFFICHER//////////////////////////////////////////////////////
         private void ReadEmp_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             try
             {
                 listViewEmp.Items.Clear();
                 Employe_Classe.Afficher();
 
-                for(int i= 0;i< Employe_Classe.Afficher().Items.Count; i++)
+                for (int i = 0; i < Employe_Classe.Afficher().Items.Count; i++)
                 {
-                    listViewEmp.Items.Add((ListViewItem)Employe_Classe.Afficher().Items[i].Clone()); 
+                    listViewEmp.Items.Add((ListViewItem)Employe_Classe.Afficher().Items[i].Clone());
                 }
- 
+
                 vider();
             }
             catch (Exception ex)
@@ -71,10 +71,10 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("ERREUR Affichage " + ex);
             }
         }
-//////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////
 
 
-//////////SUPPRIMER////////////////////////////////////////////////////////
+        //////////SUPPRIMER////////////////////////////////////////////////////////
         private void DeleteEmp_Click(object sender, EventArgs e)
         {
             if (listViewEmp.SelectedItems.Count == 0)
@@ -97,22 +97,22 @@ namespace HOTEL_MANAGMENT
 
 
         }
-//////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////MODIFIER-----UPDATE/////////////////////////////////////////////
+        /////////////////////MODIFIER-----UPDATE/////////////////////////////////////////////
 
         private void UpdateEmp_Click(object sender, EventArgs e)
 
         {
 
-            if(string.IsNullOrWhiteSpace(NomBox.Text) ||
+            if (string.IsNullOrWhiteSpace(NomBox.Text) ||
         string.IsNullOrWhiteSpace(PrenomBox.Text) ||
         string.IsNullOrWhiteSpace(AdresseBox.Text) ||
         string.IsNullOrWhiteSpace(CINBox.Text) ||
         string.IsNullOrWhiteSpace(TelephoneBox.Text) ||
         string.IsNullOrWhiteSpace(MotDePassBox.Text) ||
         string.IsNullOrWhiteSpace(IdentifiantBox.Text))
-    {
+            {
                 MessageBox.Show("Veuillez remplir tous les champs !");
                 return;
             }
@@ -129,7 +129,7 @@ namespace HOTEL_MANAGMENT
             UpdateEmp.Visible = false;
             try
             {
-                Employe_Classe.Modifier(int.Parse(getid.Text),NomBox.Text,PrenomBox.Text,AdresseBox.Text,CINBox.Text,TelephoneBox.Text,DateRejoinBox.Value,MotDePassBox.Text,int.Parse(IdentifiantBox.Text));
+                Employe_Classe.Modifier(int.Parse(getid.Text), NomBox.Text, PrenomBox.Text, AdresseBox.Text, CINBox.Text, TelephoneBox.Text, DateRejoinBox.Value, MotDePassBox.Text, int.Parse(IdentifiantBox.Text));
                 vider();
                 ReadEmp_Click(sender, e);
 
@@ -144,8 +144,8 @@ namespace HOTEL_MANAGMENT
 
 
         /////////////////////////////////////////////////////////////////////////////////
-        
-            
+
+
 
         private void consulterButton_Click(object sender, EventArgs e)
         {
@@ -159,7 +159,7 @@ namespace HOTEL_MANAGMENT
             string queryS = "select * from Employe where id=" + int.Parse(listViewEmp.SelectedItems[0].Text);
             SqlConnection cnx = cn.GetConnection();
             cmd = new SqlCommand(queryS, cnx);
-            
+
             cnx.Open();
             SqlDataReader reader = cmd.ExecuteReader();
             getid.Text = listViewEmp.SelectedItems[0].Text;
@@ -175,7 +175,7 @@ namespace HOTEL_MANAGMENT
                 MotDePassBox.Text = reader["MotDePass"].ToString();
                 IdentifiantBox.Text = reader["loginE"].ToString();
 
-
+                 
 
             }
             cnx.Close();
@@ -205,6 +205,9 @@ namespace HOTEL_MANAGMENT
 
         }
 
-        
+        private void NomBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

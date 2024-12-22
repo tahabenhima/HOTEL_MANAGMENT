@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HOTEL_MANAGMENT
 {
     public partial class Client : Form
@@ -22,7 +23,7 @@ namespace HOTEL_MANAGMENT
             InitializeComponent();
         }
 
-
+        
         private void ReadClient_Click(object sender, EventArgs e)
         {
             listViewClient.Items.Clear();

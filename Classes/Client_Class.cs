@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HOTEL_MANAGMENT.Classes
 {
-    internal class ClientClass
+    internal class Client_Class
     {
         string Nom { get; set; }
         string Prenom { get; set; }
@@ -17,7 +17,7 @@ namespace HOTEL_MANAGMENT.Classes
         DateTime DateRejoin { get; set; }
         static private SqlCommand cmd;
         static private Connection_Classe cn;
-        public ClientClass(string Nom, string Prenom, string Adresse, string CIN, int Tele, DateTime DateRejoin)
+        public Client_Class(string Nom, string Prenom, string Adresse, string CIN, int Tele, DateTime DateRejoin)
         {
             this.Nom = Nom;
             this.Prenom = Prenom;

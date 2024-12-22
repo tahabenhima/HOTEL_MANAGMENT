@@ -26,7 +26,7 @@ namespace HOTEL_MANAGMENT
         private void ReadClient_Click(object sender, EventArgs e)
         {
             listViewClient.Items.Clear();
-            foreach (ListViewItem item in Classes.ClientClass.ReadClient().Items)
+            foreach (ListViewItem item in Classes.Client_Class.ReadClient().Items)
             {
                 listViewClient.Items.Add((ListViewItem)item.Clone());
             }
@@ -50,7 +50,7 @@ namespace HOTEL_MANAGMENT
             {
                 int id = int.Parse(listViewClient.SelectedItems[0].Text);
 
-                bool success = Classes.ClientClass.DeleteClient(id);
+                bool success = Classes.Client_Class.DeleteClient(id);
 
                 if (success)
                 {

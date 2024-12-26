@@ -285,10 +285,12 @@
             // listViewEmp
             // 
             listViewEmp.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6, columnHeader7, columnHeader8 });
-            listViewEmp.Location = new Point(-25, 162);
+
+            listViewEmp.Location = new Point(104, 176);
             listViewEmp.Margin = new Padding(1, 2, 1, 2);
             listViewEmp.Name = "listViewEmp";
-            listViewEmp.Size = new Size(1326, 215);
+            listViewEmp.Size = new Size(1254, 215);
+
             listViewEmp.TabIndex = 23;
             listViewEmp.UseCompatibleStateImageBehavior = false;
             listViewEmp.View = View.Details;
@@ -392,7 +394,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1386, 537);
+
+
+            ClientSize = new Size(1134, 501);
             Controls.Add(MotDePass);
             Controls.Add(getid);
             Controls.Add(consulterButton);

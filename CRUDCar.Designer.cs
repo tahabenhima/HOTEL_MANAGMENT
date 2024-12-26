@@ -52,12 +52,11 @@
             DeleteCar = new Guna.UI2.WinForms.Guna2Button();
             ReadCar = new Guna.UI2.WinForms.Guna2Button();
             ListViewCar = new ListView();
-            columnHeader1 = new ColumnHeader();
+            Nom = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             getCarId = new Label();
-            Nom = new ColumnHeader();
             SuspendLayout();
             // 
             // label2
@@ -217,7 +216,7 @@
             // 
             // ListViewCar
             // 
-            ListViewCar.Columns.AddRange(new ColumnHeader[] { columnHeader1, Nom, columnHeader2, columnHeader3, columnHeader4 });
+            ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader2, columnHeader3, columnHeader4 });
             ListViewCar.Location = new Point(79, 192);
             ListViewCar.Name = "ListViewCar";
             ListViewCar.Size = new Size(656, 129);
@@ -225,10 +224,10 @@
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
             // 
-            // columnHeader1
+            // Nom
             // 
-            columnHeader1.Text = "Id";
-            columnHeader1.Width = 150;
+            Nom.Text = "Nom";
+            Nom.Width = 150;
             // 
             // columnHeader2
             // 
@@ -254,11 +253,6 @@
             getCarId.TabIndex = 31;
             getCarId.Text = "getCarId";
             getCarId.Visible = false;
-            // 
-            // Nom
-            // 
-            Nom.Text = "Nom";
-            Nom.Width = 150;
             // 
             // CRUDCar
             // 
@@ -302,7 +296,6 @@
         private Guna.UI2.WinForms.Guna2Button DeleteCar;
         private Guna.UI2.WinForms.Guna2Button ReadCar;
         private ListView ListViewCar;
-        private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;

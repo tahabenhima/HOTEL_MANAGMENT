@@ -1,6 +1,6 @@
 ﻿namespace HOTEL_MANAGMENT
 {
-    partial class CRUDCar
+    partial class Car
     {
         /// <summary>
         /// Required designer variable.

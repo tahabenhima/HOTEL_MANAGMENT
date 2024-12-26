@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace HOTEL_MANAGMENT
 {
-    public partial class CRUDCar : Form
+    public partial class Car : Form
     {
 
         SqlCommand cmd;
@@ -20,7 +20,7 @@ namespace HOTEL_MANAGMENT
 
         EventArgs ev = new EventArgs();
         private static Connection_Classe cn = new Connection_Classe();
-        public CRUDCar()
+        public Car()
         {
             InitializeComponent();
         }
@@ -36,7 +36,7 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            CRUDCarClass Car = new CRUDCarClass(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text);
+            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text);
             SqlConnection cnx = cn.GetConnection();
 
             Car.AjouterCar();
@@ -50,11 +50,11 @@ namespace HOTEL_MANAGMENT
             try
             {
                 ListViewCar.Items.Clear();
-                CRUDCarClass.Afficher();
+                Car_Class.Afficher();
 
-                for (int i = 0; i < CRUDCarClass.Afficher().Items.Count; i++)
+                for (int i = 0; i < Car_Class.Afficher().Items.Count; i++)
                 {
-                    ListViewCar.Items.Add((ListViewItem)CRUDCarClass.Afficher().Items[i].Clone());
+                    ListViewCar.Items.Add((ListViewItem)Car_Class.Afficher().Items[i].Clone());
                 }
 
                 vider();
@@ -75,7 +75,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                CRUDCarClass.SupprimerCar(int.Parse(ListViewCar.SelectedItems[0].Text));
+                Car_Class.SupprimerCar(int.Parse(ListViewCar.SelectedItems[0].Text));
                 vider();
                 ReadCar_Click(sender, e);
 
@@ -128,7 +128,7 @@ namespace HOTEL_MANAGMENT
             UpdateCar.Visible = false;
             try
             {
-                CRUDCarClass.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MatriculeCarBox.Text, MarqueCarBox.Text, ColorCarBox.Text);
+                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MatriculeCarBox.Text, MarqueCarBox.Text, ColorCarBox.Text);
                 vider();
                 ReadCar_Click(sender, e);
 

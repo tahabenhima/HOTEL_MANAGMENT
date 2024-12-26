@@ -64,23 +64,23 @@
             Nbr_Seances_Box.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             Nbr_Seances_Box.Font = new Font("Segoe UI", 9F);
             Nbr_Seances_Box.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            Nbr_Seances_Box.Location = new Point(444, 26);
-            Nbr_Seances_Box.Margin = new Padding(4, 5, 4, 5);
+            Nbr_Seances_Box.Location = new Point(311, 16);
             Nbr_Seances_Box.Name = "Nbr_Seances_Box";
             Nbr_Seances_Box.PasswordChar = '\0';
             Nbr_Seances_Box.PlaceholderText = "";
             Nbr_Seances_Box.SelectedText = "";
             Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Nbr_Seances_Box.Size = new Size(343, 36);
+            Nbr_Seances_Box.Size = new Size(240, 22);
             Nbr_Seances_Box.TabIndex = 0;
             Nbr_Seances_Box.TextChanged += guna2TextBox1_TextChanged;
             // 
             // Nbr_Seances_Label
             // 
             Nbr_Seances_Label.BackColor = Color.Transparent;
-            Nbr_Seances_Label.Location = new Point(261, 35);
+            Nbr_Seances_Label.Location = new Point(183, 21);
+            Nbr_Seances_Label.Margin = new Padding(2, 2, 2, 2);
             Nbr_Seances_Label.Name = "Nbr_Seances_Label";
-            Nbr_Seances_Label.Size = new Size(162, 27);
+            Nbr_Seances_Label.Size = new Size(108, 17);
             Nbr_Seances_Label.TabIndex = 1;
             Nbr_Seances_Label.Text = "Nombre de Seances";
             // 
@@ -93,10 +93,11 @@
             Ajouter_Spa_BTN.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Ajouter_Spa_BTN.Font = new Font("Segoe UI", 9F);
             Ajouter_Spa_BTN.ForeColor = Color.White;
-            Ajouter_Spa_BTN.Location = new Point(63, 536);
+            Ajouter_Spa_BTN.Location = new Point(44, 322);
+            Ajouter_Spa_BTN.Margin = new Padding(2, 2, 2, 2);
             Ajouter_Spa_BTN.Name = "Ajouter_Spa_BTN";
             Ajouter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            Ajouter_Spa_BTN.Size = new Size(167, 32);
+            Ajouter_Spa_BTN.Size = new Size(117, 19);
             Ajouter_Spa_BTN.TabIndex = 2;
             Ajouter_Spa_BTN.Text = "Ajouter";
             Ajouter_Spa_BTN.Click += Ajouter_Spa_BTN_Click;
@@ -110,10 +111,11 @@
             Supprimer_Spa_BTN.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Supprimer_Spa_BTN.Font = new Font("Segoe UI", 9F);
             Supprimer_Spa_BTN.ForeColor = Color.White;
-            Supprimer_Spa_BTN.Location = new Point(514, 536);
+            Supprimer_Spa_BTN.Location = new Point(360, 322);
+            Supprimer_Spa_BTN.Margin = new Padding(2, 2, 2, 2);
             Supprimer_Spa_BTN.Name = "Supprimer_Spa_BTN";
             Supprimer_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Supprimer_Spa_BTN.Size = new Size(202, 32);
+            Supprimer_Spa_BTN.Size = new Size(141, 19);
             Supprimer_Spa_BTN.TabIndex = 3;
             Supprimer_Spa_BTN.Text = "Supprimer";
             Supprimer_Spa_BTN.Click += Supprimer_Spa_BTN_Click;
@@ -127,10 +129,11 @@
             Modifier_Spa_BTN.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Modifier_Spa_BTN.Font = new Font("Segoe UI", 9F);
             Modifier_Spa_BTN.ForeColor = Color.White;
-            Modifier_Spa_BTN.Location = new Point(286, 536);
+            Modifier_Spa_BTN.Location = new Point(200, 322);
+            Modifier_Spa_BTN.Margin = new Padding(2, 2, 2, 2);
             Modifier_Spa_BTN.Name = "Modifier_Spa_BTN";
             Modifier_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Modifier_Spa_BTN.Size = new Size(188, 32);
+            Modifier_Spa_BTN.Size = new Size(132, 19);
             Modifier_Spa_BTN.TabIndex = 4;
             Modifier_Spa_BTN.Text = "Modifier";
             Modifier_Spa_BTN.Click += Modifier_Spa_BTN_Click;
@@ -144,10 +147,11 @@
             Afficher_Spa_BTN.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Afficher_Spa_BTN.Font = new Font("Segoe UI", 9F);
             Afficher_Spa_BTN.ForeColor = Color.White;
-            Afficher_Spa_BTN.Location = new Point(811, 536);
+            Afficher_Spa_BTN.Location = new Point(568, 322);
+            Afficher_Spa_BTN.Margin = new Padding(2, 2, 2, 2);
             Afficher_Spa_BTN.Name = "Afficher_Spa_BTN";
             Afficher_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            Afficher_Spa_BTN.Size = new Size(214, 32);
+            Afficher_Spa_BTN.Size = new Size(150, 19);
             Afficher_Spa_BTN.TabIndex = 5;
             Afficher_Spa_BTN.Text = "Afficher";
             Afficher_Spa_BTN.Click += Afficher_Spa_BTN_Click;
@@ -155,9 +159,10 @@
             // listViewSpa
             // 
             listViewSpa.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
-            listViewSpa.Location = new Point(444, 117);
+            listViewSpa.Location = new Point(289, 70);
+            listViewSpa.Margin = new Padding(2, 2, 2, 2);
             listViewSpa.Name = "listViewSpa";
-            listViewSpa.Size = new Size(312, 295);
+            listViewSpa.Size = new Size(251, 179);
             listViewSpa.TabIndex = 6;
             listViewSpa.UseCompatibleStateImageBehavior = false;
             listViewSpa.View = View.Details;
@@ -181,10 +186,11 @@
             Consulter_Spa_BTN.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Consulter_Spa_BTN.Font = new Font("Segoe UI", 9F);
             Consulter_Spa_BTN.ForeColor = Color.White;
-            Consulter_Spa_BTN.Location = new Point(286, 536);
+            Consulter_Spa_BTN.Location = new Point(200, 322);
+            Consulter_Spa_BTN.Margin = new Padding(2, 2, 2, 2);
             Consulter_Spa_BTN.Name = "Consulter_Spa_BTN";
             Consulter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            Consulter_Spa_BTN.Size = new Size(188, 32);
+            Consulter_Spa_BTN.Size = new Size(132, 19);
             Consulter_Spa_BTN.TabIndex = 7;
             Consulter_Spa_BTN.Text = "Consulter";
             Consulter_Spa_BTN.Click += Consulter_Spa_BTN_Click;
@@ -192,17 +198,18 @@
             // getid
             // 
             getid.AutoSize = true;
-            getid.Location = new Point(444, 117);
+            getid.Location = new Point(311, 70);
+            getid.Margin = new Padding(2, 0, 2, 0);
             getid.Name = "getid";
-            getid.Size = new Size(27, 25);
+            getid.Size = new Size(17, 15);
             getid.TabIndex = 8;
             getid.Text = "id";
             // 
             // Spa
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1086, 636);
+            ClientSize = new Size(760, 382);
             Controls.Add(getid);
             Controls.Add(Consulter_Spa_BTN);
             Controls.Add(listViewSpa);
@@ -213,6 +220,7 @@
             Controls.Add(Nbr_Seances_Label);
             Controls.Add(Nbr_Seances_Box);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Spa";
             Text = "Spa";
             ResumeLayout(false);

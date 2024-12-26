@@ -52,11 +52,15 @@
             DeleteCar = new Guna.UI2.WinForms.Guna2Button();
             ReadCar = new Guna.UI2.WinForms.Guna2Button();
             ListViewCar = new ListView();
+
             Nom = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             getCarId = new Label();
+
+            Nom = new ColumnHeader();
+
             SuspendLayout();
             // 
             // label2
@@ -216,6 +220,7 @@
             // 
             // ListViewCar
             // 
+
             ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader2, columnHeader3, columnHeader4 });
             ListViewCar.Location = new Point(79, 192);
             ListViewCar.Name = "ListViewCar";
@@ -224,6 +229,11 @@
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
             // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Id";
+            columnHeader1.Width = 150;
+
             // Nom
             // 
             Nom.Text = "Nom";
@@ -254,6 +264,12 @@
             getCarId.Text = "getCarId";
             getCarId.Visible = false;
             // 
+            // Nom
+            // 
+            Nom.Text = "Nom";
+            Nom.Width = 150;
+            // 
+
             // CRUDCar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -296,6 +312,8 @@
         private Guna.UI2.WinForms.Guna2Button DeleteCar;
         private Guna.UI2.WinForms.Guna2Button ReadCar;
         private ListView ListViewCar;
+        private ColumnHeader columnHeader1;
+
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;

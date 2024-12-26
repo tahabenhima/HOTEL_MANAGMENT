@@ -175,7 +175,7 @@ namespace HOTEL_MANAGMENT
                 MotDePassBox.Text = reader["MotDePass"].ToString();
                 IdentifiantBox.Text = reader["loginE"].ToString();
 
-                 
+
 
             }
             cnx.Close();
@@ -206,6 +206,11 @@ namespace HOTEL_MANAGMENT
         }
 
         private void NomBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listViewEmp_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

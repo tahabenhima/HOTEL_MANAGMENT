@@ -29,10 +29,6 @@ namespace HOTEL_MANAGMENT.Classes
             cn = new Connection_Classe();
         }
 
-        public void SearchCar()
-        {
-            
-         
-        }
+      
     }
 }

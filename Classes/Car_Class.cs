@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HOTEL_MANAGMENT.Classes
 {
-    internal class CRUDCarClass
+    internal class Car_Class
     {
         string Nom { get; set; }
         string Marque { get; set; }
@@ -18,7 +18,7 @@ namespace HOTEL_MANAGMENT.Classes
         private static Connection_Classe cn;
 
 
-        public CRUDCarClass(string Nom, string Marque, string Matricule, string Color )
+        public Car_Class(string Nom, string Marque, string Matricule, string Color )
         {
             this.Nom = Nom;
             this.Marque = Marque;

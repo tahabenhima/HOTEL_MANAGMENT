@@ -75,7 +75,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                Car_Class.SupprimerCar(int.Parse(ListViewCar.SelectedItems[0].Text));
+                Car_Class.SupprimerCar(int.Parse(getCarId.Text));
                 vider();
                 ReadCar_Click(sender, e);
 
@@ -86,31 +86,6 @@ namespace HOTEL_MANAGMENT
             }
         }
 
-        private void consulterCarButton_Click(object sender, EventArgs e)
-        {
-            if (ListViewCar.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Veuillez sélectionner un Car dans la liste !");
-                return;
-            }
-            UpdateCar.Visible = true;
-            consulterCarButton.Visible = false;
-            string queryS = "select * from Car where id=" + int.Parse(ListViewCar.SelectedItems[0].Text);
-            SqlConnection cnx = cn.GetConnection();
-            cmd = new SqlCommand(queryS, cnx);
-
-            cnx.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            getCarId.Text = ListViewCar.SelectedItems[0].Text;
-            while (reader.Read())
-            {
-                NomCarBox.Text = reader["Nom"].ToString();
-                MarqueCarBox.Text = reader["Marque"].ToString();
-                MatriculeCarBox.Text = reader["Matricule"].ToString();
-                ColorCarBox.Text = reader["Color"].ToString();
-            }
-            cnx.Close();
-        }
 
         private void UpdateCar_Click(object sender, EventArgs e)
         {
@@ -124,8 +99,8 @@ namespace HOTEL_MANAGMENT
             }
 
 
-            consulterCarButton.Visible = true;
-            UpdateCar.Visible = false;
+
+
             try
             {
                 Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MatriculeCarBox.Text, MarqueCarBox.Text, ColorCarBox.Text);
@@ -145,6 +120,178 @@ namespace HOTEL_MANAGMENT
             MarqueCarBox.Clear();
             MatriculeCarBox.Clear();
             ColorCarBox.Clear();
+        }
+
+        private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListViewCar.SelectedItems.Count > 0)
+            {
+                SqlConnection cnx = cn.GetConnection();
+                cnx.Open();
+
+
+                getCarId.Text = ListViewCar.SelectedItems[0].SubItems[4].Text;
+                string queryS = "select * from Car where id=@id";
+                cmd = new SqlCommand(queryS, cnx);
+                cmd.Parameters.AddWithValue("@id", int.Parse(getCarId.Text));
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    NomCarBox.Text = reader["Nom"].ToString();
+                    MarqueCarBox.Text = reader["Marque"].ToString();
+                    MatriculeCarBox.Text = reader["Matricule"].ToString();
+                    ColorCarBox.Text = reader["Color"].ToString();
+                }
+                cnx.Close();
+            }
+
+        }
+
+        private void ColorCarBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                SqlConnection cnx = cn.GetConnection();
+                string t = ColorCarBox.Text;
+                String query = "select * from car where Color LIKE @color";
+
+                cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@color", "%" + t + "%");
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
+
+                    items.SubItems.Add(reader["Marque"].ToString());
+                    items.SubItems.Add(reader["Matricule"].ToString());
+                    items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
+                    ListViewCar.Items.Add(items);
+                }
+                reader.Close();
+                cnx.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERREUR d'affichage " + ex);
+            }
+
+        }
+
+        private void MarqueCarBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                SqlConnection cnx = cn.GetConnection();
+                string t = MarqueCarBox.Text;
+                String query = "select * from car where marque LIKE @Marque";
+
+                cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Marque", "%" + t + "%");
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
+
+                    items.SubItems.Add(reader["Marque"].ToString());
+                    items.SubItems.Add(reader["Matricule"].ToString());
+                    items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
+                    ListViewCar.Items.Add(items);
+                }
+                reader.Close();
+                cnx.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERREUR d'affichage " + ex);
+            }
+        }
+
+        private void NomCarBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                SqlConnection cnx = cn.GetConnection();
+                string t = NomCarBox.Text;
+                String query = "select * from car where nom LIKE @Nom";
+
+                cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Nom", "%" + t + "%");
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
+
+                    items.SubItems.Add(reader["Marque"].ToString());
+                    items.SubItems.Add(reader["Matricule"].ToString());
+                    items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
+                    ListViewCar.Items.Add(items);
+                }
+                reader.Close();
+                cnx.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERREUR d'affichage " + ex);
+            }
+        }
+
+        private void MatriculeCarBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                SqlConnection cnx = cn.GetConnection();
+                string t = MatriculeCarBox.Text;
+                String query = "select * from car where matricule LIKE @Matricule";
+
+                cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Matricule", "%" + t + "%");
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
+
+                    items.SubItems.Add(reader["Marque"].ToString());
+                    items.SubItems.Add(reader["Matricule"].ToString());
+                    items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
+                    ListViewCar.Items.Add(items);
+                }
+                reader.Close();
+                cnx.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERREUR d'affichage " + ex);
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ namespace HOTEL_MANAGMENT.Classes
 {
     internal class Car_Class
     {
+        int id {  get; set; }   
         string Nom { get; set; }
         string Marque { get; set; }
         string Matricule { get; set; }
@@ -29,7 +30,18 @@ namespace HOTEL_MANAGMENT.Classes
 
 
         }
+        public Car_Class(int id ,string Nom, string Marque, string Matricule, string Color)
+        {
+            this.id=id;
+            this.Nom = Nom;
+            this.Marque = Marque;
+            this.Matricule = Matricule;
+            this.Color = Color;
 
+            cn = new Connection_Classe();
+
+
+        }
         public void AjouterCar()
         {
             SqlConnection cnx = cn.GetConnection();
@@ -99,18 +111,13 @@ namespace HOTEL_MANAGMENT.Classes
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-
-
-                    ListViewItem items = new ListViewItem(reader["id"].ToString());
-                    items.SubItems.Add(reader["Nom"].ToString());
+                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
                     items.SubItems.Add(reader["Marque"].ToString());
                     items.SubItems.Add(reader["Matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
                     l.Items.Add(items);
-
-
                 }
-
             }
             catch (Exception ex)
             {

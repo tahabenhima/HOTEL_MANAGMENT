@@ -158,7 +158,7 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            Chambre_Class chb = new Chambre_Class(int.Parse(getid.Text),TypechambreBox.Text, int.Parse(NumeroChambreBox.Text), int.Parse(CapasiteChambreBox.Text), float.Parse(PrixChambreBox.Text));
+            Chambre_Class chb = new Chambre_Class(int.Parse(getid.Text), TypechambreBox.Text, int.Parse(NumeroChambreBox.Text), int.Parse(CapasiteChambreBox.Text), float.Parse(PrixChambreBox.Text));
             SqlConnection cnx = cn.GetConnection();
 
             try
@@ -177,38 +177,104 @@ namespace HOTEL_MANAGMENT
 
         private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             if (ListViewChambre.SelectedItems.Count > 0)
             {
-                
-                ListViewItem selectedItem = ListViewChambre.SelectedItems[0] ;
-                int il = int.Parse( selectedItem.SubItems[4].Text);
 
-                
+                ListViewItem selectedItem = ListViewChambre.SelectedItems[0];
+                int il = int.Parse(selectedItem.SubItems[4].Text);
+
+
 
 
                 string queryS = "select * from Chambre where id=" + il;
-            SqlConnection cnx = cn.GetConnection();
-            cmd = new SqlCommand(queryS, cnx);
+                SqlConnection cnx = cn.GetConnection();
+                cmd = new SqlCommand(queryS, cnx);
 
-            cnx.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            getid.Text = selectedItem.SubItems[4].Text;
-            while (reader.Read())
-            {
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                getid.Text = selectedItem.SubItems[4].Text;
+                while (reader.Read())
+                {
                     TypechambreBox.Text = reader["type_Chambre"].ToString();
                     CapasiteChambreBox.Text = reader["Capacite"].ToString();
                     PrixChambreBox.Text = reader["Prix"].ToString();
                     NumeroChambreBox.Text = reader["numero"].ToString();
-             
 
 
+
+
+                }
+                cnx.Close();
+            }
+
+
+        }
+
+        private void telechargerCSVbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+
+                string queryCh = "SELECT * FROM Chambre";
+                SqlConnection cnx = cn.GetConnection();
+                cmd = new SqlCommand(queryCh, cnx);
+
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                //pour nomer et choisir path
+
+                SaveFileDialog saveFileDialog = new SaveFileDialog
+                {
+                    Filter = "CSV files (*.csv)|*.csv",
+                    Title = "Choisissez l'emplacement pour sauvegarder le fichier CSV",
+                    FileName = "table_Chambre.csv" 
+                };
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //  creation  fichier CSV
+                    string filePath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Écrire les en-têtes des colonn
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        writer.Write(reader.GetName(i));
+                        if (i < reader.FieldCount - 1)
+                            writer.Write(",");
+                    }
+                    writer.WriteLine();
+
+                    // Écrire les lignes 
+                    while (reader.Read())
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            writer.Write(reader[i].ToString());
+                            if (i < reader.FieldCount - 1)
+                                writer.Write(",");
+                        }
+                        writer.WriteLine();
+                    }
+
+
+                    MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
+                    cnx.Close();
+                }
+                }
+                else
+                {
+                    MessageBox.Show("Exportation annulée par l'utilisateur.");
+                }
 
             }
-            cnx.Close();
- }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur : {ex.Message}");
+            }
         }
     }
 }

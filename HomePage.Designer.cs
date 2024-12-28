@@ -70,9 +70,9 @@
             // 
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1946, 42);
+            panel1.Size = new Size(1554, 34);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -80,10 +80,10 @@
             panel2.BackColor = Color.AliceBlue;
             panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 42);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(0, 34);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(173, 895);
+            panel2.Size = new Size(138, 716);
             panel2.TabIndex = 1;
             // 
             // panel3
@@ -100,9 +100,9 @@
             panel3.Controls.Add(EmployesHomeBtn);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 0);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(173, 895);
+            panel3.Size = new Size(138, 716);
             panel3.TabIndex = 0;
             // 
             // ExitHomeBtn
@@ -114,11 +114,11 @@
             ExitHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ExitHomeBtn.Font = new Font("Segoe UI", 9F);
             ExitHomeBtn.ForeColor = Color.White;
-            ExitHomeBtn.Location = new Point(0, 648);
-            ExitHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            ExitHomeBtn.Location = new Point(0, 518);
+            ExitHomeBtn.Margin = new Padding(3, 4, 3, 4);
             ExitHomeBtn.Name = "ExitHomeBtn";
             ExitHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ExitHomeBtn.Size = new Size(173, 60);
+            ExitHomeBtn.Size = new Size(138, 48);
             ExitHomeBtn.TabIndex = 9;
             ExitHomeBtn.Text = "Exit";
             ExitHomeBtn.Click += ExitHomeBtn_Click;
@@ -132,13 +132,14 @@
             CarRentalHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             CarRentalHomeBtn.Font = new Font("Segoe UI", 9F);
             CarRentalHomeBtn.ForeColor = Color.White;
-            CarRentalHomeBtn.Location = new Point(0, 567);
-            CarRentalHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            CarRentalHomeBtn.Location = new Point(0, 454);
+            CarRentalHomeBtn.Margin = new Padding(3, 4, 3, 4);
             CarRentalHomeBtn.Name = "CarRentalHomeBtn";
             CarRentalHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            CarRentalHomeBtn.Size = new Size(173, 60);
+            CarRentalHomeBtn.Size = new Size(138, 48);
             CarRentalHomeBtn.TabIndex = 8;
             CarRentalHomeBtn.Text = "Car rental";
+            CarRentalHomeBtn.Click += CarRentalHomeBtn_Click;
             // 
             // SpaHomeBtn
             // 
@@ -149,11 +150,11 @@
             SpaHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             SpaHomeBtn.Font = new Font("Segoe UI", 9F);
             SpaHomeBtn.ForeColor = Color.White;
-            SpaHomeBtn.Location = new Point(-4, 497);
-            SpaHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            SpaHomeBtn.Location = new Point(-3, 398);
+            SpaHomeBtn.Margin = new Padding(3, 4, 3, 4);
             SpaHomeBtn.Name = "SpaHomeBtn";
             SpaHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            SpaHomeBtn.Size = new Size(173, 60);
+            SpaHomeBtn.Size = new Size(138, 48);
             SpaHomeBtn.TabIndex = 7;
             SpaHomeBtn.Text = "Spa";
             SpaHomeBtn.Click += SpaHomeBtn_Click;
@@ -167,13 +168,14 @@
             FoodHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             FoodHomeBtn.Font = new Font("Segoe UI", 9F);
             FoodHomeBtn.ForeColor = Color.White;
-            FoodHomeBtn.Location = new Point(-4, 427);
-            FoodHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            FoodHomeBtn.Location = new Point(-3, 342);
+            FoodHomeBtn.Margin = new Padding(3, 4, 3, 4);
             FoodHomeBtn.Name = "FoodHomeBtn";
             FoodHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            FoodHomeBtn.Size = new Size(173, 60);
+            FoodHomeBtn.Size = new Size(138, 48);
             FoodHomeBtn.TabIndex = 6;
             FoodHomeBtn.Text = "Food";
+            FoodHomeBtn.Click += FoodHomeBtn_Click;
             // 
             // PayementsHomeBtn
             // 
@@ -184,11 +186,11 @@
             PayementsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             PayementsHomeBtn.Font = new Font("Segoe UI", 9F);
             PayementsHomeBtn.ForeColor = Color.White;
-            PayementsHomeBtn.Location = new Point(0, 357);
-            PayementsHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            PayementsHomeBtn.Location = new Point(0, 286);
+            PayementsHomeBtn.Margin = new Padding(3, 4, 3, 4);
             PayementsHomeBtn.Name = "PayementsHomeBtn";
             PayementsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            PayementsHomeBtn.Size = new Size(173, 60);
+            PayementsHomeBtn.Size = new Size(138, 48);
             PayementsHomeBtn.TabIndex = 5;
             PayementsHomeBtn.Text = "Payements";
             // 
@@ -201,11 +203,11 @@
             FacturesHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             FacturesHomeBtn.Font = new Font("Segoe UI", 9F);
             FacturesHomeBtn.ForeColor = Color.White;
-            FacturesHomeBtn.Location = new Point(0, 287);
-            FacturesHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            FacturesHomeBtn.Location = new Point(0, 230);
+            FacturesHomeBtn.Margin = new Padding(3, 4, 3, 4);
             FacturesHomeBtn.Name = "FacturesHomeBtn";
             FacturesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            FacturesHomeBtn.Size = new Size(173, 60);
+            FacturesHomeBtn.Size = new Size(138, 48);
             FacturesHomeBtn.TabIndex = 4;
             FacturesHomeBtn.Text = "Factures";
             // 
@@ -218,13 +220,14 @@
             ChambresHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ChambresHomeBtn.Font = new Font("Segoe UI", 9F);
             ChambresHomeBtn.ForeColor = Color.White;
-            ChambresHomeBtn.Location = new Point(0, 217);
-            ChambresHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            ChambresHomeBtn.Location = new Point(0, 174);
+            ChambresHomeBtn.Margin = new Padding(3, 4, 3, 4);
             ChambresHomeBtn.Name = "ChambresHomeBtn";
             ChambresHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            ChambresHomeBtn.Size = new Size(173, 60);
+            ChambresHomeBtn.Size = new Size(138, 48);
             ChambresHomeBtn.TabIndex = 3;
             ChambresHomeBtn.Text = "Chambres";
+            ChambresHomeBtn.Click += ChambresHomeBtn_Click;
             // 
             // ReservationsHomeBtn
             // 
@@ -235,11 +238,11 @@
             ReservationsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ReservationsHomeBtn.Font = new Font("Segoe UI", 9F);
             ReservationsHomeBtn.ForeColor = Color.White;
-            ReservationsHomeBtn.Location = new Point(0, 147);
-            ReservationsHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            ReservationsHomeBtn.Location = new Point(0, 118);
+            ReservationsHomeBtn.Margin = new Padding(3, 4, 3, 4);
             ReservationsHomeBtn.Name = "ReservationsHomeBtn";
             ReservationsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            ReservationsHomeBtn.Size = new Size(173, 60);
+            ReservationsHomeBtn.Size = new Size(138, 48);
             ReservationsHomeBtn.TabIndex = 2;
             ReservationsHomeBtn.Text = "Reservations";
             ReservationsHomeBtn.Click += guna2Button1_Click_1;
@@ -253,11 +256,11 @@
             ClientsHomeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ClientsHomeBtn.Font = new Font("Segoe UI", 9F);
             ClientsHomeBtn.ForeColor = Color.White;
-            ClientsHomeBtn.Location = new Point(0, 70);
-            ClientsHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            ClientsHomeBtn.Location = new Point(0, 56);
+            ClientsHomeBtn.Margin = new Padding(3, 4, 3, 4);
             ClientsHomeBtn.Name = "ClientsHomeBtn";
             ClientsHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            ClientsHomeBtn.Size = new Size(173, 60);
+            ClientsHomeBtn.Size = new Size(138, 48);
             ClientsHomeBtn.TabIndex = 1;
             ClientsHomeBtn.Text = "Clients";
             ClientsHomeBtn.Click += guna2Button1_Click;
@@ -272,10 +275,10 @@
             EmployesHomeBtn.Font = new Font("Segoe UI", 9F);
             EmployesHomeBtn.ForeColor = Color.White;
             EmployesHomeBtn.Location = new Point(0, 0);
-            EmployesHomeBtn.Margin = new Padding(4, 5, 4, 5);
+            EmployesHomeBtn.Margin = new Padding(3, 4, 3, 4);
             EmployesHomeBtn.Name = "EmployesHomeBtn";
             EmployesHomeBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            EmployesHomeBtn.Size = new Size(173, 60);
+            EmployesHomeBtn.Size = new Size(138, 48);
             EmployesHomeBtn.TabIndex = 0;
             EmployesHomeBtn.Text = "Employes";
             EmployesHomeBtn.Click += EmployesHomeBtn_Click;
@@ -284,22 +287,22 @@
             // 
             ControlsPanel.BackColor = SystemColors.ActiveBorder;
             ControlsPanel.Dock = DockStyle.Fill;
-            ControlsPanel.Location = new Point(173, 42);
-            ControlsPanel.Margin = new Padding(4, 5, 4, 5);
+            ControlsPanel.Location = new Point(138, 34);
+            ControlsPanel.Margin = new Padding(3, 4, 3, 4);
             ControlsPanel.Name = "ControlsPanel";
-            ControlsPanel.Size = new Size(1773, 895);
+            ControlsPanel.Size = new Size(1416, 716);
             ControlsPanel.TabIndex = 2;
             // 
             // HomePage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1946, 937);
+            ClientSize = new Size(1554, 750);
             Controls.Add(ControlsPanel);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HomePage";
             Text = "HomePage";
             WindowState = FormWindowState.Maximized;

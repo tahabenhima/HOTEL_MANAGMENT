@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
@@ -57,6 +59,7 @@
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
             label4 = new Label();
+            Carbtn = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // label2
@@ -211,7 +214,7 @@
             SearchCarLocationBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             SearchCarLocationBtn.Size = new Size(170, 48);
             SearchCarLocationBtn.TabIndex = 11;
-            SearchCarLocationBtn.Text = "Search";
+            SearchCarLocationBtn.Text = "Chercher";
             SearchCarLocationBtn.Click += SearchCarLocationBtn_Click;
             // 
             // listView1
@@ -260,11 +263,32 @@
             label4.TabIndex = 13;
             label4.Text = "model";
             // 
+            // Carbtn
+            // 
+            Carbtn.BorderRadius = 10;
+            Carbtn.CustomizableEdges = customizableEdges13;
+            Carbtn.DisabledState.BorderColor = Color.DarkGray;
+            Carbtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            Carbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Carbtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Carbtn.FillColor = Color.SlateGray;
+            Carbtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Carbtn.ForeColor = Color.White;
+            Carbtn.Location = new Point(1025, 364);
+            Carbtn.Margin = new Padding(3, 4, 3, 4);
+            Carbtn.Name = "Carbtn";
+            Carbtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Carbtn.Size = new Size(170, 48);
+            Carbtn.TabIndex = 14;
+            Carbtn.Text = "Voiture";
+            Carbtn.Click += Carbtn_Click;
+            // 
             // CarLocation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1258, 438);
+            Controls.Add(Carbtn);
             Controls.Add(label4);
             Controls.Add(listView1);
             Controls.Add(SearchCarLocationBtn);
@@ -304,5 +328,6 @@
         private Label label4;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private Guna.UI2.WinForms.Guna2Button Carbtn;
     }
 }

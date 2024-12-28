@@ -55,5 +55,20 @@ namespace HOTEL_MANAGMENT
         {
             AddControls(new Spa());
         }
+
+        private void ChambresHomeBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new Chambre());
+        }
+
+        private void CarRentalHomeBtn_Click(object sender, EventArgs e)
+        {
+            AddControls(new CarLocation());
+        }
+
+        private void FoodHomeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

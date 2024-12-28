@@ -219,9 +219,7 @@
             // 
             // columnHeader1
             // 
-            columnHeader1.Text = "Id";
-            columnHeader1.Width = 150;
-
+           
             // Nom
             // 
             Nom.Text = "Nom";

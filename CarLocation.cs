@@ -54,31 +54,38 @@ namespace HOTEL_MANAGMENT
             }*/
         }
 
-/*
-        public void RemplirComboColor()
+        private void Carbtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                cn = new Connection_Classe();
-                SqlConnection cnx = cn.GetConnection();
-                ModelCarLocationComboBox.Items.Clear();
-                String query = "select Mat from STAGIAIRE";
-                cmd = new SqlCommand(query, cnx);
-                cnx.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+            this.Hide();
+            Car c = new Car();
+            c.Show();
+        }
 
-                while (reader.Read())
+        /*
+                public void RemplirComboColor()
                 {
-                    ModelCarLocationComboBox.Items.Add(reader[0]);
-                }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
+                    try
+                    {
+                        cn = new Connection_Classe();
+                        SqlConnection cnx = cn.GetConnection();
+                        ModelCarLocationComboBox.Items.Clear();
+                        String query = "select Mat from STAGIAIRE";
+                        cmd = new SqlCommand(query, cnx);
+                        cnx.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
 
-                MessageBox.Show("ERREUR d'affichage " + ex);
-            }
-        
-        }*/
+                        while (reader.Read())
+                        {
+                            ModelCarLocationComboBox.Items.Add(reader[0]);
+                        }
+                        reader.Close();
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show("ERREUR d'affichage " + ex);
+                    }
+
+                }*/
     }
 }

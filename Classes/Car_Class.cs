@@ -15,28 +15,33 @@ namespace HOTEL_MANAGMENT.Classes
         string Matricule { get; set; }
         string Color { get; set; }
 
+        float Prix { get; set; }
+
         private static SqlCommand cmd;
         private static Connection_Classe cn;
 
 
-        public Car_Class(string Nom, string Marque, string Matricule, string Color )
+        public Car_Class(string Nom, string Marque, string Matricule, string Color, float Prix )
         {
             this.Nom = Nom;
             this.Marque = Marque;
             this.Matricule = Matricule;
             this.Color = Color;
+            this.Prix = Prix;
+
 
             cn = new Connection_Classe();
 
 
         }
-        public Car_Class(int id ,string Nom, string Marque, string Matricule, string Color)
+        public Car_Class(int id ,string Nom, string Marque, string Matricule, string Color, float Prix)
         {
             this.id=id;
             this.Nom = Nom;
             this.Marque = Marque;
             this.Matricule = Matricule;
             this.Color = Color;
+            this.Prix = Prix;
 
             cn = new Connection_Classe();
 
@@ -46,12 +51,14 @@ namespace HOTEL_MANAGMENT.Classes
         {
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query = "insert into Car (Nom,Marque,Matricule,Color) values(@Nom,@Marque,@Matricule,@Color)";
+            string query = "insert into Car (Nom,Marque,Matricule,Color,Prix) values(@Nom,@Marque,@Matricule,@Color,@Prix)";
             cmd = new SqlCommand(query, cnx);
             cmd.Parameters.AddWithValue("@Nom", Nom);
             cmd.Parameters.AddWithValue("@Marque", Marque);
             cmd.Parameters.AddWithValue("@Matricule", Matricule);
             cmd.Parameters.AddWithValue("@Color", Color);
+            cmd.Parameters.AddWithValue("@Prix", Prix);
+
             try
             {
 
@@ -115,6 +122,7 @@ namespace HOTEL_MANAGMENT.Classes
                     items.SubItems.Add(reader["Marque"].ToString());
                     items.SubItems.Add(reader["Matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
                     items.SubItems.Add(reader["id"].ToString());
                     l.Items.Add(items);
                 }
@@ -128,18 +136,20 @@ namespace HOTEL_MANAGMENT.Classes
 
         }
 
-        public static void Modifier(int id,string Nom, string Marque, string Matricule, string Color)
+        public static void Modifier(int id,string Nom, string Marque, string Matricule, string Color ,float Prix)
         {
             cn = new Connection_Classe();
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query3 = "UPDATE Car set Nom=@Nom,Marque=@Marque,Matricule=@Matricule,Color=@Color  where id=@id";
+            string query3 = "UPDATE Car set Nom=@Nom,Marque=@Marque,Matricule=@Matricule,Color=@Color, Prix=@Prix where id=@id";
             cmd = new SqlCommand(query3, cnx);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@Nom", Nom);
             cmd.Parameters.AddWithValue("@Marque", Marque);
             cmd.Parameters.AddWithValue("@Matricule", Matricule);
             cmd.Parameters.AddWithValue("@Color", Color);
+            cmd.Parameters.AddWithValue("@Prix", Prix);
+
             try
             {
 

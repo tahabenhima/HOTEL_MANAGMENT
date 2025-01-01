@@ -14,7 +14,7 @@ namespace HOTEL_MANAGMENT.Classes
         DateTime DateFin { get; set; }
         Boolean isdisponible { get; set; }
         Car car { get; set;}
-
+        int nbrjour { get;set; }
         private static SqlCommand cmd;
         private static Connection_Classe cn;
 
@@ -25,7 +25,7 @@ namespace HOTEL_MANAGMENT.Classes
             DateFin = dateFin;
             this.isdisponible = isdisponible;
             this.car = car;
-
+            int nbrjour = Math.Abs((DateFin - DateDebut).Days);
             cn = new Connection_Classe();
         }
 

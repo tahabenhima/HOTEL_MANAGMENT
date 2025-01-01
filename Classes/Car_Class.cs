@@ -16,9 +16,9 @@ namespace HOTEL_MANAGMENT.Classes
         string Color { get; set; }
 
         private static SqlCommand cmd;
-        private static Connection_Classe cn;
+        private static Connection_Classe cn=new Connection_Classe();
 
-
+        
         public Car_Class(string Nom, string Marque, string Matricule, string Color )
         {
             this.Nom = Nom;
@@ -46,7 +46,7 @@ namespace HOTEL_MANAGMENT.Classes
         {
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query = "insert into Car (Nom,Marque,Matricule,Color) values(@Nom,@Marque,@Matricule,@Color)";
+            string query = "insert into Car (nom,marque,matricule,Color) values(@Nom,@Marque,@Matricule,@Color)";
             cmd = new SqlCommand(query, cnx);
             cmd.Parameters.AddWithValue("@Nom", Nom);
             cmd.Parameters.AddWithValue("@Marque", Marque);
@@ -69,13 +69,13 @@ namespace HOTEL_MANAGMENT.Classes
 
         public static void SupprimerCar(int id)
         {
-            cn = new Connection_Classe();
+            
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query1 = "delete  from Car where id=@id";
+            string query1 = "delete from Car where id=@id";
             cmd = new SqlCommand(query1, cnx);
             cmd.Parameters.AddWithValue("@id", id);
-
+           
             //le processus de suppression
             try
             {
@@ -100,7 +100,7 @@ namespace HOTEL_MANAGMENT.Classes
         public static ListView Afficher()
         {
             ListView l = new ListView { };
-            cn = new Connection_Classe();
+            
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
             string query2 = "select * from Car";
@@ -111,9 +111,9 @@ namespace HOTEL_MANAGMENT.Classes
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
-                    items.SubItems.Add(reader["Marque"].ToString());
-                    items.SubItems.Add(reader["Matricule"].ToString());
+                    ListViewItem items = new ListViewItem(reader["nom"].ToString());
+                    items.SubItems.Add(reader["marque"].ToString());
+                    items.SubItems.Add(reader["matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
                     items.SubItems.Add(reader["id"].ToString());
                     l.Items.Add(items);
@@ -133,7 +133,7 @@ namespace HOTEL_MANAGMENT.Classes
             cn = new Connection_Classe();
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query3 = "UPDATE Car set Nom=@Nom,Marque=@Marque,Matricule=@Matricule,Color=@Color  where id=@id";
+            string query3 = "UPDATE Car set nom=@Nom,marque=@Marque,matricule=@Matricule,Color=@Color  where id=@id";
             cmd = new SqlCommand(query3, cnx);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@Nom", Nom);

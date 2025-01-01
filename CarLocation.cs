@@ -65,7 +65,50 @@ namespace HOTEL_MANAGMENT
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
+            // ListViewCar.Clear();
+            if (ListViewCar.SelectedItems.Count > 0)
+            {
+                int il;
+                ListViewItem selectedItem = ListViewCar.SelectedItems[0];
+                il = int.Parse(selectedItem.SubItems[5].Text);
+                string queryS = "select * from Car where id=" + il;
+                SqlConnection cnx = cn.GetConnection();
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
+                cmd = new SqlCommand(queryS, cnx);
+
+                cnx.Open();
+                //SqlDataReader reader = cmd.ExecuteReader();
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    getCarId.Text = ListViewCar.SelectedItems[0].SubItems[5].Text;
+                    if (reader.Read())
+                    {
+                        labelNom.Visible = true;
+                        labelMatricule.Visible = true;
+                        labelCouleur.Visible = true;
+                        labelMarque.Visible = true;
+                        label3.Visible = true;
+                        label4.Visible = true;
+                        label5.Visible = true;
+                        label7.Visible = true;
+
+                        labelNom.Text = reader["nom"].ToString();
+
+                        labelMatricule.Text = reader["matricule"].ToString();
+                        labelCouleur.Text = reader["Color"].ToString();
+                        //in fonctionne selement si est la derniere
+                        labelMarque.Text = reader["marque"].ToString();
+                    }
+
+
+                }
+                cnx.Close();
+
+            }
+
             /*
                     public void RemplirComboColor()
                     {
@@ -95,3 +138,4 @@ namespace HOTEL_MANAGMENT
         }
     }
 
+}

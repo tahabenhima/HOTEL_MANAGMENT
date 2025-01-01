@@ -11,12 +11,15 @@ namespace HOTEL_MANAGMENT.Classes
     internal class Spa_Classe
     {  
         public   int   Nbr_Seances { get; set; }
+        public float Prix { get; set; }
+
         private static SqlCommand cmd;
         private static Connection_Classe cn;
 
 
-        public Spa_Classe(int Nbr_Seances) {
+        public Spa_Classe(int Nbr_Seances,float Prix) {
             this.Nbr_Seances = Nbr_Seances;
+            this.Prix = Prix;
             cn = new Connection_Classe();
 
 
@@ -27,9 +30,10 @@ namespace HOTEL_MANAGMENT.Classes
         {
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string req = "insert into  Spa  (Nbr_Seances) values (@Nbr_Seances)";
+            string req = "insert into  Spa  (Nbr_Seances,Prix) values (@Nbr_Seances,@Prix)";
             cmd = new SqlCommand(req, cnx);
             cmd.Parameters.AddWithValue("@Nbr_Seances",  Nbr_Seances);
+            cmd.Parameters.AddWithValue("@Prix", Prix);
             try
             {
 
@@ -97,6 +101,7 @@ namespace HOTEL_MANAGMENT.Classes
 
                     ListViewItem items = new ListViewItem(reader["id"].ToString());
                     items.SubItems.Add(reader["Nbr_Seances"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
                     l.Items.Add(items);
 
 
@@ -115,15 +120,16 @@ namespace HOTEL_MANAGMENT.Classes
         }
 
 ///////////MODIFIER////////////////////////////////////
-         public static void Modifier_Spa(int id, int Nbr_Seances)
+         public static void Modifier_Spa(int id, int Nbr_Seances,float Prix)
         {
             cn = new Connection_Classe();
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string req3 = "UPDATE Spa SET  Nbr_Seances=@Nbr_Seances  where id=@id";
+            string req3 = "UPDATE Spa SET  Nbr_Seances=@Nbr_Seances,Prix=@Prix  where id=@id";
             cmd = new SqlCommand(req3, cnx);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@Nbr_Seances", Nbr_Seances);
+            cmd.Parameters.AddWithValue("@Prix", Prix);
             try
             {
 

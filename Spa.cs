@@ -44,7 +44,7 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("Le champ Nombre de seances doit être des entiers !");
                 return;
             }
-            Spa_Classe Spa = new Spa_Classe(int.Parse(Nbr_Seances_Box.Text));
+            Spa_Classe Spa = new Spa_Classe(int.Parse(Nbr_Seances_Box.Text),20);
             SqlConnection cnx = cn.GetConnection();
 
             Spa.Ajouter_Spa();
@@ -119,7 +119,7 @@ namespace HOTEL_MANAGMENT
             Modifier_Spa_BTN.Visible = false;
             try
             {
-                Spa_Classe.Modifier_Spa(int.Parse(getid.Text), int.Parse(Nbr_Seances_Box.Text));
+                Spa_Classe.Modifier_Spa(int.Parse(getid.Text), int.Parse(Nbr_Seances_Box.Text), 20);
                 vider();
                 Afficher_Spa_BTN_Click(sender, e);
 

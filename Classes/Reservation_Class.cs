@@ -53,10 +53,11 @@ namespace HOTEL_MANAGMENT.Classes
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
             string query = "insert into Reservation (DateArrive,DateSortie,PrixTotal,Statut) values(@DateArrive,@DateSortie,@PrixTotal,@Statut";
-            if(Carcheckbox.)
+            
+            /*if(Carcheckbox)
             {
                 query += ",@Client"; 
-            }
+            }*/
             cmd = new SqlCommand(query, cnx);
             cmd.Parameters.AddWithValue("@DateArrive", DateArrive);
             cmd.Parameters.AddWithValue("@DateSortie", DateSortie);
@@ -75,6 +76,7 @@ namespace HOTEL_MANAGMENT.Classes
             {
                 cnx.Close();
             }
+
         }
 
 

@@ -38,7 +38,7 @@ namespace HOTEL_MANAGMENT
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-
+            AddControls(new Reservation());
         }
 
         private void guna2Button1_Click_2(object sender, EventArgs e)

@@ -136,6 +136,45 @@ namespace HOTEL_MANAGMENT.Classes
 
         }
 
+        public static ListView AfficherCarNonLocation(DateTime debutLocation , DateTime finLocation )
+        {
+            ListView l = new ListView { };
+
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query2 = @" SELECT *  FROM Car c
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM Car_Location cl
+            WHERE cl.id_Car = c.id
+              AND cl.Fin_Location >= @Debut_Location
+              AND cl.Debut_Location <= @Fin_Location);";
+            cmd = new SqlCommand(query2, cnx);
+            cmd.Parameters.AddWithValue("@Debut_Location", debutLocation);
+            cmd.Parameters.AddWithValue("@Fin_Location", finLocation);
+            try
+            {
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["nom"].ToString());
+                    items.SubItems.Add(reader["marque"].ToString());
+                    items.SubItems.Add(reader["matricule"].ToString());
+                    items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
+                    items.SubItems.Add(reader["id"].ToString());
+                    l.Items.Add(items);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR " + ex);
+            }
+            cnx.Close();
+            return l;
+
+        }
         public static void Modifier(int id,string Nom, string Marque, string Matricule, string Color ,float Prix)
         {
             cn = new Connection_Classe();

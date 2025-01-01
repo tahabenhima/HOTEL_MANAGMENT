@@ -54,6 +54,7 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            columnHeader6 = new ColumnHeader();
             getCarId = new Label();
             SuspendLayout();
             // 
@@ -203,11 +204,11 @@
             // 
             // ListViewCar
             // 
-            ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
+            ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
             ListViewCar.Location = new Point(35, 249);
             ListViewCar.Margin = new Padding(3, 4, 3, 4);
             ListViewCar.Name = "ListViewCar";
-            ListViewCar.Size = new Size(608, 171);
+            ListViewCar.Size = new Size(662, 171);
             ListViewCar.TabIndex = 30;
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
@@ -235,8 +236,13 @@
             // 
             // columnHeader5
             // 
-            columnHeader5.Text = "id";
-            columnHeader5.Width = 0;
+            columnHeader5.Text = "Prix";
+            columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "id";
+            columnHeader6.Width = 0;
             // 
             // getCarId
             // 
@@ -297,5 +303,6 @@
         private Label getCarId;
         private ColumnHeader Nom;
         private ColumnHeader columnHeader5;
+        private ColumnHeader columnHeader6;
     }
 }

@@ -63,9 +63,9 @@
             // prixlabel
             // 
             prixlabel.AutoSize = true;
-            prixlabel.Location = new Point(59, 118);
+            prixlabel.Location = new Point(67, 157);
             prixlabel.Name = "prixlabel";
-            prixlabel.Size = new Size(27, 15);
+            prixlabel.Size = new Size(33, 20);
             prixlabel.TabIndex = 46;
             prixlabel.Text = "Prix";
             // 
@@ -74,9 +74,10 @@
             ListViewChambre.BackColor = Color.WhiteSmoke;
             ListViewChambre.Columns.AddRange(new ColumnHeader[] { type, columnHeader2, columnHeader3, columnHeader4, id });
             ListViewChambre.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ListViewChambre.Location = new Point(59, 160);
+            ListViewChambre.Location = new Point(67, 213);
+            ListViewChambre.Margin = new Padding(3, 4, 3, 4);
             ListViewChambre.Name = "ListViewChambre";
-            ListViewChambre.Size = new Size(681, 159);
+            ListViewChambre.Size = new Size(778, 211);
             ListViewChambre.TabIndex = 45;
             ListViewChambre.UseCompatibleStateImageBehavior = false;
             ListViewChambre.View = View.Details;
@@ -119,11 +120,11 @@
             ReadChambrebtn.FillColor = SystemColors.Control;
             ReadChambrebtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ReadChambrebtn.ForeColor = Color.Black;
-            ReadChambrebtn.Location = new Point(602, 353);
-            ReadChambrebtn.Margin = new Padding(2);
+            ReadChambrebtn.Location = new Point(688, 471);
+            ReadChambrebtn.Margin = new Padding(2, 3, 2, 3);
             ReadChambrebtn.Name = "ReadChambrebtn";
             ReadChambrebtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ReadChambrebtn.Size = new Size(138, 34);
+            ReadChambrebtn.Size = new Size(158, 45);
             ReadChambrebtn.TabIndex = 44;
             ReadChambrebtn.Text = "Afficher Chambre";
             ReadChambrebtn.Click += ReadChambrebtn_Click;
@@ -141,11 +142,11 @@
             DeleteChambrebtn.FillColor = SystemColors.Control;
             DeleteChambrebtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DeleteChambrebtn.ForeColor = Color.Black;
-            DeleteChambrebtn.Location = new Point(411, 353);
-            DeleteChambrebtn.Margin = new Padding(2);
+            DeleteChambrebtn.Location = new Point(470, 471);
+            DeleteChambrebtn.Margin = new Padding(2, 3, 2, 3);
             DeleteChambrebtn.Name = "DeleteChambrebtn";
             DeleteChambrebtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DeleteChambrebtn.Size = new Size(154, 34);
+            DeleteChambrebtn.Size = new Size(176, 45);
             DeleteChambrebtn.TabIndex = 43;
             DeleteChambrebtn.Text = "Supprimer Chambre";
             DeleteChambrebtn.Click += DeleteChambrebtn_Click_1;
@@ -163,11 +164,11 @@
             UpdateChambrebtn.FillColor = SystemColors.Control;
             UpdateChambrebtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             UpdateChambrebtn.ForeColor = Color.Black;
-            UpdateChambrebtn.Location = new Point(230, 353);
-            UpdateChambrebtn.Margin = new Padding(2);
+            UpdateChambrebtn.Location = new Point(263, 471);
+            UpdateChambrebtn.Margin = new Padding(2, 3, 2, 3);
             UpdateChambrebtn.Name = "UpdateChambrebtn";
             UpdateChambrebtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            UpdateChambrebtn.Size = new Size(140, 33);
+            UpdateChambrebtn.Size = new Size(160, 44);
             UpdateChambrebtn.TabIndex = 42;
             UpdateChambrebtn.Text = "Modifier Chambre";
             UpdateChambrebtn.Click += UpdateChambrebtn_Click_1;
@@ -185,76 +186,80 @@
             AddChambrebtn.FillColor = SystemColors.Control;
             AddChambrebtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AddChambrebtn.ForeColor = Color.Black;
-            AddChambrebtn.Location = new Point(59, 353);
-            AddChambrebtn.Margin = new Padding(2);
+            AddChambrebtn.Location = new Point(67, 471);
+            AddChambrebtn.Margin = new Padding(2, 3, 2, 3);
             AddChambrebtn.Name = "AddChambrebtn";
             AddChambrebtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            AddChambrebtn.Size = new Size(131, 32);
+            AddChambrebtn.Size = new Size(150, 43);
             AddChambrebtn.TabIndex = 40;
             AddChambrebtn.Text = "Ajouter Chambre";
             AddChambrebtn.Click += AddChambrebtn_Click;
             // 
             // CapasiteChambreBox
             // 
-            CapasiteChambreBox.Location = new Point(535, 110);
+            CapasiteChambreBox.Location = new Point(611, 147);
+            CapasiteChambreBox.Margin = new Padding(3, 4, 3, 4);
             CapasiteChambreBox.Name = "CapasiteChambreBox";
-            CapasiteChambreBox.Size = new Size(205, 23);
+            CapasiteChambreBox.Size = new Size(234, 27);
             CapasiteChambreBox.TabIndex = 39;
             // 
             // NumeroChambreBox
             // 
-            NumeroChambreBox.Location = new Point(535, 56);
+            NumeroChambreBox.Location = new Point(611, 75);
+            NumeroChambreBox.Margin = new Padding(3, 4, 3, 4);
             NumeroChambreBox.Name = "NumeroChambreBox";
-            NumeroChambreBox.Size = new Size(205, 23);
+            NumeroChambreBox.Size = new Size(234, 27);
             NumeroChambreBox.TabIndex = 38;
             // 
             // PrixChambreBox
             // 
-            PrixChambreBox.Location = new Point(121, 110);
+            PrixChambreBox.Location = new Point(138, 147);
+            PrixChambreBox.Margin = new Padding(3, 4, 3, 4);
             PrixChambreBox.Name = "PrixChambreBox";
-            PrixChambreBox.Size = new Size(197, 23);
+            PrixChambreBox.Size = new Size(225, 27);
             PrixChambreBox.TabIndex = 37;
             // 
             // TypechambreBox
             // 
-            TypechambreBox.Location = new Point(121, 56);
+            TypechambreBox.Location = new Point(138, 75);
+            TypechambreBox.Margin = new Padding(3, 4, 3, 4);
             TypechambreBox.Name = "TypechambreBox";
-            TypechambreBox.Size = new Size(197, 23);
+            TypechambreBox.Size = new Size(225, 27);
             TypechambreBox.TabIndex = 36;
             // 
             // labelnum
             // 
             labelnum.AutoSize = true;
-            labelnum.Location = new Point(458, 59);
+            labelnum.Location = new Point(523, 79);
             labelnum.Name = "labelnum";
-            labelnum.Size = new Size(51, 15);
+            labelnum.Size = new Size(63, 20);
             labelnum.TabIndex = 35;
             labelnum.Text = "Numero";
             // 
             // labelcapa
             // 
             labelcapa.AutoSize = true;
-            labelcapa.Location = new Point(458, 113);
+            labelcapa.Location = new Point(523, 151);
             labelcapa.Name = "labelcapa";
-            labelcapa.Size = new Size(52, 15);
+            labelcapa.Size = new Size(67, 20);
             labelcapa.TabIndex = 34;
-            labelcapa.Text = "Capasite";
+            labelcapa.Text = "Capacite";
             // 
             // labeltype
             // 
             labeltype.AutoSize = true;
-            labeltype.Location = new Point(55, 59);
+            labeltype.Location = new Point(63, 79);
             labeltype.Name = "labeltype";
-            labeltype.Size = new Size(31, 15);
+            labeltype.Size = new Size(40, 20);
             labeltype.TabIndex = 33;
             labeltype.Text = "Type";
             // 
             // getid
             // 
             getid.AutoSize = true;
-            getid.Location = new Point(59, 142);
+            getid.Location = new Point(67, 189);
             getid.Name = "getid";
-            getid.Size = new Size(24, 15);
+            getid.Size = new Size(31, 20);
             getid.TabIndex = 47;
             getid.Text = "get";
             getid.Visible = false;
@@ -273,20 +278,21 @@
             telechargerCSVbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             telechargerCSVbtn.ForeColor = Color.Black;
             telechargerCSVbtn.Image = Properties.Resources._6133884;
-            telechargerCSVbtn.Location = new Point(230, 416);
+            telechargerCSVbtn.Location = new Point(263, 555);
+            telechargerCSVbtn.Margin = new Padding(3, 4, 3, 4);
             telechargerCSVbtn.Name = "telechargerCSVbtn";
             telechargerCSVbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            telechargerCSVbtn.Size = new Size(335, 30);
+            telechargerCSVbtn.Size = new Size(383, 40);
             telechargerCSVbtn.TabIndex = 48;
             telechargerCSVbtn.Text = "Telecharger les données sous form csv";
             telechargerCSVbtn.Click += telechargerCSVbtn_Click;
             // 
             // Chambre
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(800, 467);
+            ClientSize = new Size(914, 623);
             Controls.Add(telechargerCSVbtn);
             Controls.Add(getid);
             Controls.Add(prixlabel);
@@ -303,6 +309,7 @@
             Controls.Add(labelcapa);
             Controls.Add(labeltype);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Chambre";
             Text = "Chambre";
             ResumeLayout(false);

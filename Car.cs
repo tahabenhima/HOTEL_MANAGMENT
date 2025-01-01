@@ -37,7 +37,7 @@ namespace HOTEL_MANAGMENT
                 return;
             }
 
-            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text);
+            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text,20);
             SqlConnection cnx = cn.GetConnection();
 
             Car.AjouterCar();
@@ -78,7 +78,7 @@ namespace HOTEL_MANAGMENT
                 MessageBox.Show("Veuillez sélectionner car dans la liste !");
                 return;
             }
-            int a = int.Parse(ListViewCar.SelectedItems[0].SubItems[4].Text);
+            int a = int.Parse(ListViewCar.SelectedItems[0].SubItems[5].Text);
            
             try
             {
@@ -110,7 +110,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text ,ColorCarBox.Text);
+                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text ,ColorCarBox.Text,20);
                 vider();
                 ReadCar_Click(sender, e);
 
@@ -132,12 +132,12 @@ namespace HOTEL_MANAGMENT
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            // ListViewCar.Clear();
             if (ListViewCar.SelectedItems.Count > 0)
             {
-
+                int il;
                 ListViewItem selectedItem = ListViewCar.SelectedItems[0];
-                int il = int.Parse(selectedItem.SubItems[4].Text);
-
+                il = int.Parse(selectedItem.SubItems[5].Text);
                 string queryS = "select * from Car where id=" + il;
                 SqlConnection cnx = cn.GetConnection();
                 if (cnx.State == ConnectionState.Open)
@@ -150,24 +150,28 @@ namespace HOTEL_MANAGMENT
                 //SqlDataReader reader = cmd.ExecuteReader();
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    getCarId.Text = selectedItem.SubItems[4].Text;
+                    getCarId.Text = ListViewCar.SelectedItems[0].SubItems[5].Text;
                     if (reader.Read())
                     {
+
                         NomCarBox.Text = reader["nom"].ToString();
-                        MarqueCarBox.Text = reader["marque"].ToString();
+
                         MatriculeCarBox.Text = reader["matricule"].ToString();
                         ColorCarBox.Text = reader["Color"].ToString();
+                        //in fonctionne selement si est la derniere
+                        MarqueCarBox.Text = reader["marque"].ToString();
                     }
-                   
-                    cnx.Close();
+
+
                 }
-                    
+                cnx.Close();
             }
 
         }
 
         private void ColorCarBox_TextChanged(object sender, EventArgs e)
-        {/*
+        {
+            /*
             try
             {
                 ListViewCar.Items.Clear();
@@ -192,6 +196,7 @@ namespace HOTEL_MANAGMENT
                     items.SubItems.Add(reader["marque"].ToString());
                     items.SubItems.Add(reader["matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
                     items.SubItems.Add(reader["id"].ToString());
                     ListViewCar.Items.Add(items);
                 }
@@ -204,27 +209,26 @@ namespace HOTEL_MANAGMENT
 
                 MessageBox.Show("ERREUR d'affichage " + ex);
             }
-*/
+            */
         }
-
+        //cmd.Parameters.AddWithValue("@Marque", "%" + t + "%");
         private void MarqueCarBox_TextChanged(object sender, EventArgs e)
         {
-            /*
-            SqlConnection cnx = cn.GetConnection();
-            if (cnx.State == ConnectionState.Open)
-            {
-                cnx.Close();
-            }
+            
             try
             {
                 ListViewCar.Items.Clear();
 
-               
+                SqlConnection cnx = cn.GetConnection();
+                if (cnx.State == ConnectionState.Open)
+                {
+                    cnx.Close();
+                }
                 string t = MarqueCarBox.Text;
-                String query = "select * from car where marque LIKE @Marque";
+                String query = "select * from car where marque LIKE @marque";
 
                 cmd = new SqlCommand(query, cnx);
-                cmd.Parameters.AddWithValue("@Marque", "%" + t + "%");
+                cmd.Parameters.AddWithValue("@marque", "%" + t + "%");
                 cnx.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -235,11 +239,12 @@ namespace HOTEL_MANAGMENT
                     items.SubItems.Add(reader["marque"].ToString());
                     items.SubItems.Add(reader["matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
                     items.SubItems.Add(reader["id"].ToString());
                     ListViewCar.Items.Add(items);
                 }
-                //reader.Close();
-               
+
+                cnx.Close();
 
             }
             catch (Exception ex)
@@ -247,55 +252,55 @@ namespace HOTEL_MANAGMENT
 
                 MessageBox.Show("ERREUR d'affichage " + ex);
             }
-            cnx.Close();
-            */
+
         }
 
         private void NomCarBox_TextChanged(object sender, EventArgs e)
         {
-           /* SqlConnection cnx = cn.GetConnection();
-            try
-            {
-                ListViewCar.Items.Clear();
+            /* SqlConnection cnx = cn.GetConnection();
+             try
+             {
+                 ListViewCar.Items.Clear();
 
-               
-                string t = NomCarBox.Text;
-                String query = "select * from car where nom LIKE @Nom";
-               
-                cmd = new SqlCommand(query, cnx);
-                if (cnx.State == ConnectionState.Open)
-                {
-                    cnx.Close();
-                }
-                cmd.Parameters.AddWithValue("@Nom", "%" + t + "%");
-                cnx.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    ListViewItem items = new ListViewItem(reader["Nom"].ToString());
+                 string t = NomCarBox.Text;
+                 String query = "select * from car where nom LIKE @Nom";
 
-                    items.SubItems.Add(reader["marque"].ToString());
-                    items.SubItems.Add(reader["matricule"].ToString());
-                    items.SubItems.Add(reader["Color"].ToString());
-                    items.SubItems.Add(reader["id"].ToString());
-                    ListViewCar.Items.Add(items);
-                }
-                reader.Close();
-                
+                 cmd = new SqlCommand(query, cnx);
+                 if (cnx.State == ConnectionState.Open)
+                 {
+                     cnx.Close();
+                 }
+                 cmd.Parameters.AddWithValue("@Nom", "%" + t + "%");
+                 cnx.Open();
+                 SqlDataReader reader = cmd.ExecuteReader();
 
-            }
-            catch (Exception ex)
-            {
+                 while (reader.Read())
+                 {
+                     ListViewItem items = new ListViewItem(reader["Nom"].ToString());
 
-                MessageBox.Show("ERREUR d'affichage " + ex);
-            }
-            cnx.Close();*/
+                     items.SubItems.Add(reader["marque"].ToString());
+                     items.SubItems.Add(reader["matricule"].ToString());
+                     items.SubItems.Add(reader["Color"].ToString());
+                     items.SubItems.Add(reader["Prix"].ToString());
+                     items.SubItems.Add(reader["id"].ToString());
+                     ListViewCar.Items.Add(items);
+                 }
+                 reader.Close();
+
+
+             }
+             catch (Exception ex)
+             {
+
+                 MessageBox.Show("ERREUR d'affichage " + ex);
+             }
+             cnx.Close();*/
         }
 
         private void MatriculeCarBox_TextChanged(object sender, EventArgs e)
         {
-           
+
             /*SqlConnection cnx = cn.GetConnection();
             if (cnx.State == ConnectionState.Open)
             {
@@ -321,6 +326,7 @@ namespace HOTEL_MANAGMENT
                     items.SubItems.Add(reader["marque"].ToString());
                     items.SubItems.Add(reader["matricule"].ToString());
                     items.SubItems.Add(reader["Color"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
                     items.SubItems.Add(reader["id"].ToString());
                     ListViewCar.Items.Add(items);
                 }

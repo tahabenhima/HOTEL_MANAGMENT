@@ -32,7 +32,27 @@ namespace HOTEL_MANAGMENT
 
         private void SearchCarLocationBtn_Click(object sender, EventArgs e)
         {
-            
+            //FROM Car c WHERE NOT EXISTS (SELECT 1 FROM Car_Location cl WHERE cl.id_Car = c.id AND cl.Fin_Location >= '2023-10-01'AND cl.Debut_Location <= '2025-10-01')
+
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                int n = Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    ListViewCar.Items.Add((ListViewItem)Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items[i].Clone());
+                }
+
+                //vider();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR Affichage  " + ex);
+            }
         }
 
         private void Carbtn_Click(object sender, EventArgs e)
@@ -44,35 +64,34 @@ namespace HOTEL_MANAGMENT
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            
+
         }
-
-        /*
-                public void RemplirComboColor()
-                {
-                    try
+            /*
+                    public void RemplirComboColor()
                     {
-                        cn = new Connection_Classe();
-                        SqlConnection cnx = cn.GetConnection();
-                        ModelCarLocationComboBox.Items.Clear();
-                        String query = "select Mat from STAGIAIRE";
-                        cmd = new SqlCommand(query, cnx);
-                        cnx.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        while (reader.Read())
+                        try
                         {
-                            ModelCarLocationComboBox.Items.Add(reader[0]);
+                            cn = new Connection_Classe();
+                            SqlConnection cnx = cn.GetConnection();
+                            ModelCarLocationComboBox.Items.Clear();
+                            String query = "select Mat from STAGIAIRE";
+                            cmd = new SqlCommand(query, cnx);
+                            cnx.Open();
+                            SqlDataReader reader = cmd.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                ModelCarLocationComboBox.Items.Add(reader[0]);
+                            }
+                            reader.Close();
                         }
-                        reader.Close();
-                    }
-                    catch (Exception ex)
-                    {
+                        catch (Exception ex)
+                        {
 
-                        MessageBox.Show("ERREUR d'affichage " + ex);
-                    }
+                            MessageBox.Show("ERREUR d'affichage " + ex);
+                        }
 
-                }*/
+                    }*/
+        }
     }
-}
+

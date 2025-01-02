@@ -63,7 +63,7 @@ namespace HOTEL_MANAGMENT
             Car c = new Car();
             c.Show();
         }
-
+        /*msg*/
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*// ListViewCar.Clear();
@@ -109,6 +109,8 @@ namespace HOTEL_MANAGMENT
             }*/
             if (ListViewCar.SelectedItems.Count > 0)
             {
+
+
                 int il;
                 ListViewItem selectedItem = ListViewCar.SelectedItems[0];
                 il = int.Parse(selectedItem.SubItems[5].Text);

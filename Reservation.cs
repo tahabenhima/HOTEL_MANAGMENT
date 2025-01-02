@@ -98,12 +98,52 @@ namespace HOTEL_MANAGMENT
 
         private void SearchCarLocationBtn_Click_1(object sender, EventArgs e)
         {
-            
-        }
+            try
+            {
+                ListViewCar.Items.Clear();
+
+                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                int n = Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    ListViewCar.Items.Add((ListViewItem)Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items[i].Clone());
+                }
+
+                //vider();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR Affichage  " + ex);
+            }
+}
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (ListViewCar.SelectedItems.Count > 0)
+            {
+                int il;
+                ListViewItem selectedItem = ListViewCar.SelectedItems[0];
+                il = int.Parse(selectedItem.SubItems[5].Text);
+                string queryS = "select * from Car where id=" + il;
+                labelNom.Visible = true;
+                labelMatricule.Visible = true;
+                labelCouleur.Visible = true;
+                labelMarque.Visible = true;
+                label3.Visible = true;
+                label4.Visible = true;
+                label5.Visible = true;
+                label7.Visible = true;
+                labelp.Visible = true;
+                labelPrix.Visible = true;
+                getCarId.Text = ListViewCar.SelectedItems[0].SubItems[5].Text;
+                labelNom.Text = selectedItem.SubItems[0].Text;
+                labelMatricule.Text = selectedItem.SubItems[2].Text;
+                labelCouleur.Text = selectedItem.SubItems[3].Text;
+                labelPrix.Text = selectedItem.SubItems[4].Text;
+                labelMarque.Text = selectedItem.SubItems[1].Text;
+            }
         }
 
        

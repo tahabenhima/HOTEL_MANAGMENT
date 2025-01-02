@@ -66,6 +66,8 @@
             labelNom = new Label();
             labelMatricule = new Label();
             label7 = new Label();
+            labelPrix = new Label();
+            labelp = new Label();
             SuspendLayout();
             // 
             // label2
@@ -353,11 +355,35 @@
             label7.Text = "Matricule";
             label7.Visible = false;
             // 
+            // labelPrix
+            // 
+            labelPrix.AutoSize = true;
+            labelPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPrix.Location = new Point(128, 527);
+            labelPrix.Name = "labelPrix";
+            labelPrix.Size = new Size(39, 23);
+            labelPrix.TabIndex = 42;
+            labelPrix.Text = "Prix";
+            labelPrix.Visible = false;
+            // 
+            // labelp
+            // 
+            labelp.AutoSize = true;
+            labelp.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelp.Location = new Point(34, 527);
+            labelp.Name = "labelp";
+            labelp.Size = new Size(39, 23);
+            labelp.TabIndex = 41;
+            labelp.Text = "Prix";
+            labelp.Visible = false;
+            // 
             // CarLocation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1224, 576);
+            Controls.Add(labelPrix);
+            Controls.Add(labelp);
             Controls.Add(labelMatricule);
             Controls.Add(label7);
             Controls.Add(labelMarque);
@@ -415,5 +441,7 @@
         private Label labelNom;
         private Label labelMatricule;
         private Label label7;
+        private Label labelPrix;
+        private Label labelp;
     }
 }

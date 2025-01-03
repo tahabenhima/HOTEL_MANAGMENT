@@ -162,6 +162,26 @@ namespace HOTEL_MANAGMENT
         private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*validation*/
+            if (ListViewChambre.SelectedItems.Count > 0)
+            {
+
+                ListViewItem selectedItem = ListViewChambre.SelectedItems[0];
+
+
+                label11.Visible = true;
+                label15.Visible = true;
+                label16.Visible = true;
+                label17.Visible = true;
+                selecType.Visible = true;
+                selectNumero.Visible = true;
+                selectPrix.Visible = true;
+                selectCapacite.Visible = true;
+                getchambreId.Text = ListViewChambre.SelectedItems[0].SubItems[4].Text;
+                selecType.Text = selectedItem.SubItems[0].Text;
+                selectPrix.Text = selectedItem.SubItems[2].Text;
+                selectCapacite.Text = selectedItem.SubItems[3].Text;
+                selectNumero.Text = selectedItem.SubItems[1].Text;
+            }
 
         }
     }

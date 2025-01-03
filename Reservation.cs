@@ -161,7 +161,8 @@ namespace HOTEL_MANAGMENT
 
         private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            /*validation*/
+
         }
     }
 }

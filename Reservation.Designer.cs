@@ -78,6 +78,15 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             id = new ColumnHeader();
+            label17 = new Label();
+            getchambreId = new Label();
+            label15 = new Label();
+            selecType = new Label();
+            selectPrix = new Label();
+            selectNumero = new Label();
+            label11 = new Label();
+            selectCapacite = new Label();
+            label16 = new Label();
             SuspendLayout();
             // 
             // labeltype
@@ -103,7 +112,7 @@
             Reserverbtn.FillColor = SystemColors.Control;
             Reserverbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Reserverbtn.ForeColor = Color.Black;
-            Reserverbtn.Location = new Point(73, 722);
+            Reserverbtn.Location = new Point(73, 784);
             Reserverbtn.Margin = new Padding(2, 3, 2, 3);
             Reserverbtn.Name = "Reserverbtn";
             Reserverbtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -285,7 +294,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(81, 667);
+            label8.Location = new Point(81, 729);
             label8.Name = "label8";
             label8.Size = new Size(46, 23);
             label8.TabIndex = 57;
@@ -491,10 +500,11 @@
             ListViewChambre.Location = new Point(37, 270);
             ListViewChambre.Margin = new Padding(3, 4, 3, 4);
             ListViewChambre.Name = "ListViewChambre";
-            ListViewChambre.Size = new Size(603, 211);
+            ListViewChambre.Size = new Size(607, 211);
             ListViewChambre.TabIndex = 77;
             ListViewChambre.UseCompatibleStateImageBehavior = false;
             ListViewChambre.View = View.Details;
+            ListViewChambre.SelectedIndexChanged += ListViewChambre_SelectedIndexChanged;
             // 
             // type
             // 
@@ -520,11 +530,119 @@
             // 
             id.Width = 0;
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(37, 602);
+            label17.Name = "label17";
+            label17.Size = new Size(39, 23);
+            label17.TabIndex = 79;
+            label17.Text = "Prix";
+            label17.Visible = false;
+            // 
+            // getchambreId
+            // 
+            getchambreId.AutoSize = true;
+            getchambreId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            getchambreId.Location = new Point(266, 485);
+            getchambreId.Name = "getchambreId";
+            getchambreId.Size = new Size(15, 23);
+            getchambreId.TabIndex = 87;
+            getchambreId.Text = " ";
+            getchambreId.Visible = false;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(38, 550);
+            label15.Name = "label15";
+            label15.Size = new Size(73, 23);
+            label15.TabIndex = 80;
+            label15.Text = "Numero";
+            label15.Visible = false;
+            // 
+            // selecType
+            // 
+            selecType.AutoSize = true;
+            selecType.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selecType.Location = new Point(150, 498);
+            selecType.Name = "selecType";
+            selecType.Size = new Size(46, 23);
+            selecType.TabIndex = 81;
+            selecType.Text = "Type";
+            selecType.Visible = false;
+            // 
+            // selectPrix
+            // 
+            selectPrix.AutoSize = true;
+            selectPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selectPrix.Location = new Point(150, 602);
+            selectPrix.Name = "selectPrix";
+            selectPrix.Size = new Size(39, 23);
+            selectPrix.TabIndex = 82;
+            selectPrix.Text = "Prix";
+            selectPrix.Visible = false;
+            // 
+            // selectNumero
+            // 
+            selectNumero.AutoSize = true;
+            selectNumero.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selectNumero.Location = new Point(150, 550);
+            selectNumero.Name = "selectNumero";
+            selectNumero.Size = new Size(73, 23);
+            selectNumero.TabIndex = 83;
+            selectNumero.Text = "Numero";
+            selectNumero.Visible = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(38, 651);
+            label11.Name = "label11";
+            label11.Size = new Size(76, 23);
+            label11.TabIndex = 84;
+            label11.Text = "Capacite";
+            label11.Visible = false;
+            // 
+            // selectCapacite
+            // 
+            selectCapacite.AutoSize = true;
+            selectCapacite.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            selectCapacite.Location = new Point(150, 651);
+            selectCapacite.Name = "selectCapacite";
+            selectCapacite.Size = new Size(76, 23);
+            selectCapacite.TabIndex = 85;
+            selectCapacite.Text = "Capacite";
+            selectCapacite.Visible = false;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(37, 498);
+            label16.Name = "label16";
+            label16.Size = new Size(46, 23);
+            label16.TabIndex = 78;
+            label16.Text = "Type";
+            label16.Visible = false;
+            // 
             // Reservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1420, 856);
+            Controls.Add(getchambreId);
+            Controls.Add(selectCapacite);
+            Controls.Add(label11);
+            Controls.Add(selectNumero);
+            Controls.Add(selectPrix);
+            Controls.Add(selecType);
+            Controls.Add(label15);
+            Controls.Add(label16);
+            Controls.Add(label17);
             Controls.Add(ListViewChambre);
             Controls.Add(getCarId);
             Controls.Add(labelPrix);
@@ -604,5 +722,14 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader id;
+        private Label label17;
+        private Label getchambreId;
+        private Label label15;
+        private Label selecType;
+        private Label selectPrix;
+        private Label selectNumero;
+        private Label label11;
+        private Label selectCapacite;
+        private Label label16;
     }
 }

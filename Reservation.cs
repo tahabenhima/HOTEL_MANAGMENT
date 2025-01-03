@@ -67,8 +67,8 @@ namespace HOTEL_MANAGMENT
             {
                 ListViewCar.Visible = true;
                 labelMsg.Visible = true;
-                
-                
+
+
                 try
                 {
                     ListViewCar.Items.Clear();
@@ -94,7 +94,7 @@ namespace HOTEL_MANAGMENT
             {
                 ListViewCar.Visible = false;
                 labelMsg.Visible = false;
-               
+
                 label6.Visible = false;
                 labelNom.Visible = false;
 
@@ -105,7 +105,7 @@ namespace HOTEL_MANAGMENT
 
                 labelCouleur.Visible = false;
 
-                
+
 
                 label9.Visible = false;
                 labelMatricule.Visible = false;
@@ -136,7 +136,7 @@ namespace HOTEL_MANAGMENT
                 int il;
                 ListViewItem selectedItem = ListViewCar.SelectedItems[0];
                 il = int.Parse(selectedItem.SubItems[5].Text);
-                string queryS = "select * from Car where id=" + il;
+               
                 labelNom.Visible = true;
                 labelMatricule.Visible = true;
                 labelCouleur.Visible = true;
@@ -159,6 +159,9 @@ namespace HOTEL_MANAGMENT
             }
         }
 
-       
+        private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

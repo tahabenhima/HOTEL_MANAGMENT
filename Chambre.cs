@@ -1,14 +1,5 @@
 ﻿using HOTEL_MANAGMENT.Classes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace HOTEL_MANAGMENT
 {
@@ -25,6 +16,7 @@ namespace HOTEL_MANAGMENT
         {
             InitializeComponent();
             ReadChambrebtn_Click(se, ev);
+            vider();
         }
 
         private void AddChambrebtn_Click(object sender, EventArgs e)
@@ -68,7 +60,7 @@ namespace HOTEL_MANAGMENT
         }
         void vider()
         {
-            TypechambreBox.Clear();
+            TypechambreBox.Text.DefaultIfEmpty();
             NumeroChambreBox.Clear();
             CapasiteChambreBox.Clear();
             PrixChambreBox.Clear();
@@ -231,39 +223,39 @@ namespace HOTEL_MANAGMENT
                 {
                     Filter = "CSV files (*.csv)|*.csv",
                     Title = "Choisissez l'emplacement pour sauvegarder le fichier CSV",
-                    FileName = "table_Chambre.csv" 
+                    FileName = "table_Chambre.csv"
                 };
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     //  creation  fichier CSV
                     string filePath = saveFileDialog.FileName;
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    // Écrire les en-têtes des colonn
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    using (StreamWriter writer = new StreamWriter(filePath))
                     {
-                        writer.Write(reader.GetName(i));
-                        if (i < reader.FieldCount - 1)
-                            writer.Write(",");
-                    }
-                    writer.WriteLine();
-
-                    // Écrire les lignes 
-                    while (reader.Read())
-                    {
+                        // Écrire les en-têtes des colonn
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            writer.Write(reader[i].ToString());
+                            writer.Write(reader.GetName(i));
                             if (i < reader.FieldCount - 1)
                                 writer.Write(",");
                         }
                         writer.WriteLine();
+
+                        // Écrire les lignes 
+                        while (reader.Read())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                writer.Write(reader[i].ToString());
+                                if (i < reader.FieldCount - 1)
+                                    writer.Write(",");
+                            }
+                            writer.WriteLine();
+                        }
+
+
+                        MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
+                        cnx.Close();
                     }
-
-
-                    MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
-                    cnx.Close();
-                }
                 }
                 else
                 {

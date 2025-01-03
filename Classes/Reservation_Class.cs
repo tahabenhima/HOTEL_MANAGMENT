@@ -19,7 +19,7 @@ namespace HOTEL_MANAGMENT.Classes
         public float PrixTotal { get; set; }
         public bool Statut { get; set; }
         private static SqlCommand cmd;
-        private static Connection_Classe cn;
+        private static Connection_Classe cn = new Connection_Classe();
         // Constructor
         public Reservation_Class( DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
@@ -79,7 +79,44 @@ namespace HOTEL_MANAGMENT.Classes
 
         }
 
+        public static ListView AfficherchabrerNonReserve(DateTime debutLocation, DateTime finLocation)
+        {
+            ListView l = new ListView { };
 
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query2 = @"SELECT *FROM Chambre c 
+            WHERE NOT EXISTS 
+            (SELECT 1 FROM Reservation r
+            WHERE r.id_Chambre = c.id AND r.dateSortie >= @Debut_Location AND r.dateArrive <= @Fin_Location);";
+
+
+            cmd = new SqlCommand(query2, cnx);
+            cmd.Parameters.AddWithValue("@Debut_Location", debutLocation);
+            cmd.Parameters.AddWithValue("@Fin_Location", finLocation);
+            try
+            {
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ListViewItem items = new ListViewItem(reader["type_Chambre"].ToString());
+                    items.SubItems.Add(reader["numero"].ToString());
+                    items.SubItems.Add(reader["Prix"].ToString());
+                    items.SubItems.Add(reader["Capacite"].ToString());
+                    
+                    items.SubItems.Add(reader["id"].ToString());
+                    l.Items.Add(items);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR " + ex);
+            }
+            cnx.Close();
+            return l;
+
+        }
 
     }
 }

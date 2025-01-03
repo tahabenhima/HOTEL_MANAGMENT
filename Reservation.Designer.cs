@@ -38,16 +38,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DateFinReservation = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            DateDebutReservation = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            label1 = new Label();
-            label2 = new Label();
             labeltype = new Label();
             Reserverbtn = new Guna.UI2.WinForms.Guna2Button();
             Carcheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -77,78 +67,26 @@
             labelMarque = new Label();
             labelCouleur = new Label();
             labelNom = new Label();
-            SearchCarLocationBtn = new Guna.UI2.WinForms.Guna2Button();
             labelPrix = new Label();
             labelp = new Label();
             labelMatricule = new Label();
             label9 = new Label();
             getCarId = new Label();
+            ListViewChambre = new ListView();
+            type = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
+            id = new ColumnHeader();
             SuspendLayout();
-            // 
-            // DateFinReservation
-            // 
-            DateFinReservation.BorderRadius = 10;
-            DateFinReservation.BorderThickness = 1;
-            DateFinReservation.Checked = true;
-            DateFinReservation.CustomizableEdges = customizableEdges1;
-            DateFinReservation.FillColor = Color.AliceBlue;
-            DateFinReservation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DateFinReservation.Format = DateTimePickerFormat.Long;
-            DateFinReservation.Location = new Point(208, 117);
-            DateFinReservation.Margin = new Padding(3, 4, 3, 4);
-            DateFinReservation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateFinReservation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateFinReservation.Name = "DateFinReservation";
-            DateFinReservation.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            DateFinReservation.Size = new Size(159, 36);
-            DateFinReservation.TabIndex = 11;
-            DateFinReservation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
-            // 
-            // DateDebutReservation
-            // 
-            DateDebutReservation.BorderRadius = 10;
-            DateDebutReservation.BorderThickness = 1;
-            DateDebutReservation.Checked = true;
-            DateDebutReservation.CustomizableEdges = customizableEdges3;
-            DateDebutReservation.FillColor = Color.AliceBlue;
-            DateDebutReservation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DateDebutReservation.Format = DateTimePickerFormat.Long;
-            DateDebutReservation.Location = new Point(208, 56);
-            DateDebutReservation.Margin = new Padding(3, 4, 3, 4);
-            DateDebutReservation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            DateDebutReservation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            DateDebutReservation.Name = "DateDebutReservation";
-            DateDebutReservation.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DateDebutReservation.Size = new Size(159, 36);
-            DateDebutReservation.TabIndex = 10;
-            DateDebutReservation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(73, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(96, 23);
-            label1.TabIndex = 9;
-            label1.Text = "Date debut";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(73, 117);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 23);
-            label2.TabIndex = 8;
-            label2.Text = "Date fin";
             // 
             // labeltype
             // 
             labeltype.AutoSize = true;
-            labeltype.Location = new Point(73, 181);
+            labeltype.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            labeltype.Location = new Point(73, 164);
             labeltype.Name = "labeltype";
-            labeltype.Size = new Size(40, 20);
+            labeltype.Size = new Size(46, 23);
             labeltype.TabIndex = 37;
             labeltype.Text = "Type";
             // 
@@ -157,7 +95,7 @@
             Reserverbtn.BorderColor = Color.Gray;
             Reserverbtn.BorderRadius = 5;
             Reserverbtn.BorderThickness = 1;
-            Reserverbtn.CustomizableEdges = customizableEdges5;
+            Reserverbtn.CustomizableEdges = customizableEdges1;
             Reserverbtn.DisabledState.BorderColor = Color.DarkGray;
             Reserverbtn.DisabledState.CustomBorderColor = Color.DarkGray;
             Reserverbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -168,7 +106,7 @@
             Reserverbtn.Location = new Point(73, 722);
             Reserverbtn.Margin = new Padding(2, 3, 2, 3);
             Reserverbtn.Name = "Reserverbtn";
-            Reserverbtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            Reserverbtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Reserverbtn.Size = new Size(202, 43);
             Reserverbtn.TabIndex = 41;
             Reserverbtn.Text = "Reserver Chambre";
@@ -235,46 +173,44 @@
             DateFinCarLocation.BorderRadius = 10;
             DateFinCarLocation.BorderThickness = 1;
             DateFinCarLocation.Checked = true;
-            DateFinCarLocation.CustomizableEdges = customizableEdges7;
+            DateFinCarLocation.CustomizableEdges = customizableEdges3;
             DateFinCarLocation.FillColor = Color.AliceBlue;
             DateFinCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateFinCarLocation.Format = DateTimePickerFormat.Long;
-            DateFinCarLocation.Location = new Point(957, 300);
+            DateFinCarLocation.Location = new Point(208, 90);
             DateFinCarLocation.Margin = new Padding(3, 4, 3, 4);
             DateFinCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateFinCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateFinCarLocation.Name = "DateFinCarLocation";
-            DateFinCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            DateFinCarLocation.Size = new Size(159, 36);
+            DateFinCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            DateFinCarLocation.Size = new Size(231, 36);
             DateFinCarLocation.TabIndex = 50;
             DateFinCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
-            DateFinCarLocation.Visible = false;
             // 
             // DateDebutCarLocation
             // 
             DateDebutCarLocation.BorderRadius = 10;
             DateDebutCarLocation.BorderThickness = 1;
             DateDebutCarLocation.Checked = true;
-            DateDebutCarLocation.CustomizableEdges = customizableEdges9;
+            DateDebutCarLocation.CustomizableEdges = customizableEdges5;
             DateDebutCarLocation.FillColor = Color.AliceBlue;
             DateDebutCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateDebutCarLocation.Format = DateTimePickerFormat.Long;
-            DateDebutCarLocation.Location = new Point(957, 239);
+            DateDebutCarLocation.Location = new Point(208, 29);
             DateDebutCarLocation.Margin = new Padding(3, 4, 3, 4);
             DateDebutCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateDebutCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateDebutCarLocation.Name = "DateDebutCarLocation";
-            DateDebutCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            DateDebutCarLocation.Size = new Size(159, 36);
+            DateDebutCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            DateDebutCarLocation.Size = new Size(231, 36);
             DateDebutCarLocation.TabIndex = 49;
             DateDebutCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
-            DateDebutCarLocation.Visible = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(822, 709);
+            label5.Location = new Point(821, 580);
             label5.Name = "label5";
             label5.Size = new Size(70, 23);
             label5.TabIndex = 48;
@@ -285,18 +221,17 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(822, 239);
+            label3.Location = new Point(73, 29);
             label3.Name = "label3";
             label3.Size = new Size(96, 23);
             label3.TabIndex = 47;
             label3.Text = "Date debut";
-            label3.Visible = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(822, 605);
+            label6.Location = new Point(821, 476);
             label6.Name = "label6";
             label6.Size = new Size(48, 23);
             label6.TabIndex = 46;
@@ -307,12 +242,11 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(822, 300);
+            label7.Location = new Point(73, 90);
             label7.Name = "label7";
             label7.Size = new Size(71, 23);
             label7.TabIndex = 45;
             label7.Text = "Date fin";
-            label7.Visible = false;
             // 
             // Nbr_Seances_Label
             // 
@@ -327,7 +261,7 @@
             // 
             // Nbr_Seances_Box
             // 
-            Nbr_Seances_Box.CustomizableEdges = customizableEdges11;
+            Nbr_Seances_Box.CustomizableEdges = customizableEdges7;
             Nbr_Seances_Box.DefaultText = "";
             Nbr_Seances_Box.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             Nbr_Seances_Box.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -342,7 +276,7 @@
             Nbr_Seances_Box.PasswordChar = '\0';
             Nbr_Seances_Box.PlaceholderText = "";
             Nbr_Seances_Box.SelectedText = "";
-            Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Nbr_Seances_Box.Size = new Size(150, 29);
             Nbr_Seances_Box.TabIndex = 55;
             Nbr_Seances_Box.Visible = false;
@@ -371,7 +305,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges13;
+            guna2Button1.CustomizableEdges = customizableEdges9;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -379,10 +313,10 @@
             guna2Button1.FillColor = Color.SlateGray;
             guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(132, 239);
+            guna2Button1.Location = new Point(135, 214);
             guna2Button1.Margin = new Padding(3, 4, 3, 4);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Button1.Size = new Size(170, 48);
             guna2Button1.TabIndex = 60;
             guna2Button1.Text = "Chercher";
@@ -392,27 +326,27 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Chambre Simple", "Chambre Double", "Suite" });
-            comboBox1.Location = new Point(205, 189);
+            comboBox1.Location = new Point(208, 164);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(231, 28);
             comboBox1.TabIndex = 61;
             // 
             // labelMsg
             // 
             labelMsg.AutoSize = true;
-            labelMsg.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMsg.Location = new Point(1097, 617);
+            labelMsg.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelMsg.ForeColor = Color.Red;
+            labelMsg.Location = new Point(1155, 528);
             labelMsg.Name = "labelMsg";
-            labelMsg.Size = new Size(71, 23);
+            labelMsg.Size = new Size(0, 32);
             labelMsg.TabIndex = 62;
-            labelMsg.Text = "Date fin";
             labelMsg.Visible = false;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(823, 657);
+            label4.Location = new Point(822, 528);
             label4.Name = "label4";
             label4.Size = new Size(78, 23);
             label4.TabIndex = 65;
@@ -422,7 +356,7 @@
             // ListViewCar
             // 
             ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12 });
-            ListViewCar.Location = new Point(822, 354);
+            ListViewCar.Location = new Point(821, 239);
             ListViewCar.Margin = new Padding(3, 4, 3, 4);
             ListViewCar.Name = "ListViewCar";
             ListViewCar.Size = new Size(829, 216);
@@ -466,7 +400,7 @@
             // 
             labelMarque.AutoSize = true;
             labelMarque.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMarque.Location = new Point(935, 657);
+            labelMarque.Location = new Point(934, 528);
             labelMarque.Name = "labelMarque";
             labelMarque.Size = new Size(70, 23);
             labelMarque.TabIndex = 70;
@@ -477,7 +411,7 @@
             // 
             labelCouleur.AutoSize = true;
             labelCouleur.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCouleur.Location = new Point(935, 709);
+            labelCouleur.Location = new Point(934, 580);
             labelCouleur.Name = "labelCouleur";
             labelCouleur.Size = new Size(70, 23);
             labelCouleur.TabIndex = 69;
@@ -488,39 +422,18 @@
             // 
             labelNom.AutoSize = true;
             labelNom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNom.Location = new Point(935, 605);
+            labelNom.Location = new Point(934, 476);
             labelNom.Name = "labelNom";
             labelNom.Size = new Size(48, 23);
             labelNom.TabIndex = 68;
             labelNom.Text = "Nom";
             labelNom.Visible = false;
             // 
-            // SearchCarLocationBtn
-            // 
-            SearchCarLocationBtn.BorderRadius = 10;
-            SearchCarLocationBtn.CustomizableEdges = customizableEdges15;
-            SearchCarLocationBtn.DisabledState.BorderColor = Color.DarkGray;
-            SearchCarLocationBtn.DisabledState.CustomBorderColor = Color.DarkGray;
-            SearchCarLocationBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            SearchCarLocationBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            SearchCarLocationBtn.FillColor = Color.SlateGray;
-            SearchCarLocationBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            SearchCarLocationBtn.ForeColor = Color.White;
-            SearchCarLocationBtn.Location = new Point(1178, 255);
-            SearchCarLocationBtn.Margin = new Padding(3, 4, 3, 4);
-            SearchCarLocationBtn.Name = "SearchCarLocationBtn";
-            SearchCarLocationBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            SearchCarLocationBtn.Size = new Size(170, 48);
-            SearchCarLocationBtn.TabIndex = 71;
-            SearchCarLocationBtn.Text = "Chercher Voiture";
-            SearchCarLocationBtn.Visible = false;
-            SearchCarLocationBtn.Click += SearchCarLocationBtn_Click_1;
-            // 
             // labelPrix
             // 
             labelPrix.AutoSize = true;
             labelPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPrix.Location = new Point(935, 806);
+            labelPrix.Location = new Point(934, 677);
             labelPrix.Name = "labelPrix";
             labelPrix.Size = new Size(39, 23);
             labelPrix.TabIndex = 75;
@@ -531,7 +444,7 @@
             // 
             labelp.AutoSize = true;
             labelp.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelp.Location = new Point(821, 806);
+            labelp.Location = new Point(820, 677);
             labelp.Name = "labelp";
             labelp.Size = new Size(39, 23);
             labelp.TabIndex = 74;
@@ -542,7 +455,7 @@
             // 
             labelMatricule.AutoSize = true;
             labelMatricule.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMatricule.Location = new Point(935, 758);
+            labelMatricule.Location = new Point(934, 629);
             labelMatricule.Name = "labelMatricule";
             labelMatricule.Size = new Size(82, 23);
             labelMatricule.TabIndex = 73;
@@ -553,7 +466,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(823, 758);
+            label9.Location = new Point(822, 629);
             label9.Name = "label9";
             label9.Size = new Size(82, 23);
             label9.TabIndex = 72;
@@ -563,24 +476,61 @@
             // getCarId
             // 
             getCarId.AutoSize = true;
-            getCarId.Location = new Point(925, 574);
+            getCarId.Location = new Point(935, 459);
             getCarId.Name = "getCarId";
-            getCarId.Size = new Size(58, 20);
+            getCarId.Size = new Size(13, 20);
             getCarId.TabIndex = 76;
-            getCarId.Text = "label10";
+            getCarId.Text = " ";
             getCarId.Visible = false;
+            // 
+            // ListViewChambre
+            // 
+            ListViewChambre.BackColor = Color.WhiteSmoke;
+            ListViewChambre.Columns.AddRange(new ColumnHeader[] { type, columnHeader2, columnHeader3, columnHeader4, id });
+            ListViewChambre.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ListViewChambre.Location = new Point(37, 270);
+            ListViewChambre.Margin = new Padding(3, 4, 3, 4);
+            ListViewChambre.Name = "ListViewChambre";
+            ListViewChambre.Size = new Size(603, 211);
+            ListViewChambre.TabIndex = 77;
+            ListViewChambre.UseCompatibleStateImageBehavior = false;
+            ListViewChambre.View = View.Details;
+            // 
+            // type
+            // 
+            type.Text = "Type";
+            type.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Numero";
+            columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Prix";
+            columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Capasite";
+            columnHeader4.Width = 150;
+            // 
+            // id
+            // 
+            id.Width = 0;
             // 
             // Reservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1420, 856);
+            Controls.Add(ListViewChambre);
             Controls.Add(getCarId);
             Controls.Add(labelPrix);
             Controls.Add(labelp);
             Controls.Add(labelMatricule);
             Controls.Add(label9);
-            Controls.Add(SearchCarLocationBtn);
             Controls.Add(labelMarque);
             Controls.Add(labelCouleur);
             Controls.Add(labelNom);
@@ -604,10 +554,6 @@
             Controls.Add(Carcheckbox);
             Controls.Add(Reserverbtn);
             Controls.Add(labeltype);
-            Controls.Add(DateFinReservation);
-            Controls.Add(DateDebutReservation);
-            Controls.Add(label1);
-            Controls.Add(label2);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Reservation";
             Text = "Reservation";
@@ -617,11 +563,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateFinReservation;
-        private Guna.UI2.WinForms.Guna2DateTimePicker DateDebutReservation;
-        private Label label1;
-        private Label label2;
         private Label labeltype;
         private Guna.UI2.WinForms.Guna2Button Reserverbtn;
         private Guna.UI2.WinForms.Guna2CheckBox Carcheckbox;
@@ -652,11 +593,16 @@
         private Label labelMarque;
         private Label labelCouleur;
         private Label labelNom;
-        private Guna.UI2.WinForms.Guna2Button SearchCarLocationBtn;
         private Label labelPrix;
         private Label labelp;
         private Label labelMatricule;
         private Label label9;
         private Label getCarId;
+        private ListView ListViewChambre;
+        private ColumnHeader type;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
+        private ColumnHeader id;
     }
 }

@@ -30,7 +30,25 @@ namespace HOTEL_MANAGMENT
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ListViewCar.Items.Clear();
 
+                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                int n = Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation).Items.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    ListViewChambre.Items.Add((ListViewItem)Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation).Items[i].Clone());
+                }
+
+                //vider();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR Affichage  " + ex);
+            }
         }
 
         private void SearchCarLocationBtn_Click(object sender, EventArgs e)
@@ -47,38 +65,53 @@ namespace HOTEL_MANAGMENT
         {
             if (Carcheckbox.Checked)
             {
-                SearchCarLocationBtn.Visible = true;
-                labelMsg.Visible = true;
-                label3.Visible = true;
-                DateDebutCarLocation.Visible = true;
-                label7.Visible = true;
-                DateFinCarLocation.Visible = true;
-                label6.Visible = true;
-                labelNom.Visible = true;
-                label5.Visible = true;
-                labelMarque.Visible = true;
-                label4.Visible = true;
-                labelCouleur.Visible = true;
                 ListViewCar.Visible = true;
-                label9.Visible = true;
+                labelMsg.Visible = true;
+                
+                
+                try
+                {
+                    ListViewCar.Items.Clear();
+
+                    DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                    DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                    int n = Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items.Count;
+                    for (int i = 0; i < n; i++)
+                    {
+                        ListViewCar.Items.Add((ListViewItem)Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items[i].Clone());
+                    }
+
+                    //vider();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERREUR Affichage  " + ex);
+                }
 
             }
             else
             {
-                SearchCarLocationBtn.Visible = false;
+                ListViewCar.Visible = false;
                 labelMsg.Visible = false;
-                label3.Visible = false;
-                DateDebutCarLocation.Visible = false;
-                label7.Visible = false;
-                DateFinCarLocation.Visible = false;
+               
                 label6.Visible = false;
                 labelNom.Visible = false;
+
                 label5.Visible = false;
+
                 labelMarque.Visible = false;
                 label4.Visible = false;
+
                 labelCouleur.Visible = false;
-                ListViewCar.Visible = false;
+
+                
+
                 label9.Visible = false;
+                labelMatricule.Visible = false;
+                labelp.Visible = false;
+
+                labelPrix.Visible = false;
             }
         }
 
@@ -95,29 +128,6 @@ namespace HOTEL_MANAGMENT
                 Nbr_Seances_Box.Visible = false;
             }
         }
-
-        private void SearchCarLocationBtn_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                ListViewCar.Items.Clear();
-
-                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
-                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
-                int n = Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items.Count;
-                for (int i = 0; i < n; i++)
-                {
-                    ListViewCar.Items.Add((ListViewItem)Car_Class.AfficherCarNonLocation(debutLocation, finLocation).Items[i].Clone());
-                }
-
-                //vider();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERREUR Affichage  " + ex);
-            }
-}
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,6 +147,9 @@ namespace HOTEL_MANAGMENT
                 label7.Visible = true;
                 labelp.Visible = true;
                 labelPrix.Visible = true;
+                label6.Visible = true;
+                label9.Visible = true;
+                labelp.Visible = true;
                 getCarId.Text = ListViewCar.SelectedItems[0].SubItems[5].Text;
                 labelNom.Text = selectedItem.SubItems[0].Text;
                 labelMatricule.Text = selectedItem.SubItems[2].Text;

@@ -52,12 +52,12 @@
             CapasiteChambreBox = new TextBox();
             NumeroChambreBox = new TextBox();
             PrixChambreBox = new TextBox();
-            TypechambreBox = new TextBox();
             labelnum = new Label();
             labelcapa = new Label();
             labeltype = new Label();
             getid = new Label();
             telechargerCSVbtn = new Guna.UI2.WinForms.Guna2Button();
+            TypechambreBox = new ComboBox();
             SuspendLayout();
             // 
             // prixlabel
@@ -219,14 +219,6 @@
             PrixChambreBox.Size = new Size(225, 27);
             PrixChambreBox.TabIndex = 37;
             // 
-            // TypechambreBox
-            // 
-            TypechambreBox.Location = new Point(138, 75);
-            TypechambreBox.Margin = new Padding(3, 4, 3, 4);
-            TypechambreBox.Name = "TypechambreBox";
-            TypechambreBox.Size = new Size(225, 27);
-            TypechambreBox.TabIndex = 36;
-            // 
             // labelnum
             // 
             labelnum.AutoSize = true;
@@ -287,12 +279,22 @@
             telechargerCSVbtn.Text = "Telecharger les données sous form csv";
             telechargerCSVbtn.Click += telechargerCSVbtn_Click;
             // 
+            // TypechambreBox
+            // 
+            TypechambreBox.FormattingEnabled = true;
+            TypechambreBox.Items.AddRange(new object[] { "Chambre Simple", "Chambre Double", "Suite" });
+            TypechambreBox.Location = new Point(138, 71);
+            TypechambreBox.Name = "TypechambreBox";
+            TypechambreBox.Size = new Size(231, 28);
+            TypechambreBox.TabIndex = 62;
+            // 
             // Chambre
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(914, 623);
+            Controls.Add(TypechambreBox);
             Controls.Add(telechargerCSVbtn);
             Controls.Add(getid);
             Controls.Add(prixlabel);
@@ -304,7 +306,6 @@
             Controls.Add(CapasiteChambreBox);
             Controls.Add(NumeroChambreBox);
             Controls.Add(PrixChambreBox);
-            Controls.Add(TypechambreBox);
             Controls.Add(labelnum);
             Controls.Add(labelcapa);
             Controls.Add(labeltype);
@@ -331,12 +332,12 @@
         private TextBox CapasiteChambreBox;
         private TextBox NumeroChambreBox;
         private TextBox PrixChambreBox;
-        private TextBox TypechambreBox;
         private Label labelnum;
         private Label labelcapa;
         private Label labeltype;
         private Label getid;
         private ColumnHeader id;
         private Guna.UI2.WinForms.Guna2Button telechargerCSVbtn;
+        private ComboBox TypechambreBox;
     }
 }

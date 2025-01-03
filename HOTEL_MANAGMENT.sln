@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HOTEL_MANAGMENT", "HOTEL_MANAGMENT.csproj", "{D7FED6FD-CA46-4431-8011-6E7E091A5CB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HOTEL_MANAGEMENT_ASP", "..\HOTEL_MANAGEMENT_ASP\HOTEL_MANAGEMENT_ASP.csproj", "{BC344876-A984-47C6-A172-1C9240EAC092}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D7FED6FD-CA46-4431-8011-6E7E091A5CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7FED6FD-CA46-4431-8011-6E7E091A5CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7FED6FD-CA46-4431-8011-6E7E091A5CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC344876-A984-47C6-A172-1C9240EAC092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC344876-A984-47C6-A172-1C9240EAC092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC344876-A984-47C6-A172-1C9240EAC092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC344876-A984-47C6-A172-1C9240EAC092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

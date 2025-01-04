@@ -33,7 +33,8 @@ namespace HOTEL_MANAGMENT
              Food_Class  fo = new Food_Class();
             Spa_Classe  sp = new Spa_Classe();
             Car_Class  ca = new Car_Class();
-            Reservation_Class r = new Reservation_Class(cl, ch, fo, sp, ca, debutR, finR, 1200, true);
+            // Reservation_Class r = new Reservation_Class(cl, ch, fo, sp, ca, debutR, finR, 1200, true);
+            Reservation_Class r = new Reservation_Class();
             r.AjouterReserve();
 
 

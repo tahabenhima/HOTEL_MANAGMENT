@@ -31,7 +31,7 @@ namespace HOTEL_MANAGMENT.Classes
             cn = new Connection_Classe();
 
         }
-
+        public Reservation_Class() { }
         // Constructor2
         public Reservation_Class(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
@@ -129,10 +129,10 @@ namespace HOTEL_MANAGMENT.Classes
             //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
             cmd.Parameters.AddWithValue("@id_Client", 2);
             cmd.Parameters.AddWithValue("@id_Chambre", 1002);
-            cmd.Parameters.AddWithValue("@id_Food", this.food_obj);
-            cmd.Parameters.AddWithValue("@id_Spa", this.spa_obj);
+            cmd.Parameters.AddWithValue("@id_Food",1);
+            cmd.Parameters.AddWithValue("@id_Spa", 1);
 
-            cmd.Parameters.AddWithValue("@id_Car", this.car_obj);
+            cmd.Parameters.AddWithValue("@id_Car", 1);
             cmd.Parameters.AddWithValue("@dateArrive", "2023-10-01");
             cmd.Parameters.AddWithValue("@dateSortie", "2025-10-01");
             

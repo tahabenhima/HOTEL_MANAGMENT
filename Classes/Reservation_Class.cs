@@ -117,6 +117,41 @@ namespace HOTEL_MANAGMENT.Classes
             return l;
 
         }
+        public void   AjouterReserve()
+        {
+
+
+
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query = "insert into Reservation (id_Client,id_Chambre,id_Food,id_Spa,id_Car,dateArrive,dateSortie,prixtotal,statut) values (@id_Client,@id_Chambre,@id_Food,@id_Spa,@id_Car,@dateArrive,@dateSortie,@prixtotal,@statut)";
+            cmd = new SqlCommand(query, cnx);
+            //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
+            cmd.Parameters.AddWithValue("@id_Client", 2);
+            cmd.Parameters.AddWithValue("@id_Chambre", 1002);
+            cmd.Parameters.AddWithValue("@id_Food", this.food_obj);
+            cmd.Parameters.AddWithValue("@id_Spa", this.spa_obj);
+
+            cmd.Parameters.AddWithValue("@id_Car", this.car_obj);
+            cmd.Parameters.AddWithValue("@dateArrive", "2023-10-01");
+            cmd.Parameters.AddWithValue("@dateSortie", "2025-10-01");
+            
+            cmd.Parameters.AddWithValue("@prixtotal", 1200);
+            cmd.Parameters.AddWithValue("@statut", 1);
+
+            try
+            {
+
+                int row = cmd.ExecuteNonQuery();
+                MessageBox.Show("Car successefuly added!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR" + ex);
+
+            }
+            cnx.Close();
+        }
 
     }
 }

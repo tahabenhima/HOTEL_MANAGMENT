@@ -14,7 +14,7 @@ namespace HOTEL_MANAGMENT.Classes
         public int id_food { get; set; }
         public float Prix { get; set; }
         public int Quantite { get; set; }
-        
+        public Food_Class() { }
         public Food_Class(float prix, int quantite)
         {
             

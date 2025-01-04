@@ -20,7 +20,7 @@ namespace HOTEL_MANAGMENT.Classes
         private static SqlCommand cmd;
         private static Connection_Classe cn=new Connection_Classe();
 
-
+        public Car_Class() { }
         public Car_Class(string Nom, string Marque, string Matricule, string Color, float Prix )
         {
             this.Nom = Nom;

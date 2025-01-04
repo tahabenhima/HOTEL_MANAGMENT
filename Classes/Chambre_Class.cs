@@ -17,7 +17,7 @@ namespace HOTEL_MANAGMENT.Classes
         private static SqlCommand cmd;
         private static Connection_Classe cn;
 
-
+        public Chambre_Class() { }
         public Chambre_Class( string TypeChambre, int Numero,  int Capacite, float Prix)
         {
             

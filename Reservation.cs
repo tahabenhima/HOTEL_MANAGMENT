@@ -22,8 +22,19 @@ namespace HOTEL_MANAGMENT
 
         private void Reserverbtn_Click(object sender, EventArgs e)
         {
+            DateTime debutR = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+            DateTime finR = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
 
+            //(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
 
+            //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
+            Client_Class  cl = new Client_Class();
+             Chambre_Class  ch = new Chambre_Class();
+             Food_Class  fo = new Food_Class();
+            Spa_Classe  sp = new Spa_Classe();
+            Car_Class  ca = new Car_Class();
+            Reservation_Class r = new Reservation_Class(cl, ch, fo, sp, ca, debutR, finR, 1200, true);
+            r.AjouterReserve();
 
 
         }
@@ -166,8 +177,6 @@ namespace HOTEL_MANAGMENT
             {
 
                 ListViewItem selectedItem = ListViewChambre.SelectedItems[0];
-
-
                 label11.Visible = true;
                 label15.Visible = true;
                 label16.Visible = true;

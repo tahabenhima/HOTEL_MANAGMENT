@@ -15,7 +15,7 @@ namespace HOTEL_MANAGMENT.Classes
 
         private static SqlCommand cmd;
         private static Connection_Classe cn;
-
+        public Spa_Classe() { }
 
         public Spa_Classe(int Nbr_Seances,float Prix) {
             this.Nbr_Seances = Nbr_Seances;

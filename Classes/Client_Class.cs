@@ -28,7 +28,7 @@ namespace HOTEL_MANAGMENT.Classes
 
             cn = new Connection_Classe();
         }
-
+        public Client_Class() { }
         static public Boolean DeleteClient(int e)
         {
             try
@@ -91,6 +91,7 @@ namespace HOTEL_MANAGMENT.Classes
             }
             return list;
         }
+        
     }
 }
 

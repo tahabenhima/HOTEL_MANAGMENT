@@ -9,14 +9,16 @@ namespace HOTEL_MANAGMENT.Classes
 {
     internal class Client_Class
     {
-        string Nom { get; set; }
-        string Prenom { get; set; }
-        string Adresse { get; set; }
-        string CIN { get; set; }
-        int Tele { get; set; }
-        DateTime DateRejoin { get; set; }
+        public int id_Client { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Adresse { get; set; }
+        public string CIN { get; set; }
+        public int Tele { get; set; }
+        public DateTime DateRejoin { get; set; }
         static private SqlCommand cmd;
         static private Connection_Classe cn;
+        public Client_Class() { this.id_Client = 2; }
         public Client_Class(string Nom, string Prenom, string Adresse, string CIN, int Tele, DateTime DateRejoin)
         {
             this.Nom = Nom;
@@ -28,7 +30,19 @@ namespace HOTEL_MANAGMENT.Classes
 
             cn = new Connection_Classe();
         }
-        public Client_Class() { }
+        public Client_Class(int id,string Nom, string Prenom, string Adresse, string CIN, int Tele, DateTime DateRejoin)
+        {
+            this.id_Client=id;  
+            this.Nom = Nom;
+            this.Prenom = Prenom;
+            this.Adresse = Adresse;
+            this.CIN = CIN;
+            this.Tele = Tele;
+            this.DateRejoin = DateRejoin;
+
+            cn = new Connection_Classe();
+        }
+    
         static public Boolean DeleteClient(int e)
         {
             try

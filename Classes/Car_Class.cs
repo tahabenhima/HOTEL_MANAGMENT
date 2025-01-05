@@ -10,12 +10,13 @@ namespace HOTEL_MANAGMENT.Classes
     internal class Car_Class
     {
         int id {  get; set; }   
-        string Nom { get; set; }
-        string Marque { get; set; }
-        string Matricule { get; set; }
-        string Color { get; set; }
-
-        float Prix { get; set; }
+        public string Nom { get; set; }
+        public string Marque { get; set; }
+        public string Matricule { get; set; }
+        public string Color { get; set; }
+        public int id_Car { get; set; }
+        
+        public float Prix { get; set; }
 
         private static SqlCommand cmd;
         private static Connection_Classe cn=new Connection_Classe();

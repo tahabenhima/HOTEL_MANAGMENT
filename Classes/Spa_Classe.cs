@@ -12,7 +12,8 @@ namespace HOTEL_MANAGMENT.Classes
     {  
         public   int   Nbr_Seances { get; set; }
         public float Prix { get; set; }
-
+        public int id_Spa { get; set; }
+        
         private static SqlCommand cmd;
         private static Connection_Classe cn;
         public Spa_Classe() { }
@@ -23,9 +24,16 @@ namespace HOTEL_MANAGMENT.Classes
             cn = new Connection_Classe();
 
 
-        } 
+        }
+        public Spa_Classe(int id_Spa, int Nbr_Seances, float Prix )
+        {
+            this.Nbr_Seances = Nbr_Seances;
+            this.Prix = Prix;
+            cn = new Connection_Classe();
 
-    /////////////////ajouter/////////
+
+        }
+        /////////////////ajouter/////////
         public   void Ajouter_Spa()
         {
             SqlConnection cnx = cn.GetConnection();

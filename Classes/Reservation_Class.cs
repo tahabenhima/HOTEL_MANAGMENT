@@ -10,12 +10,14 @@ namespace HOTEL_MANAGMENT.Classes
     internal class Reservation_Class
     {
         public Client_Class client_obj { get; set; }
+        
         public Chambre_Class chambre_obj { get; set; }
         public Food_Class food_obj { get; set; }
         public Spa_Classe spa_obj { get; set; }
         public Car_Class car_obj { get; set; }
         public DateTime DateArrive { get; set; }
         public DateTime DateSortie { get; set; }
+        public int NbrJour { get; set; }    
         public float PrixTotal { get; set; }
         public bool Statut { get; set; }
         private static SqlCommand cmd;
@@ -23,7 +25,7 @@ namespace HOTEL_MANAGMENT.Classes
         // Constructor
         public Reservation_Class( DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
-            
+            NbrJour = Math.Abs((dateArrive - dateSortie).Days);
             DateArrive = dateArrive;
             DateSortie = dateSortie;
             PrixTotal = prixTotal;
@@ -35,6 +37,7 @@ namespace HOTEL_MANAGMENT.Classes
         // Constructor2
         public Reservation_Class(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
+            NbrJour = Math.Abs((dateArrive - dateSortie).Days);
             this.client_obj = client ;
             this.chambre_obj = chambre;
             this.food_obj = food;
@@ -79,7 +82,7 @@ namespace HOTEL_MANAGMENT.Classes
 
         }
 
-        public static ListView AfficherchabrerNonReserve(DateTime debutLocation, DateTime finLocation)
+        public static ListView AfficherchabrerNonReserve(DateTime debutLocation, DateTime finLocation,string type)
         {
             ListView l = new ListView { };
 
@@ -88,12 +91,13 @@ namespace HOTEL_MANAGMENT.Classes
             string query2 = @"SELECT *FROM Chambre c 
             WHERE NOT EXISTS 
             (SELECT 1 FROM Reservation r
-            WHERE r.id_Chambre = c.id AND r.dateSortie >= @Debut_Location AND r.dateArrive <= @Fin_Location);";
+            WHERE r.id_Chambre = c.id AND r.dateSortie >= @Debut_Location AND r.dateArrive <= @Fin_Location )And c.type_Chambre= @type;";
 
 
             cmd = new SqlCommand(query2, cnx);
             cmd.Parameters.AddWithValue("@Debut_Location", debutLocation);
             cmd.Parameters.AddWithValue("@Fin_Location", finLocation);
+            cmd.Parameters.AddWithValue("@type", type);
             try
             {
 
@@ -117,33 +121,71 @@ namespace HOTEL_MANAGMENT.Classes
             return l;
 
         }
-        public void   AjouterReserve()
+        public void   AjouterReserve(float prixTotal)
         {
-
-
+            //int id_Client,int id_Chambre,int id_Food,int id_Spa,int id_Car
 
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
             string query = "insert into Reservation (id_Client,id_Chambre,id_Food,id_Spa,id_Car,dateArrive,dateSortie,prixtotal,statut) values (@id_Client,@id_Chambre,@id_Food,@id_Spa,@id_Car,@dateArrive,@dateSortie,@prixtotal,@statut)";
             cmd = new SqlCommand(query, cnx);
-            //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
-            cmd.Parameters.AddWithValue("@id_Client", 2);
-            cmd.Parameters.AddWithValue("@id_Chambre", 1002);
-            cmd.Parameters.AddWithValue("@id_Food",1);
-            cmd.Parameters.AddWithValue("@id_Spa", 1);
+            if (food_obj != null)
+            {
+                int id_Food = food_obj.id_food;
+                MessageBox.Show("Food " + id_Food);
+                cmd.Parameters.AddWithValue("@id_Food", id_Food);
+            }
+            else {
+                string id_Food = "NULL";
+                MessageBox.Show("Food " + id_Food);
+                cmd.Parameters.AddWithValue("@id_Food", id_Food);
+            }
 
-            cmd.Parameters.AddWithValue("@id_Car", 1);
+            if (spa_obj != null)
+            {
+                int id_Spa = spa_obj.id_Spa;
+                MessageBox.Show("Spa " + id_Spa);
+                cmd.Parameters.AddWithValue("@id_Spa", id_Spa);
+            }
+            else
+            {
+                string id_Spa = "NULL";
+                MessageBox.Show("Spa " + id_Spa);
+                cmd.Parameters.AddWithValue("@id_Spa", id_Spa);
+            }
+
+            if (car_obj != null)
+            {
+                int id_Car = car_obj.id_Car;
+                MessageBox.Show("Car " + id_Car);
+                cmd.Parameters.AddWithValue("@id_Car", id_Car);
+            }
+            else
+            {
+                string id_Car = "NULL";
+                MessageBox.Show("Car " + id_Car);
+                cmd.Parameters.AddWithValue("@id_Car", id_Car);
+            }
+            
+            
+            //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
+            cmd.Parameters.AddWithValue("@id_Client",this.client_obj.id_Client);
+            cmd.Parameters.AddWithValue("@id_Chambre", chambre_obj.id);
+            
+            
+
+            
             cmd.Parameters.AddWithValue("@dateArrive", "2023-10-01");
             cmd.Parameters.AddWithValue("@dateSortie", "2025-10-01");
             
-            cmd.Parameters.AddWithValue("@prixtotal", 1200);
+            cmd.Parameters.AddWithValue("@prixtotal", prixTotal);
             cmd.Parameters.AddWithValue("@statut", 1);
 
             try
             {
 
                 int row = cmd.ExecuteNonQuery();
-                MessageBox.Show("Car successefuly added!");
+                MessageBox.Show("Reservation successefuly added!");
             }
             catch (Exception ex)
             {
@@ -151,7 +193,9 @@ namespace HOTEL_MANAGMENT.Classes
 
             }
             cnx.Close();
+            
         }
+
 
     }
 }

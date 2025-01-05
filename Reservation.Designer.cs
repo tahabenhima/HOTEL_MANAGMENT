@@ -36,8 +36,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             labeltype = new Label();
             Reserverbtn = new Guna.UI2.WinForms.Guna2Button();
             Carcheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -50,7 +48,6 @@
             label6 = new Label();
             label7 = new Label();
             Nbr_Seances_Label = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            Nbr_Seances_Box = new Guna.UI2.WinForms.Guna2TextBox();
             label8 = new Label();
             prixtotal = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -87,15 +84,16 @@
             label11 = new Label();
             selectCapacite = new Label();
             label16 = new Label();
+            Nbr_Seances_Box = new ComboBox();
             SuspendLayout();
             // 
             // labeltype
             // 
             labeltype.AutoSize = true;
             labeltype.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            labeltype.Location = new Point(73, 164);
+            labeltype.Location = new Point(64, 123);
             labeltype.Name = "labeltype";
-            labeltype.Size = new Size(46, 23);
+            labeltype.Size = new Size(36, 17);
             labeltype.TabIndex = 37;
             labeltype.Text = "Type";
             // 
@@ -112,11 +110,11 @@
             Reserverbtn.FillColor = SystemColors.Control;
             Reserverbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Reserverbtn.ForeColor = Color.Black;
-            Reserverbtn.Location = new Point(73, 784);
-            Reserverbtn.Margin = new Padding(2, 3, 2, 3);
+            Reserverbtn.Location = new Point(64, 588);
+            Reserverbtn.Margin = new Padding(2);
             Reserverbtn.Name = "Reserverbtn";
             Reserverbtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            Reserverbtn.Size = new Size(202, 43);
+            Reserverbtn.Size = new Size(177, 32);
             Reserverbtn.TabIndex = 41;
             Reserverbtn.Text = "Reserver Chambre";
             Reserverbtn.Click += Reserverbtn_Click;
@@ -128,10 +126,9 @@
             Carcheckbox.CheckedState.BorderRadius = 0;
             Carcheckbox.CheckedState.BorderThickness = 0;
             Carcheckbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            Carcheckbox.Location = new Point(822, 186);
-            Carcheckbox.Margin = new Padding(3, 4, 3, 4);
+            Carcheckbox.Location = new Point(719, 140);
             Carcheckbox.Name = "Carcheckbox";
-            Carcheckbox.Size = new Size(78, 24);
+            Carcheckbox.Size = new Size(63, 19);
             Carcheckbox.TabIndex = 42;
             Carcheckbox.Text = "Voiture";
             Carcheckbox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -147,16 +144,16 @@
             Repascheckbx.CheckedState.BorderRadius = 0;
             Repascheckbx.CheckedState.BorderThickness = 0;
             Repascheckbx.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            Repascheckbx.Location = new Point(822, 55);
-            Repascheckbx.Margin = new Padding(3, 4, 3, 4);
+            Repascheckbx.Location = new Point(719, 41);
             Repascheckbx.Name = "Repascheckbx";
-            Repascheckbx.Size = new Size(71, 24);
+            Repascheckbx.Size = new Size(57, 19);
             Repascheckbx.TabIndex = 43;
             Repascheckbx.Text = "Repas";
             Repascheckbx.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
             Repascheckbx.UncheckedState.BorderRadius = 0;
             Repascheckbx.UncheckedState.BorderThickness = 0;
             Repascheckbx.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            Repascheckbx.CheckedChanged += Repascheckbx_CheckedChanged;
             // 
             // Spacheckbox
             // 
@@ -165,10 +162,9 @@
             Spacheckbox.CheckedState.BorderRadius = 0;
             Spacheckbox.CheckedState.BorderThickness = 0;
             Spacheckbox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            Spacheckbox.Location = new Point(822, 120);
-            Spacheckbox.Margin = new Padding(3, 4, 3, 4);
+            Spacheckbox.Location = new Point(719, 90);
             Spacheckbox.Name = "Spacheckbox";
-            Spacheckbox.Size = new Size(56, 24);
+            Spacheckbox.Size = new Size(45, 19);
             Spacheckbox.TabIndex = 44;
             Spacheckbox.Text = "Spa";
             Spacheckbox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -186,13 +182,12 @@
             DateFinCarLocation.FillColor = Color.AliceBlue;
             DateFinCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateFinCarLocation.Format = DateTimePickerFormat.Long;
-            DateFinCarLocation.Location = new Point(208, 90);
-            DateFinCarLocation.Margin = new Padding(3, 4, 3, 4);
+            DateFinCarLocation.Location = new Point(182, 68);
             DateFinCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateFinCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateFinCarLocation.Name = "DateFinCarLocation";
             DateFinCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DateFinCarLocation.Size = new Size(231, 36);
+            DateFinCarLocation.Size = new Size(202, 27);
             DateFinCarLocation.TabIndex = 50;
             DateFinCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
             // 
@@ -205,13 +200,12 @@
             DateDebutCarLocation.FillColor = Color.AliceBlue;
             DateDebutCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateDebutCarLocation.Format = DateTimePickerFormat.Long;
-            DateDebutCarLocation.Location = new Point(208, 29);
-            DateDebutCarLocation.Margin = new Padding(3, 4, 3, 4);
+            DateDebutCarLocation.Location = new Point(182, 22);
             DateDebutCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateDebutCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateDebutCarLocation.Name = "DateDebutCarLocation";
             DateDebutCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            DateDebutCarLocation.Size = new Size(231, 36);
+            DateDebutCarLocation.Size = new Size(202, 27);
             DateDebutCarLocation.TabIndex = 49;
             DateDebutCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
             // 
@@ -219,9 +213,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(821, 580);
+            label5.Location = new Point(718, 435);
             label5.Name = "label5";
-            label5.Size = new Size(70, 23);
+            label5.Size = new Size(55, 17);
             label5.TabIndex = 48;
             label5.Text = "Couleur";
             label5.Visible = false;
@@ -230,9 +224,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(73, 29);
+            label3.Location = new Point(64, 22);
             label3.Name = "label3";
-            label3.Size = new Size(96, 23);
+            label3.Size = new Size(76, 17);
             label3.TabIndex = 47;
             label3.Text = "Date debut";
             // 
@@ -240,9 +234,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(821, 476);
+            label6.Location = new Point(718, 357);
             label6.Name = "label6";
-            label6.Size = new Size(48, 23);
+            label6.Size = new Size(38, 17);
             label6.TabIndex = 46;
             label6.Text = "Nom";
             label6.Visible = false;
@@ -251,52 +245,30 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(73, 90);
+            label7.Location = new Point(64, 68);
             label7.Name = "label7";
-            label7.Size = new Size(71, 23);
+            label7.Size = new Size(55, 17);
             label7.TabIndex = 45;
             label7.Text = "Date fin";
             // 
             // Nbr_Seances_Label
             // 
             Nbr_Seances_Label.BackColor = Color.Transparent;
-            Nbr_Seances_Label.Location = new Point(822, 155);
-            Nbr_Seances_Label.Margin = new Padding(2, 3, 2, 3);
+            Nbr_Seances_Label.Location = new Point(719, 116);
+            Nbr_Seances_Label.Margin = new Padding(2);
             Nbr_Seances_Label.Name = "Nbr_Seances_Label";
-            Nbr_Seances_Label.Size = new Size(136, 22);
+            Nbr_Seances_Label.Size = new Size(108, 17);
             Nbr_Seances_Label.TabIndex = 56;
             Nbr_Seances_Label.Text = "Nombre de Seances";
             Nbr_Seances_Label.Visible = false;
-            // 
-            // Nbr_Seances_Box
-            // 
-            Nbr_Seances_Box.CustomizableEdges = customizableEdges7;
-            Nbr_Seances_Box.DefaultText = "";
-            Nbr_Seances_Box.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            Nbr_Seances_Box.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            Nbr_Seances_Box.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            Nbr_Seances_Box.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            Nbr_Seances_Box.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            Nbr_Seances_Box.Font = new Font("Segoe UI", 9F);
-            Nbr_Seances_Box.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            Nbr_Seances_Box.Location = new Point(969, 148);
-            Nbr_Seances_Box.Margin = new Padding(3, 5, 3, 5);
-            Nbr_Seances_Box.Name = "Nbr_Seances_Box";
-            Nbr_Seances_Box.PasswordChar = '\0';
-            Nbr_Seances_Box.PlaceholderText = "";
-            Nbr_Seances_Box.SelectedText = "";
-            Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Nbr_Seances_Box.Size = new Size(150, 29);
-            Nbr_Seances_Box.TabIndex = 55;
-            Nbr_Seances_Box.Visible = false;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(81, 729);
+            label8.Location = new Point(64, 547);
             label8.Name = "label8";
-            label8.Size = new Size(46, 23);
+            label8.Size = new Size(37, 17);
             label8.TabIndex = 57;
             label8.Text = "Total";
             // 
@@ -305,16 +277,16 @@
             prixtotal.AutoSize = true;
             prixtotal.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             prixtotal.ForeColor = Color.Maroon;
-            prixtotal.Location = new Point(147, 667);
+            prixtotal.Location = new Point(131, 544);
             prixtotal.Name = "prixtotal";
-            prixtotal.Size = new Size(17, 25);
+            prixtotal.Size = new Size(0, 20);
             prixtotal.TabIndex = 58;
-            prixtotal.Text = " ";
+            prixtotal.Click += prixtotal_Click;
             // 
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges9;
+            guna2Button1.CustomizableEdges = customizableEdges7;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -322,11 +294,10 @@
             guna2Button1.FillColor = Color.SlateGray;
             guna2Button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(135, 214);
-            guna2Button1.Margin = new Padding(3, 4, 3, 4);
+            guna2Button1.Location = new Point(118, 160);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Button1.Size = new Size(170, 48);
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.Size = new Size(149, 36);
             guna2Button1.TabIndex = 60;
             guna2Button1.Text = "Chercher";
             guna2Button1.Click += guna2Button1_Click;
@@ -335,9 +306,10 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Chambre Simple", "Chambre Double", "Suite" });
-            comboBox1.Location = new Point(208, 164);
+            comboBox1.Location = new Point(182, 123);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(231, 28);
+            comboBox1.Size = new Size(203, 23);
             comboBox1.TabIndex = 61;
             // 
             // labelMsg
@@ -345,9 +317,9 @@
             labelMsg.AutoSize = true;
             labelMsg.Font = new Font("Arial Rounded MT Bold", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelMsg.ForeColor = Color.Red;
-            labelMsg.Location = new Point(1155, 528);
+            labelMsg.Location = new Point(1011, 396);
             labelMsg.Name = "labelMsg";
-            labelMsg.Size = new Size(0, 32);
+            labelMsg.Size = new Size(0, 26);
             labelMsg.TabIndex = 62;
             labelMsg.Visible = false;
             // 
@@ -355,9 +327,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(822, 528);
+            label4.Location = new Point(719, 396);
             label4.Name = "label4";
-            label4.Size = new Size(78, 23);
+            label4.Size = new Size(61, 17);
             label4.TabIndex = 65;
             label4.Text = "Marquec";
             label4.Visible = false;
@@ -365,10 +337,9 @@
             // ListViewCar
             // 
             ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12 });
-            ListViewCar.Location = new Point(821, 239);
-            ListViewCar.Margin = new Padding(3, 4, 3, 4);
+            ListViewCar.Location = new Point(718, 179);
             ListViewCar.Name = "ListViewCar";
-            ListViewCar.Size = new Size(829, 216);
+            ListViewCar.Size = new Size(726, 163);
             ListViewCar.TabIndex = 67;
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
@@ -409,9 +380,9 @@
             // 
             labelMarque.AutoSize = true;
             labelMarque.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMarque.Location = new Point(934, 528);
+            labelMarque.Location = new Point(817, 396);
             labelMarque.Name = "labelMarque";
-            labelMarque.Size = new Size(70, 23);
+            labelMarque.Size = new Size(55, 17);
             labelMarque.TabIndex = 70;
             labelMarque.Text = "Marque";
             labelMarque.Visible = false;
@@ -420,9 +391,9 @@
             // 
             labelCouleur.AutoSize = true;
             labelCouleur.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCouleur.Location = new Point(934, 580);
+            labelCouleur.Location = new Point(817, 435);
             labelCouleur.Name = "labelCouleur";
-            labelCouleur.Size = new Size(70, 23);
+            labelCouleur.Size = new Size(55, 17);
             labelCouleur.TabIndex = 69;
             labelCouleur.Text = "Couleur";
             labelCouleur.Visible = false;
@@ -431,9 +402,9 @@
             // 
             labelNom.AutoSize = true;
             labelNom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNom.Location = new Point(934, 476);
+            labelNom.Location = new Point(817, 357);
             labelNom.Name = "labelNom";
-            labelNom.Size = new Size(48, 23);
+            labelNom.Size = new Size(38, 17);
             labelNom.TabIndex = 68;
             labelNom.Text = "Nom";
             labelNom.Visible = false;
@@ -442,9 +413,9 @@
             // 
             labelPrix.AutoSize = true;
             labelPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPrix.Location = new Point(934, 677);
+            labelPrix.Location = new Point(817, 508);
             labelPrix.Name = "labelPrix";
-            labelPrix.Size = new Size(39, 23);
+            labelPrix.Size = new Size(31, 17);
             labelPrix.TabIndex = 75;
             labelPrix.Text = "Prix";
             labelPrix.Visible = false;
@@ -453,9 +424,9 @@
             // 
             labelp.AutoSize = true;
             labelp.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelp.Location = new Point(820, 677);
+            labelp.Location = new Point(718, 508);
             labelp.Name = "labelp";
-            labelp.Size = new Size(39, 23);
+            labelp.Size = new Size(31, 17);
             labelp.TabIndex = 74;
             labelp.Text = "Prix";
             labelp.Visible = false;
@@ -464,9 +435,9 @@
             // 
             labelMatricule.AutoSize = true;
             labelMatricule.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMatricule.Location = new Point(934, 629);
+            labelMatricule.Location = new Point(817, 472);
             labelMatricule.Name = "labelMatricule";
-            labelMatricule.Size = new Size(82, 23);
+            labelMatricule.Size = new Size(64, 17);
             labelMatricule.TabIndex = 73;
             labelMatricule.Text = "Matricule";
             labelMatricule.Visible = false;
@@ -475,9 +446,9 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(822, 629);
+            label9.Location = new Point(719, 472);
             label9.Name = "label9";
-            label9.Size = new Size(82, 23);
+            label9.Size = new Size(64, 17);
             label9.TabIndex = 72;
             label9.Text = "Matricule";
             label9.Visible = false;
@@ -485,9 +456,9 @@
             // getCarId
             // 
             getCarId.AutoSize = true;
-            getCarId.Location = new Point(935, 459);
+            getCarId.Location = new Point(818, 344);
             getCarId.Name = "getCarId";
-            getCarId.Size = new Size(13, 20);
+            getCarId.Size = new Size(10, 15);
             getCarId.TabIndex = 76;
             getCarId.Text = " ";
             getCarId.Visible = false;
@@ -497,10 +468,9 @@
             ListViewChambre.BackColor = Color.WhiteSmoke;
             ListViewChambre.Columns.AddRange(new ColumnHeader[] { type, columnHeader2, columnHeader3, columnHeader4, id });
             ListViewChambre.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ListViewChambre.Location = new Point(37, 270);
-            ListViewChambre.Margin = new Padding(3, 4, 3, 4);
+            ListViewChambre.Location = new Point(32, 202);
             ListViewChambre.Name = "ListViewChambre";
-            ListViewChambre.Size = new Size(607, 211);
+            ListViewChambre.Size = new Size(532, 159);
             ListViewChambre.TabIndex = 77;
             ListViewChambre.UseCompatibleStateImageBehavior = false;
             ListViewChambre.View = View.Details;
@@ -534,9 +504,9 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(37, 602);
+            label17.Location = new Point(32, 452);
             label17.Name = "label17";
-            label17.Size = new Size(39, 23);
+            label17.Size = new Size(31, 17);
             label17.TabIndex = 79;
             label17.Text = "Prix";
             label17.Visible = false;
@@ -545,9 +515,9 @@
             // 
             getchambreId.AutoSize = true;
             getchambreId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            getchambreId.Location = new Point(266, 485);
+            getchambreId.Location = new Point(233, 364);
             getchambreId.Name = "getchambreId";
-            getchambreId.Size = new Size(15, 23);
+            getchambreId.Size = new Size(12, 17);
             getchambreId.TabIndex = 87;
             getchambreId.Text = " ";
             getchambreId.Visible = false;
@@ -556,9 +526,9 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(38, 550);
+            label15.Location = new Point(33, 412);
             label15.Name = "label15";
-            label15.Size = new Size(73, 23);
+            label15.Size = new Size(58, 17);
             label15.TabIndex = 80;
             label15.Text = "Numero";
             label15.Visible = false;
@@ -567,9 +537,9 @@
             // 
             selecType.AutoSize = true;
             selecType.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selecType.Location = new Point(150, 498);
+            selecType.Location = new Point(131, 374);
             selecType.Name = "selecType";
-            selecType.Size = new Size(46, 23);
+            selecType.Size = new Size(36, 17);
             selecType.TabIndex = 81;
             selecType.Text = "Type";
             selecType.Visible = false;
@@ -578,9 +548,9 @@
             // 
             selectPrix.AutoSize = true;
             selectPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selectPrix.Location = new Point(150, 602);
+            selectPrix.Location = new Point(131, 452);
             selectPrix.Name = "selectPrix";
-            selectPrix.Size = new Size(39, 23);
+            selectPrix.Size = new Size(31, 17);
             selectPrix.TabIndex = 82;
             selectPrix.Text = "Prix";
             selectPrix.Visible = false;
@@ -589,9 +559,9 @@
             // 
             selectNumero.AutoSize = true;
             selectNumero.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selectNumero.Location = new Point(150, 550);
+            selectNumero.Location = new Point(131, 412);
             selectNumero.Name = "selectNumero";
-            selectNumero.Size = new Size(73, 23);
+            selectNumero.Size = new Size(58, 17);
             selectNumero.TabIndex = 83;
             selectNumero.Text = "Numero";
             selectNumero.Visible = false;
@@ -600,9 +570,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(38, 651);
+            label11.Location = new Point(33, 488);
             label11.Name = "label11";
-            label11.Size = new Size(76, 23);
+            label11.Size = new Size(59, 17);
             label11.TabIndex = 84;
             label11.Text = "Capacite";
             label11.Visible = false;
@@ -611,9 +581,9 @@
             // 
             selectCapacite.AutoSize = true;
             selectCapacite.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            selectCapacite.Location = new Point(150, 651);
+            selectCapacite.Location = new Point(131, 488);
             selectCapacite.Name = "selectCapacite";
-            selectCapacite.Size = new Size(76, 23);
+            selectCapacite.Size = new Size(59, 17);
             selectCapacite.TabIndex = 85;
             selectCapacite.Text = "Capacite";
             selectCapacite.Visible = false;
@@ -622,18 +592,30 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(37, 498);
+            label16.Location = new Point(32, 374);
             label16.Name = "label16";
-            label16.Size = new Size(46, 23);
+            label16.Size = new Size(36, 17);
             label16.TabIndex = 78;
             label16.Text = "Type";
             label16.Visible = false;
             // 
+            // Nbr_Seances_Box
+            // 
+            Nbr_Seances_Box.FormattingEnabled = true;
+            Nbr_Seances_Box.Items.AddRange(new object[] { "1", "2", "3", "4", "5" });
+            Nbr_Seances_Box.Location = new Point(854, 116);
+            Nbr_Seances_Box.Margin = new Padding(3, 2, 3, 2);
+            Nbr_Seances_Box.Name = "Nbr_Seances_Box";
+            Nbr_Seances_Box.Size = new Size(140, 23);
+            Nbr_Seances_Box.TabIndex = 88;
+            Nbr_Seances_Box.Visible = false;
+            // 
             // Reservation
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1420, 856);
+            ClientSize = new Size(1370, 749);
+            Controls.Add(Nbr_Seances_Box);
             Controls.Add(getchambreId);
             Controls.Add(selectCapacite);
             Controls.Add(label11);
@@ -666,13 +648,11 @@
             Controls.Add(prixtotal);
             Controls.Add(label8);
             Controls.Add(Nbr_Seances_Label);
-            Controls.Add(Nbr_Seances_Box);
             Controls.Add(Spacheckbox);
             Controls.Add(Repascheckbx);
             Controls.Add(Carcheckbox);
             Controls.Add(Reserverbtn);
             Controls.Add(labeltype);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Reservation";
             Text = "Reservation";
             Load += Reservation_Load;
@@ -694,7 +674,6 @@
         private Label label6;
         private Label label7;
         private Guna.UI2.WinForms.Guna2HtmlLabel Nbr_Seances_Label;
-        private Guna.UI2.WinForms.Guna2TextBox Nbr_Seances_Box;
         private Label label8;
         private Label prixtotal;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
@@ -731,5 +710,6 @@
         private Label label11;
         private Label selectCapacite;
         private Label label16;
+        private ComboBox Nbr_Seances_Box;
     }
 }

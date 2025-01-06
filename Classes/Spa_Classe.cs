@@ -157,7 +157,33 @@ namespace HOTEL_MANAGMENT.Classes
         public static float getprix(int id)
         {
             float prix = 0;
-           
+            cn = new Connection_Classe();
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string req2 = "select * from Spa where id=@id";
+            cmd = new SqlCommand(req2, cnx);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+
+
+                    prix = float.Parse(reader["Prix"].ToString());
+
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR " + ex);
+            }
+            cnx.Close();
             return prix;
         }
     }

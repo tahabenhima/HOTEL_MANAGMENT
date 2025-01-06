@@ -280,7 +280,28 @@ namespace HOTEL_MANAGMENT
 
         private void btnVallidation_Click(object sender, EventArgs e)
         {
-            
+            prixT = 0;
+            reservation = new Reservation_Class(Client, chambre, f, sp, ca, DateDebutCarLocation.Value, DateFinCarLocation.Value, chambre.Prix, true);
+
+            label8.Visible = true;
+            prixtotal.Visible = true;
+
+            if (chambre != null)
+                prixT += reservation.NbrJour * chambre.Prix;
+
+            //MessageBox.Show("" + reservation.NbrJour);
+
+            if (ca != null)
+                prixT += reservation.NbrJour * ca.Prix;
+
+            if (f != null)
+                prixT += reservation.NbrJour * f.Prix;
+
+            if (sp != null)
+                prixT += sp.Prix;
+
+            prixtotal.Text = prixT.ToString();
+            //MessageBox.Show("" + prixT);
         }
     }
 }

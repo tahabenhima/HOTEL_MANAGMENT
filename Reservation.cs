@@ -236,7 +236,7 @@ namespace HOTEL_MANAGMENT
                 //public Chambre_Class(int id,string TypeChambre, int Numero, int Capacite, float Prix)
                 chambre = new Chambre_Class(int.Parse(getchambreId.Text), selecType.Text, int.Parse(selectNumero.Text), int.Parse(selectCapacite.Text), float
                     .Parse(selectPrix.Text));
-               
+                btnVallidation_Click(sender, e);
             }
 
         }
@@ -246,11 +246,11 @@ namespace HOTEL_MANAGMENT
             if (Repascheckbx.Checked == true)
             {
                 f = new Food_Class(1, 200, true);
-                
-                
-            }
-           
+                btnVallidation_Click( sender, e);
 
+            }
+            else { btnVallidation_Click(sender, e); }
+           
 
 
 
@@ -269,7 +269,7 @@ namespace HOTEL_MANAGMENT
             int indice = Nbr_Seances_Box.SelectedIndex+1;
             float p = Spa_Classe.getprix(indice);
             sp = new Spa_Classe(indice, indice, p);
-            MessageBox.Show(""+sp.Prix);
+            
            
            
         }
@@ -277,7 +277,7 @@ namespace HOTEL_MANAGMENT
 
 
 
-
+       
         private void btnVallidation_Click(object sender, EventArgs e)
         {
             prixT = 0;
@@ -294,8 +294,17 @@ namespace HOTEL_MANAGMENT
             if (ca != null)
                 prixT += reservation.NbrJour * ca.Prix;
 
-            if (f != null)
-                prixT += reservation.NbrJour * f.Prix;
+          
+            if (Repascheckbx.Checked == true)
+            {
+                if (f != null)
+                {
+                    prixT += reservation.NbrJour * f.Prix;
+                }
+
+
+            }
+            
 
             if (sp != null)
                 prixT += sp.Prix;

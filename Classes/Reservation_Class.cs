@@ -14,7 +14,7 @@ namespace HOTEL_MANAGMENT.Classes
         public Chambre_Class chambre_obj { get; set; }
         public Food_Class food_obj { get; set; }
         public Spa_Classe spa_obj { get; set; }
-        public Car_Class car_obj { get; set; }
+        public CarLocation_Class car_obj { get; set; }
         public DateTime DateArrive { get; set; }
         public DateTime DateSortie { get; set; }
         public int NbrJour { get; set; }    
@@ -52,7 +52,7 @@ namespace HOTEL_MANAGMENT.Classes
         }
         public Reservation_Class() { }
         // Constructor2
-        public Reservation_Class(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
+        public Reservation_Class(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, CarLocation_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
             TimeSpan difference = dateSortie - dateArrive;
             NbrJour = (int)difference.TotalDays;
@@ -139,7 +139,7 @@ namespace HOTEL_MANAGMENT.Classes
             return l;
 
         }
-        public void   AjouterReserve(float prixTotal)
+        public void   AjouterReserve()
         {
             //int id_Client,int id_Chambre,int id_Food,int id_Spa,int id_Car
 
@@ -156,7 +156,7 @@ namespace HOTEL_MANAGMENT.Classes
             else {
                 string id_Food = "NULL";
                 MessageBox.Show("Food " + id_Food);
-                cmd.Parameters.AddWithValue("@id_Food", id_Food);
+                cmd.Parameters.AddWithValue("@id_Food", DBNull.Value);
             }
 
             if (spa_obj != null)
@@ -169,12 +169,12 @@ namespace HOTEL_MANAGMENT.Classes
             {
                 string id_Spa = "NULL";
                 MessageBox.Show("Spa " + id_Spa);
-                cmd.Parameters.AddWithValue("@id_Spa", id_Spa);
+                cmd.Parameters.AddWithValue("@id_Spa", DBNull.Value);
             }
 
             if (car_obj != null)
             {
-                int id_Car = car_obj.id_Car;
+                int id_Car = car_obj.car.id;
                 MessageBox.Show("Car " + id_Car);
                 cmd.Parameters.AddWithValue("@id_Car", id_Car);
             }
@@ -182,7 +182,7 @@ namespace HOTEL_MANAGMENT.Classes
             {
                 string id_Car = "NULL";
                 MessageBox.Show("Car " + id_Car);
-                cmd.Parameters.AddWithValue("@id_Car", id_Car);
+                cmd.Parameters.AddWithValue("@id_Car", DBNull.Value);
             }
             
             
@@ -191,12 +191,12 @@ namespace HOTEL_MANAGMENT.Classes
             cmd.Parameters.AddWithValue("@id_Chambre", chambre_obj.id);
             
             
-
+            //DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day
             
-            cmd.Parameters.AddWithValue("@dateArrive", "2023-10-01");
-            cmd.Parameters.AddWithValue("@dateSortie", "2025-10-01");
+            cmd.Parameters.AddWithValue("@dateArrive", this.DateArrive);
+            cmd.Parameters.AddWithValue("@dateSortie", this.DateSortie);
             
-            cmd.Parameters.AddWithValue("@prixtotal", prixTotal);
+            cmd.Parameters.AddWithValue("@prixtotal", this.PrixTotal);
             cmd.Parameters.AddWithValue("@statut", 1);
 
             try

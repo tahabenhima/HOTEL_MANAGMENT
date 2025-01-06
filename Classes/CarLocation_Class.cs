@@ -14,7 +14,7 @@ namespace HOTEL_MANAGMENT.Classes
         DateTime DateFin { get; set; }
         Boolean isdisponible { get; set; }
         int id_carR { get; set;}
-       Car_Class car { get; set; }
+      public  Car_Class car { get; set; }
         int nbrjour { get;set; }
         private static SqlCommand cmd;
         private static Connection_Classe cn;
@@ -28,6 +28,7 @@ namespace HOTEL_MANAGMENT.Classes
             this.id_carR = id_carR;
             this.car = car;
             int nbrjour = Math.Abs((DateFin - DateDebut).Days);
+            
             cn = new Connection_Classe();
         }
         public CarLocation_Class( DateTime dateDebut, DateTime dateFin, bool isdisponible, Car_Class car)
@@ -35,7 +36,7 @@ namespace HOTEL_MANAGMENT.Classes
             DateDebut = dateDebut;
             DateFin = dateFin;
             this.isdisponible = isdisponible;
-           
+            //MessageBox.Show("" + dateDebut);
             this.car = car;
             int nbrjour = Math.Abs((DateFin - DateDebut).Days);
             cn = new Connection_Classe();
@@ -44,12 +45,12 @@ namespace HOTEL_MANAGMENT.Classes
         {
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query = "insert into Car_Location (dateDebut,dateFin,id_Car,disponibilite) values(@dateDebut,@dateFin,@Matricule,@id_Car,@disponibilite)";
+            string query = "insert into Car_Location (dateDebut,dateFin,id_Car,disponibilite) values(@dateDebut,@dateFin,@id_Car,@disponibilite)";
             cmd = new SqlCommand(query, cnx);
             cmd.Parameters.AddWithValue("@dateDebut", this.DateDebut);
             cmd.Parameters.AddWithValue("@dateFin", this.DateFin);
-            cmd.Parameters.AddWithValue("@id_Car", this.car.id_Car);
-            cmd.Parameters.AddWithValue("@disponibilite", this.isdisponible);
+            cmd.Parameters.AddWithValue("@id_Car", this.car.id);
+            cmd.Parameters.AddWithValue("@disponibilite", 1);
 
             try
             {

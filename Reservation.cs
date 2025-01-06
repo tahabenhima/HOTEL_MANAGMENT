@@ -35,30 +35,7 @@ namespace HOTEL_MANAGMENT
 
         }
 
-        private void Reserverbtn_Click(object sender, EventArgs e)
-        {
-           
-
-
-
-            /*
-                        DateTime debutR = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
-                        DateTime finR = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
-
-                        //(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
-
-                        //(2,1002,NULL,NULL,NULL,'2023-10-01','2025-10-01',1200,1)
-                        Client_Class cl = new Client_Class();
-                        Chambre_Class ch = new Chambre_Class();
-                        Food_Class fo = new Food_Class();
-                        Spa_Classe sp = new Spa_Classe();
-                        Car_Class ca = new Car_Class();
-                        // Reservation_Class r = new Reservation_Class(cl, ch, fo, sp, ca, debutR, finR, 1200, true);
-                        Reservation_Class r = new Reservation_Class();
-                        r.AjouterReserve();
-            */
-
-        }
+       
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -71,8 +48,8 @@ namespace HOTEL_MANAGMENT
 
                 ListViewChambre.Items.Clear();
 
-                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
-                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                 debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                 finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
                 int n = Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation, comboBox1.Text).Items.Count;
                 for (int i = 0; i < n; i++)
                 {
@@ -173,11 +150,13 @@ namespace HOTEL_MANAGMENT
                 Nbr_Seances_Box.Visible = false;
                 sp = new Spa_Classe();
                 btnVallidation_Click(sender, e);
+                //MessageBox.Show("" + sp.id_Spa);
             }
         }
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int idc=-1;
             if (ListViewCar.SelectedItems.Count > 0)
             {
                 int il;
@@ -204,13 +183,15 @@ namespace HOTEL_MANAGMENT
                 labelPrix.Text = selectedItem.SubItems[4].Text;
                 labelMarque.Text = selectedItem.SubItems[1].Text;
                 //        public CarLocation_Class( DateTime dateDebut, DateTime dateFin, bool isdisponible, Car_Class car)
-                int idc = int.Parse(getCarId.Text);
+              
                 //public Car_Class(int id, string Nom, string Marque, string Matricule, string Color, float Prix)
 
-                ca = new Car_Class(idc, labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
+                ca = new Car_Class(int.Parse(getCarId.Text), labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
+            
                 carL = new CarLocation_Class(debutLocation, finLocation, true, ca);
-                btnVallidation_Click(sender, e);
+            btnVallidation_Click(sender, e);
             }
+            
         }
 
         private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,6 +252,7 @@ namespace HOTEL_MANAGMENT
         {
             int indice = Nbr_Seances_Box.SelectedIndex+1;
             float p = Spa_Classe.getprix(indice);
+            //MessageBox.Show("" + indice);
             sp = new Spa_Classe(indice, indice, p);
             btnVallidation_Click(sender, e);
 
@@ -284,7 +266,7 @@ namespace HOTEL_MANAGMENT
         private void btnVallidation_Click(object sender, EventArgs e)
         {
             prixT = 0;
-            reservation = new Reservation_Class(Client, chambre, f, sp, ca, DateDebutCarLocation.Value, DateFinCarLocation.Value, chambre.Prix, true);
+            reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, chambre.Prix, true);
 
             label8.Visible = true;
             prixtotal.Visible = true;
@@ -314,6 +296,20 @@ namespace HOTEL_MANAGMENT
 
             prixtotal.Text = prixT.ToString();
             //MessageBox.Show("" + prixT);
+        }
+        private void Reserverbtn_Click(object sender, EventArgs e)
+        {
+            
+            if (carL != null)
+            {
+                carL.AjouterCarLocationReservation();
+            }
+            reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, prixT, true);
+            
+            reservation.AjouterReserve();
+
+           
+
         }
     }
 }

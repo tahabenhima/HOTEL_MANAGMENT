@@ -31,13 +31,16 @@ namespace HOTEL_MANAGMENT
             if (string.IsNullOrWhiteSpace(NomCarBox.Text) ||
             string.IsNullOrWhiteSpace(MarqueCarBox.Text) ||
             string.IsNullOrWhiteSpace(MatriculeCarBox.Text) ||
-            string.IsNullOrWhiteSpace(ColorCarBox.Text))
+            string.IsNullOrWhiteSpace(ColorCarBox.Text)||
+            string.IsNullOrWhiteSpace(prixCarBox.Text)
+            
+            )
             {
                 MessageBox.Show("Veuillez remplir tous les champs !");
                 return;
             }
 
-            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text,20);
+            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text,int.Parse(prixCarBox.Text));
             SqlConnection cnx = cn.GetConnection();
 
             Car.AjouterCar();
@@ -91,6 +94,8 @@ namespace HOTEL_MANAGMENT
             {
                 MessageBox.Show("ERREUR Suppression " + ex);
             }
+            vider();
+            afficher();
         }
 
 
@@ -99,7 +104,8 @@ namespace HOTEL_MANAGMENT
             if (string.IsNullOrWhiteSpace(NomCarBox.Text) ||
         string.IsNullOrWhiteSpace(MatriculeCarBox.Text) ||
         string.IsNullOrWhiteSpace(MarqueCarBox.Text) ||
-        string.IsNullOrWhiteSpace(ColorCarBox.Text))
+        string.IsNullOrWhiteSpace(ColorCarBox.Text)||
+        string.IsNullOrWhiteSpace(prixCarBox.Text))
             {
                 MessageBox.Show("Veuillez remplir tous les champs !");
                 return;
@@ -110,7 +116,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text ,ColorCarBox.Text,20);
+                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text ,ColorCarBox.Text, int.Parse(prixCarBox.Text));
                 vider();
                 ReadCar_Click(sender, e);
 
@@ -119,6 +125,8 @@ namespace HOTEL_MANAGMENT
             {
                 MessageBox.Show("ERREUR" + ex);
             }
+            vider();
+            afficher();
         }
 
         void vider()
@@ -127,6 +135,7 @@ namespace HOTEL_MANAGMENT
             MarqueCarBox.Clear();
             MatriculeCarBox.Clear();
             ColorCarBox.Clear();
+            prixCarBox.Clear();
         }
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)

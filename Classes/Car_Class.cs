@@ -9,12 +9,12 @@ namespace HOTEL_MANAGMENT.Classes
 {
     internal class Car_Class
     {
-        int id {  get; set; }   
+        public int id {  get; set; }   
         public string Nom { get; set; }
         public string Marque { get; set; }
         public string Matricule { get; set; }
         public string Color { get; set; }
-        public int id_Car { get; set; }
+       // public int id_Car { get; set; }
         
         public float Prix { get; set; }
 

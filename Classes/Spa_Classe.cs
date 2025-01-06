@@ -27,6 +27,7 @@ namespace HOTEL_MANAGMENT.Classes
         }
         public Spa_Classe(int id_Spa, int Nbr_Seances, float Prix )
         {
+            this.id_Spa = id_Spa;
             this.Nbr_Seances = Nbr_Seances;
             this.Prix = Prix;
             cn = new Connection_Classe();

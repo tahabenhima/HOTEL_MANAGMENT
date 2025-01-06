@@ -36,6 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             labeltype = new Label();
             Reserverbtn = new Guna.UI2.WinForms.Guna2Button();
             Carcheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -85,6 +87,7 @@
             selectCapacite = new Label();
             label16 = new Label();
             Nbr_Seances_Box = new ComboBox();
+            btnVallidation = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // labeltype
@@ -110,7 +113,7 @@
             Reserverbtn.FillColor = SystemColors.Control;
             Reserverbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Reserverbtn.ForeColor = Color.Black;
-            Reserverbtn.Location = new Point(64, 588);
+            Reserverbtn.Location = new Point(64, 679);
             Reserverbtn.Margin = new Padding(2);
             Reserverbtn.Name = "Reserverbtn";
             Reserverbtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -266,21 +269,24 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(64, 547);
+            label8.Location = new Point(64, 638);
             label8.Name = "label8";
             label8.Size = new Size(37, 17);
             label8.TabIndex = 57;
             label8.Text = "Total";
+            label8.Visible = false;
             // 
             // prixtotal
             // 
             prixtotal.AutoSize = true;
             prixtotal.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             prixtotal.ForeColor = Color.Maroon;
-            prixtotal.Location = new Point(131, 544);
+            prixtotal.Location = new Point(131, 634);
             prixtotal.Name = "prixtotal";
-            prixtotal.Size = new Size(0, 20);
+            prixtotal.Size = new Size(18, 20);
             prixtotal.TabIndex = 58;
+            prixtotal.Text = "0";
+            prixtotal.Visible = false;
             prixtotal.Click += prixtotal_Click;
             // 
             // guna2Button1
@@ -609,12 +615,33 @@
             Nbr_Seances_Box.Size = new Size(140, 23);
             Nbr_Seances_Box.TabIndex = 88;
             Nbr_Seances_Box.Visible = false;
+            Nbr_Seances_Box.SelectedIndexChanged += Nbr_Seances_Box_SelectedIndexChanged;
+            // 
+            // btnVallidation
+            // 
+            btnVallidation.BorderRadius = 10;
+            btnVallidation.CustomizableEdges = customizableEdges9;
+            btnVallidation.DisabledState.BorderColor = Color.DarkGray;
+            btnVallidation.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnVallidation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnVallidation.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnVallidation.FillColor = Color.SlateGray;
+            btnVallidation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVallidation.ForeColor = Color.White;
+            btnVallidation.Location = new Point(33, 540);
+            btnVallidation.Name = "btnVallidation";
+            btnVallidation.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnVallidation.Size = new Size(149, 36);
+            btnVallidation.TabIndex = 89;
+            btnVallidation.Text = "Valider";
+            btnVallidation.Click += btnVallidation_Click;
             // 
             // Reservation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1199, 749);
+            Controls.Add(btnVallidation);
             Controls.Add(Nbr_Seances_Box);
             Controls.Add(getchambreId);
             Controls.Add(selectCapacite);
@@ -655,6 +682,7 @@
             Controls.Add(labeltype);
             Name = "Reservation";
             Text = "Reservation";
+            WindowState = FormWindowState.Maximized;
             Load += Reservation_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -711,5 +739,6 @@
         private Label selectCapacite;
         private Label label16;
         private ComboBox Nbr_Seances_Box;
+        private Guna.UI2.WinForms.Guna2Button btnVallidation;
     }
 }

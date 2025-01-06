@@ -25,7 +25,11 @@ namespace HOTEL_MANAGMENT.Classes
         // Constructor
         public Reservation_Class( DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
-            NbrJour = Math.Abs((dateArrive - dateSortie).Days);
+            TimeSpan difference = dateSortie - dateArrive;
+
+            // Obtenir le nombre de jours
+            int NbrJour = (int)difference.TotalDays;
+            NbrJour = (int)difference.TotalDays;
             DateArrive = dateArrive;
             DateSortie = dateSortie;
             PrixTotal = prixTotal;
@@ -33,11 +37,25 @@ namespace HOTEL_MANAGMENT.Classes
             cn = new Connection_Classe();
 
         }
+        public Reservation_Class(DateTime dateArrive, DateTime dateSortie)
+        {
+            TimeSpan difference = dateSortie - dateArrive;
+
+            // Obtenir le nombre de jours
+            NbrJour = (int)difference.TotalDays;
+           
+            DateArrive = dateArrive;
+            DateSortie = dateSortie;
+            MessageBox.Show("" + NbrJour);
+            cn = new Connection_Classe();
+
+        }
         public Reservation_Class() { }
         // Constructor2
         public Reservation_Class(Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
         {
-            NbrJour = Math.Abs((dateArrive - dateSortie).Days);
+            TimeSpan difference = dateSortie - dateArrive;
+            NbrJour = (int)difference.TotalDays;
             this.client_obj = client ;
             this.chambre_obj = chambre;
             this.food_obj = food;
@@ -48,7 +66,7 @@ namespace HOTEL_MANAGMENT.Classes
             PrixTotal = prixTotal;
             Statut = statut;
             cn = new Connection_Classe();
-
+           
         }
 
         public void Ajouter_Reservation()

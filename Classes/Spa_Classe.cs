@@ -154,6 +154,11 @@ namespace HOTEL_MANAGMENT.Classes
 
 
         }
-
+        public static float getprix(int id)
+        {
+            float prix = 0;
+           
+            return prix;
+        }
     }
 }

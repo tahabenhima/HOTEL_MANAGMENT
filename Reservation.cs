@@ -10,6 +10,8 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HOTEL_MANAGMENT
 {
@@ -17,7 +19,7 @@ namespace HOTEL_MANAGMENT
     {
         DateTime debutLocation;
         DateTime finLocation;
-        public float prixT = 1;
+        float prixT;
         Food_Class f;
         Spa_Classe sp;
         Car_Class ca;
@@ -26,20 +28,16 @@ namespace HOTEL_MANAGMENT
         Chambre_Class chambre = new Chambre_Class();
         Client_Class Client = new Client_Class();
 
+
         public Reservation()
         {
             InitializeComponent();
-            debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
-            finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
-            reservation = new Reservation_Class(Client, chambre, f, sp, ca, debutLocation, finLocation, chambre.Prix, true);
-           
+
         }
-        
+
         private void Reserverbtn_Click(object sender, EventArgs e)
         {
-
-
-
+           
 
 
 
@@ -64,9 +62,13 @@ namespace HOTEL_MANAGMENT
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            reservation = new Reservation_Class(DateDebutCarLocation.Value, DateFinCarLocation.Value);
+
 
             try
             {
+
+
                 ListViewChambre.Items.Clear();
 
                 DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
@@ -100,6 +102,10 @@ namespace HOTEL_MANAGMENT
         {
             if (Carcheckbox.Checked)
             {
+
+                DateTime debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                DateTime finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+
                 ListViewCar.Visible = true;
                 labelMsg.Visible = true;
 
@@ -151,18 +157,19 @@ namespace HOTEL_MANAGMENT
 
         private void Spacheckbox_CheckedChanged(object sender, EventArgs e)
         {
+
             if (Spacheckbox.Checked)
             {
                 Nbr_Seances_Label.Visible = true;
                 Nbr_Seances_Box.Visible = true;
-                sp = new Spa_Classe();
-                prixT += reservation.NbrJour * sp.Prix;
-                prixtotal.Text=prixT.ToString();
+
+
             }
             else
             {
                 Nbr_Seances_Label.Visible = false;
                 Nbr_Seances_Box.Visible = false;
+                
             }
         }
 
@@ -197,10 +204,9 @@ namespace HOTEL_MANAGMENT
                 int idc = int.Parse(getCarId.Text);
                 //public Car_Class(int id, string Nom, string Marque, string Matricule, string Color, float Prix)
 
-                Car_Class ca = new Car_Class(idc, labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
-                 carL = new CarLocation_Class(debutLocation, finLocation, true, ca);
-                prixT += reservation.NbrJour * ca.Prix;
-                prixtotal.Text = prixT.ToString();
+                ca = new Car_Class(idc, labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
+                carL = new CarLocation_Class(debutLocation, finLocation, true, ca);
+                
             }
         }
 
@@ -221,15 +227,16 @@ namespace HOTEL_MANAGMENT
                 selectCapacite.Visible = true;
                 getchambreId.Text = ListViewChambre.SelectedItems[0].SubItems[4].Text;
                 selecType.Text = selectedItem.SubItems[0].Text;
+                
                 selectPrix.Text = selectedItem.SubItems[2].Text;
+                // reservation.NbrJour * chambre.Prix
                 selectCapacite.Text = selectedItem.SubItems[3].Text;
                 selectNumero.Text = selectedItem.SubItems[1].Text;
 
                 //public Chambre_Class(int id,string TypeChambre, int Numero, int Capacite, float Prix)
                 chambre = new Chambre_Class(int.Parse(getchambreId.Text), selecType.Text, int.Parse(selectNumero.Text), int.Parse(selectCapacite.Text), float
                     .Parse(selectPrix.Text));
-                prixT += reservation.NbrJour * chambre.Prix;
-                prixtotal.Text = prixT.ToString();
+               
             }
 
         }
@@ -239,21 +246,40 @@ namespace HOTEL_MANAGMENT
             if (Repascheckbx.Checked == true)
             {
                 f = new Food_Class(1, 200, true);
-                prixT += reservation.NbrJour * f.Prix;
-                prixtotal.Text = prixT.ToString();
+                
+                
             }
+           
 
 
 
-            
+
         }
 
         private void prixtotal_Click(object sender, EventArgs e)
         {
+            /*
             //       (Client_Class client, Chambre_Class chambre, Food_Class food, Spa_Classe spa, Car_Class car, DateTime dateArrive, DateTime dateSortie, float prixTotal, bool statut)
-
-
             
+            */
+        }
+
+        private void Nbr_Seances_Box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = Nbr_Seances_Box.SelectedIndex+1;
+            float p = Spa_Classe.getprix(indice);
+            sp = new Spa_Classe(indice, indice, p);
+            MessageBox.Show(""+sp.Prix);
+           
+           
+        }
+
+
+
+
+
+        private void btnVallidation_Click(object sender, EventArgs e)
+        {
             
         }
     }

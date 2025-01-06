@@ -36,7 +36,7 @@ namespace HOTEL_MANAGMENT.Classes
             DateDebut = dateDebut;
             DateFin = dateFin;
             this.isdisponible = isdisponible;
-            //MessageBox.Show("" + dateDebut);
+            MessageBox.Show("" + dateDebut);
             this.car = car;
             int nbrjour = Math.Abs((DateFin - DateDebut).Days);
             cn = new Connection_Classe();
@@ -45,7 +45,7 @@ namespace HOTEL_MANAGMENT.Classes
         {
             SqlConnection cnx = cn.GetConnection();
             cnx.Open();
-            string query = "insert into Car_Location (dateDebut,dateFin,id_Car,disponibilite) values(@dateDebut,@dateFin,@id_Car,@disponibilite)";
+            string query = "insert into Car_Location (Debut_Location,Fin_Location,id_Car,disponibilite) values(@dateDebut,@dateFin,@id_Car,@disponibilite)";
             cmd = new SqlCommand(query, cnx);
             cmd.Parameters.AddWithValue("@dateDebut", this.DateDebut);
             cmd.Parameters.AddWithValue("@dateFin", this.DateFin);

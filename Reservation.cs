@@ -306,7 +306,7 @@ namespace HOTEL_MANAGMENT
             }
             reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, prixT, true);
             
-            reservation.AjouterReserve();
+            //reservation.AjouterReserve();
 
            
 

@@ -152,6 +152,8 @@ namespace HOTEL_MANAGMENT
                 labelp.Visible = false;
 
                 labelPrix.Visible = false;
+                ca = new Car_Class();
+                btnVallidation_Click(sender, e);
             }
         }
 
@@ -169,7 +171,8 @@ namespace HOTEL_MANAGMENT
             {
                 Nbr_Seances_Label.Visible = false;
                 Nbr_Seances_Box.Visible = false;
-                
+                sp = new Spa_Classe();
+                btnVallidation_Click(sender, e);
             }
         }
 
@@ -206,7 +209,7 @@ namespace HOTEL_MANAGMENT
 
                 ca = new Car_Class(idc, labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
                 carL = new CarLocation_Class(debutLocation, finLocation, true, ca);
-                
+                btnVallidation_Click(sender, e);
             }
         }
 
@@ -269,9 +272,9 @@ namespace HOTEL_MANAGMENT
             int indice = Nbr_Seances_Box.SelectedIndex+1;
             float p = Spa_Classe.getprix(indice);
             sp = new Spa_Classe(indice, indice, p);
-            
-           
-           
+            btnVallidation_Click(sender, e);
+
+
         }
 
 

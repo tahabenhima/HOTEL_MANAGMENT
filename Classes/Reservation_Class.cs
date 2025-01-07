@@ -46,7 +46,7 @@ namespace HOTEL_MANAGMENT.Classes
            
             DateArrive = dateArrive;
             DateSortie = dateSortie;
-            MessageBox.Show("" + NbrJour);
+            MessageBox.Show("le nombre Du Jour selectionné est : " + NbrJour);
             cn = new Connection_Classe();
 
         }
@@ -150,38 +150,32 @@ namespace HOTEL_MANAGMENT.Classes
             if (food_obj != null)
             {
                 int id_Food = food_obj.id_food;
-                MessageBox.Show("Food " + id_Food);
                 cmd.Parameters.AddWithValue("@id_Food", id_Food);
             }
             else {
                 string id_Food = "NULL";
-                MessageBox.Show("Food " + id_Food);
                 cmd.Parameters.AddWithValue("@id_Food", DBNull.Value);
             }
 
             if (spa_obj != null)
             {
                 int id_Spa = spa_obj.id_Spa;
-                MessageBox.Show("Spa " + id_Spa);
                 cmd.Parameters.AddWithValue("@id_Spa", id_Spa);
             }
             else
             {
                 string id_Spa = "NULL";
-                MessageBox.Show("Spa " + id_Spa);
                 cmd.Parameters.AddWithValue("@id_Spa", DBNull.Value);
             }
 
             if (car_obj != null)
             {
-                int id_Car = car_obj.car.id;
-                MessageBox.Show("Car " + id_Car);
+                int id_Car = car_obj.id_carR;
                 cmd.Parameters.AddWithValue("@id_Car", id_Car);
             }
             else
             {
                 string id_Car = "NULL";
-                MessageBox.Show("Car " + id_Car);
                 cmd.Parameters.AddWithValue("@id_Car", DBNull.Value);
             }
             

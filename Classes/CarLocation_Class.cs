@@ -13,7 +13,7 @@ namespace HOTEL_MANAGMENT.Classes
         DateTime DateDebut { get; set; }
         DateTime DateFin { get; set; }
         Boolean isdisponible { get; set; }
-        int id_carR { get; set;}
+       public int id_carR { get; set;}
       public  Car_Class car { get; set; }
         int nbrjour { get;set; }
         private static SqlCommand cmd;
@@ -41,6 +41,7 @@ namespace HOTEL_MANAGMENT.Classes
             int nbrjour = Math.Abs((DateFin - DateDebut).Days);
             cn = new Connection_Classe();
         }
+
         public void AjouterCarLocationReservation()
         {
             SqlConnection cnx = cn.GetConnection();
@@ -64,6 +65,39 @@ namespace HOTEL_MANAGMENT.Classes
 
             }
             cnx.Close();
+            updateId();
+        }
+
+         public void updateId()
+        {
+
+           
+            try
+            {
+                cn = new Connection_Classe();
+                SqlConnection cnx = cn.GetConnection();
+                String query = "select id from Car_Location where Debut_Location=@Debut_Location and Fin_Location=@Fin_Location and id_Car=@id_Car";
+                cmd = new SqlCommand(query, cnx);
+                cmd.Parameters.AddWithValue("@Debut_Location", this.DateDebut);
+                cmd.Parameters.AddWithValue("@Fin_Location", this.DateFin);
+                cmd.Parameters.AddWithValue("@id_Car", this.car.id);
+
+                cnx.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+
+                    this.id_carR=int.Parse(reader["id"].ToString());
+
+                }
+                cnx.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR Car " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
         }
     }
 }

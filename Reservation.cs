@@ -32,37 +32,51 @@ namespace HOTEL_MANAGMENT
         public Reservation()
         {
             InitializeComponent();
-
+            DateDebutCarLocation.Value= DateTime.Now;
+            DateFinCarLocation.Value= DateTime.Now;
         }
 
        
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            reservation = new Reservation_Class(DateDebutCarLocation.Value, DateFinCarLocation.Value);
+            TimeSpan difference = DateFinCarLocation.Value - DateDebutCarLocation.Value;
 
-
-            try
+            // Obtenir le nombre de jours
+            int Nbrjr = (int)difference.TotalDays;
+            if (Nbrjr <= 0)
             {
+                MessageBox.Show("Veuillez entrer une date de début inférieure à la date de fin.");
+            }
+            else 
+            {
+                reservation = new Reservation_Class(DateDebutCarLocation.Value, DateFinCarLocation.Value);
 
 
-                ListViewChambre.Items.Clear();
-
-                 debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
-                 finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
-                int n = Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation, comboBox1.Text).Items.Count;
-                for (int i = 0; i < n; i++)
+                try
                 {
-                    ListViewChambre.Items.Add((ListViewItem)Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation, comboBox1.Text).Items[i].Clone());
+
+
+                    ListViewChambre.Items.Clear();
+
+                    debutLocation = new DateTime(DateDebutCarLocation.Value.Year, DateDebutCarLocation.Value.Month, DateDebutCarLocation.Value.Day);
+                    finLocation = new DateTime(DateFinCarLocation.Value.Year, DateFinCarLocation.Value.Month, DateFinCarLocation.Value.Day);
+                    int n = Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation, comboBox1.Text).Items.Count;
+                    for (int i = 0; i < n; i++)
+                    {
+                        ListViewChambre.Items.Add((ListViewItem)Reservation_Class.AfficherchabrerNonReserve(debutLocation, finLocation, comboBox1.Text).Items[i].Clone());
+                    }
+
+                    //vider();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERREUR Affichage  " + ex);
                 }
 
-                //vider();
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("ERREUR Affichage  " + ex);
-            }
+           
         }
 
         private void SearchCarLocationBtn_Click(object sender, EventArgs e)
@@ -304,9 +318,11 @@ namespace HOTEL_MANAGMENT
             {
                 carL.AjouterCarLocationReservation();
             }
+           
+            MessageBox.Show("" + carL.id_carR);
             reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, prixT, true);
             
-            //reservation.AjouterReserve();
+            reservation.AjouterReserve();
 
            
 

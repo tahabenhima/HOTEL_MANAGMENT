@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -58,6 +60,7 @@
             getCarId = new Label();
             prixCarBox = new TextBox();
             label5 = new Label();
+            telechargerCSVbtn = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // label2
@@ -130,7 +133,7 @@
             // 
             // AddCar
             // 
-            AddCar.CustomizableEdges = customizableEdges9;
+            AddCar.CustomizableEdges = customizableEdges1;
             AddCar.DisabledState.BorderColor = Color.DarkGray;
             AddCar.DisabledState.CustomBorderColor = Color.DarkGray;
             AddCar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -140,7 +143,7 @@
             AddCar.Location = new Point(12, 401);
             AddCar.Margin = new Padding(2);
             AddCar.Name = "AddCar";
-            AddCar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            AddCar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             AddCar.Size = new Size(118, 33);
             AddCar.TabIndex = 19;
             AddCar.Text = "Ajouter Car";
@@ -148,7 +151,7 @@
             // 
             // UpdateCar
             // 
-            UpdateCar.CustomizableEdges = customizableEdges11;
+            UpdateCar.CustomizableEdges = customizableEdges3;
             UpdateCar.DisabledState.BorderColor = Color.DarkGray;
             UpdateCar.DisabledState.CustomBorderColor = Color.DarkGray;
             UpdateCar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -158,7 +161,7 @@
             UpdateCar.Location = new Point(153, 401);
             UpdateCar.Margin = new Padding(2);
             UpdateCar.Name = "UpdateCar";
-            UpdateCar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            UpdateCar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             UpdateCar.Size = new Size(128, 33);
             UpdateCar.TabIndex = 27;
             UpdateCar.Text = "Modifier Car";
@@ -166,7 +169,7 @@
             // 
             // DeleteCar
             // 
-            DeleteCar.CustomizableEdges = customizableEdges13;
+            DeleteCar.CustomizableEdges = customizableEdges5;
             DeleteCar.DisabledState.BorderColor = Color.DarkGray;
             DeleteCar.DisabledState.CustomBorderColor = Color.DarkGray;
             DeleteCar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -176,7 +179,7 @@
             DeleteCar.Location = new Point(304, 400);
             DeleteCar.Margin = new Padding(2);
             DeleteCar.Name = "DeleteCar";
-            DeleteCar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            DeleteCar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             DeleteCar.Size = new Size(140, 34);
             DeleteCar.TabIndex = 28;
             DeleteCar.Text = "Supprimer Car";
@@ -184,7 +187,7 @@
             // 
             // ReadCar
             // 
-            ReadCar.CustomizableEdges = customizableEdges15;
+            ReadCar.CustomizableEdges = customizableEdges7;
             ReadCar.DisabledState.BorderColor = Color.DarkGray;
             ReadCar.DisabledState.CustomBorderColor = Color.DarkGray;
             ReadCar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -194,7 +197,7 @@
             ReadCar.Location = new Point(466, 400);
             ReadCar.Margin = new Padding(2);
             ReadCar.Name = "ReadCar";
-            ReadCar.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ReadCar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             ReadCar.Size = new Size(127, 34);
             ReadCar.TabIndex = 29;
             ReadCar.Text = "Afficher Car";
@@ -267,11 +270,33 @@
             label5.TabIndex = 32;
             label5.Text = "Prix";
             // 
+            // telechargerCSVbtn
+            // 
+            telechargerCSVbtn.BorderColor = Color.Gray;
+            telechargerCSVbtn.BorderRadius = 5;
+            telechargerCSVbtn.BorderThickness = 1;
+            telechargerCSVbtn.CustomizableEdges = customizableEdges9;
+            telechargerCSVbtn.DisabledState.BorderColor = Color.DarkGray;
+            telechargerCSVbtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            telechargerCSVbtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            telechargerCSVbtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            telechargerCSVbtn.FillColor = SystemColors.Control;
+            telechargerCSVbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            telechargerCSVbtn.ForeColor = Color.Black;
+            telechargerCSVbtn.Image = Properties.Resources._6133884;
+            telechargerCSVbtn.Location = new Point(153, 447);
+            telechargerCSVbtn.Name = "telechargerCSVbtn";
+            telechargerCSVbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            telechargerCSVbtn.Size = new Size(335, 30);
+            telechargerCSVbtn.TabIndex = 49;
+            telechargerCSVbtn.Text = "Telecharger les données sous form csv";
+            // 
             // Car
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(732, 450);
+            ClientSize = new Size(732, 489);
+            Controls.Add(telechargerCSVbtn);
             Controls.Add(prixCarBox);
             Controls.Add(label5);
             Controls.Add(getCarId);
@@ -320,5 +345,6 @@
         private ColumnHeader columnHeader6;
         private TextBox prixCarBox;
         private Label label5;
+        private Guna.UI2.WinForms.Guna2Button telechargerCSVbtn;
     }
 }

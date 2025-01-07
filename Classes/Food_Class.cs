@@ -21,7 +21,6 @@ namespace HOTEL_MANAGMENT.Classes
             
             Prix = prix;
             Full = full;
-            
             cn = new Connection_Classe();
         }
         public Food_Class(int id_food, float prix, Boolean full)

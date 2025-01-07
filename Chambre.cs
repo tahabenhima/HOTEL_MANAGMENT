@@ -208,8 +208,6 @@ namespace HOTEL_MANAGMENT
             try
             {
 
-
-
                 string queryCh = "SELECT * FROM Chambre";
                 SqlConnection cnx = cn.GetConnection();
                 cmd = new SqlCommand(queryCh, cnx);

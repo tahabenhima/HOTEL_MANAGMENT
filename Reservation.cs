@@ -44,7 +44,7 @@ namespace HOTEL_MANAGMENT
 
             // Obtenir le nombre de jours
             int Nbrjr = (int)difference.TotalDays;
-            if (Nbrjr <= 0)
+            if (Nbrjr < 0)
             {
                 MessageBox.Show("Veuillez entrer une date de début inférieure à la date de fin.");
             }
@@ -319,11 +319,15 @@ namespace HOTEL_MANAGMENT
                 carL.AjouterCarLocationReservation();
             }
            
-            MessageBox.Show("" + carL.id_carR);
+            
             reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, prixT, true);
             
             reservation.AjouterReserve();
+            if (reservation!=null)
+            {
+                Facturebtn.Visible = true;
 
+            }
            
 
         }

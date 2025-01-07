@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Nbr_Seances_Box = new Guna.UI2.WinForms.Guna2TextBox();
             Nbr_Seances_Label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             Ajouter_Spa_BTN = new Guna.UI2.WinForms.Guna2Button();
@@ -49,14 +49,14 @@
             listViewSpa = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             Consulter_Spa_BTN = new Guna.UI2.WinForms.Guna2Button();
             getid = new Label();
-            columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
             // Nbr_Seances_Box
             // 
-            Nbr_Seances_Box.CustomizableEdges = customizableEdges13;
+            Nbr_Seances_Box.CustomizableEdges = customizableEdges1;
             Nbr_Seances_Box.DefaultText = "";
             Nbr_Seances_Box.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             Nbr_Seances_Box.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -70,7 +70,7 @@
             Nbr_Seances_Box.PasswordChar = '\0';
             Nbr_Seances_Box.PlaceholderText = "";
             Nbr_Seances_Box.SelectedText = "";
-            Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            Nbr_Seances_Box.ShadowDecoration.CustomizableEdges = customizableEdges2;
             Nbr_Seances_Box.Size = new Size(240, 22);
             Nbr_Seances_Box.TabIndex = 0;
             Nbr_Seances_Box.TextChanged += guna2TextBox1_TextChanged;
@@ -87,7 +87,7 @@
             // 
             // Ajouter_Spa_BTN
             // 
-            Ajouter_Spa_BTN.CustomizableEdges = customizableEdges15;
+            Ajouter_Spa_BTN.CustomizableEdges = customizableEdges3;
             Ajouter_Spa_BTN.DisabledState.BorderColor = Color.DarkGray;
             Ajouter_Spa_BTN.DisabledState.CustomBorderColor = Color.DarkGray;
             Ajouter_Spa_BTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -97,7 +97,7 @@
             Ajouter_Spa_BTN.Location = new Point(44, 322);
             Ajouter_Spa_BTN.Margin = new Padding(2);
             Ajouter_Spa_BTN.Name = "Ajouter_Spa_BTN";
-            Ajouter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            Ajouter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges4;
             Ajouter_Spa_BTN.Size = new Size(117, 19);
             Ajouter_Spa_BTN.TabIndex = 2;
             Ajouter_Spa_BTN.Text = "Ajouter";
@@ -105,7 +105,7 @@
             // 
             // Supprimer_Spa_BTN
             // 
-            Supprimer_Spa_BTN.CustomizableEdges = customizableEdges17;
+            Supprimer_Spa_BTN.CustomizableEdges = customizableEdges5;
             Supprimer_Spa_BTN.DisabledState.BorderColor = Color.DarkGray;
             Supprimer_Spa_BTN.DisabledState.CustomBorderColor = Color.DarkGray;
             Supprimer_Spa_BTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -115,7 +115,7 @@
             Supprimer_Spa_BTN.Location = new Point(360, 322);
             Supprimer_Spa_BTN.Margin = new Padding(2);
             Supprimer_Spa_BTN.Name = "Supprimer_Spa_BTN";
-            Supprimer_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            Supprimer_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Supprimer_Spa_BTN.Size = new Size(141, 19);
             Supprimer_Spa_BTN.TabIndex = 3;
             Supprimer_Spa_BTN.Text = "Supprimer";
@@ -123,7 +123,7 @@
             // 
             // Modifier_Spa_BTN
             // 
-            Modifier_Spa_BTN.CustomizableEdges = customizableEdges19;
+            Modifier_Spa_BTN.CustomizableEdges = customizableEdges7;
             Modifier_Spa_BTN.DisabledState.BorderColor = Color.DarkGray;
             Modifier_Spa_BTN.DisabledState.CustomBorderColor = Color.DarkGray;
             Modifier_Spa_BTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -133,7 +133,7 @@
             Modifier_Spa_BTN.Location = new Point(200, 322);
             Modifier_Spa_BTN.Margin = new Padding(2);
             Modifier_Spa_BTN.Name = "Modifier_Spa_BTN";
-            Modifier_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            Modifier_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges8;
             Modifier_Spa_BTN.Size = new Size(132, 19);
             Modifier_Spa_BTN.TabIndex = 4;
             Modifier_Spa_BTN.Text = "Modifier";
@@ -141,7 +141,7 @@
             // 
             // Afficher_Spa_BTN
             // 
-            Afficher_Spa_BTN.CustomizableEdges = customizableEdges21;
+            Afficher_Spa_BTN.CustomizableEdges = customizableEdges9;
             Afficher_Spa_BTN.DisabledState.BorderColor = Color.DarkGray;
             Afficher_Spa_BTN.DisabledState.CustomBorderColor = Color.DarkGray;
             Afficher_Spa_BTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -151,7 +151,7 @@
             Afficher_Spa_BTN.Location = new Point(568, 322);
             Afficher_Spa_BTN.Margin = new Padding(2);
             Afficher_Spa_BTN.Name = "Afficher_Spa_BTN";
-            Afficher_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            Afficher_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges10;
             Afficher_Spa_BTN.Size = new Size(150, 19);
             Afficher_Spa_BTN.TabIndex = 5;
             Afficher_Spa_BTN.Text = "Afficher";
@@ -178,9 +178,14 @@
             columnHeader2.Text = "Nombre de Seances";
             columnHeader2.Width = 150;
             // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Prix";
+            columnHeader3.Width = 160;
+            // 
             // Consulter_Spa_BTN
             // 
-            Consulter_Spa_BTN.CustomizableEdges = customizableEdges23;
+            Consulter_Spa_BTN.CustomizableEdges = customizableEdges11;
             Consulter_Spa_BTN.DisabledState.BorderColor = Color.DarkGray;
             Consulter_Spa_BTN.DisabledState.CustomBorderColor = Color.DarkGray;
             Consulter_Spa_BTN.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -190,7 +195,7 @@
             Consulter_Spa_BTN.Location = new Point(200, 322);
             Consulter_Spa_BTN.Margin = new Padding(2);
             Consulter_Spa_BTN.Name = "Consulter_Spa_BTN";
-            Consulter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            Consulter_Spa_BTN.ShadowDecoration.CustomizableEdges = customizableEdges12;
             Consulter_Spa_BTN.Size = new Size(132, 19);
             Consulter_Spa_BTN.TabIndex = 7;
             Consulter_Spa_BTN.Text = "Consulter";
@@ -199,17 +204,13 @@
             // getid
             // 
             getid.AutoSize = true;
-            getid.Location = new Point(311, 70);
+            getid.Location = new Point(119, 70);
             getid.Margin = new Padding(2, 0, 2, 0);
             getid.Name = "getid";
             getid.Size = new Size(17, 15);
             getid.TabIndex = 8;
             getid.Text = "id";
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Prix";
-            columnHeader3.Width = 160;
+            getid.Visible = false;
             // 
             // Spa
             // 

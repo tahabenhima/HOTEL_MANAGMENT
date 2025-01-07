@@ -120,16 +120,24 @@ namespace HOTEL_MANAGMENT.Classes
             {
 
                 SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (!reader.HasRows) // Vérifie si le lecteur contient des lignes
                 {
-                    ListViewItem items = new ListViewItem(reader["type_Chambre"].ToString());
-                    items.SubItems.Add(reader["numero"].ToString());
-                    items.SubItems.Add(reader["Prix"].ToString());
-                    items.SubItems.Add(reader["Capacite"].ToString());
-                    
-                    items.SubItems.Add(reader["id"].ToString());
-                    l.Items.Add(items);
+                    MessageBox.Show("Aucune Chambre disponible.");
                 }
+                else
+                {
+                    while (reader.Read())
+                    {
+                        ListViewItem items = new ListViewItem(reader["type_Chambre"].ToString());
+                        items.SubItems.Add(reader["numero"].ToString());
+                        items.SubItems.Add(reader["Prix"].ToString());
+                        items.SubItems.Add(reader["Capacite"].ToString());
+
+                        items.SubItems.Add(reader["id"].ToString());
+                        l.Items.Add(items);
+                    }
+                }
+                
             }
             catch (Exception ex)
             {

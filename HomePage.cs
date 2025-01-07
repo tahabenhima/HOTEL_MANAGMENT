@@ -66,9 +66,9 @@ namespace HOTEL_MANAGMENT
             AddControls(new CarLocation());
         }
 
-        private void FoodHomeBtn_Click(object sender, EventArgs e)
+        private void guna2Button1_Click_3(object sender, EventArgs e)
         {
-
+            AddControls(new Car());
         }
     }
 }

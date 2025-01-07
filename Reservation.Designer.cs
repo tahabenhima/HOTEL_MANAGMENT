@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             labeltype = new Label();
             Reserverbtn = new Guna.UI2.WinForms.Guna2Button();
             Carcheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -88,6 +90,7 @@
             label16 = new Label();
             Nbr_Seances_Box = new ComboBox();
             btnVallidation = new Guna.UI2.WinForms.Guna2Button();
+            Facturebtn = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // labeltype
@@ -636,11 +639,31 @@
             btnVallidation.Text = "Valider";
             btnVallidation.Click += btnVallidation_Click;
             // 
+            // Facturebtn
+            // 
+            Facturebtn.BorderRadius = 10;
+            Facturebtn.CustomizableEdges = customizableEdges11;
+            Facturebtn.DisabledState.BorderColor = Color.DarkGray;
+            Facturebtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            Facturebtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Facturebtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Facturebtn.FillColor = Color.SlateGray;
+            Facturebtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Facturebtn.ForeColor = Color.White;
+            Facturebtn.Location = new Point(266, 675);
+            Facturebtn.Name = "Facturebtn";
+            Facturebtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            Facturebtn.Size = new Size(149, 36);
+            Facturebtn.TabIndex = 90;
+            Facturebtn.Text = "Facture";
+            Facturebtn.Visible = false;
+            // 
             // Reservation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1199, 749);
+            Controls.Add(Facturebtn);
             Controls.Add(btnVallidation);
             Controls.Add(Nbr_Seances_Box);
             Controls.Add(getchambreId);
@@ -740,5 +763,6 @@
         private Label label16;
         private ComboBox Nbr_Seances_Box;
         private Guna.UI2.WinForms.Guna2Button btnVallidation;
+        private Guna.UI2.WinForms.Guna2Button Facturebtn;
     }
 }

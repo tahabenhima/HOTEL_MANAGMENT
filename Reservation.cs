@@ -32,11 +32,11 @@ namespace HOTEL_MANAGMENT
         public Reservation()
         {
             InitializeComponent();
-            DateDebutCarLocation.Value= DateTime.Now;
-            DateFinCarLocation.Value= DateTime.Now;
+            DateDebutCarLocation.Value = DateTime.Now;
+            DateFinCarLocation.Value = DateTime.Now;
         }
 
-       
+
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace HOTEL_MANAGMENT
             {
                 MessageBox.Show("Veuillez entrer une date de début inférieure à la date de fin.");
             }
-            else 
+            else
             {
                 reservation = new Reservation_Class(DateDebutCarLocation.Value, DateFinCarLocation.Value);
 
@@ -76,7 +76,7 @@ namespace HOTEL_MANAGMENT
                 }
 
             }
-           
+
         }
 
         private void SearchCarLocationBtn_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace HOTEL_MANAGMENT
 
         private void ListViewCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int idc=-1;
+            int idc = -1;
             if (ListViewCar.SelectedItems.Count > 0)
             {
                 int il;
@@ -197,15 +197,15 @@ namespace HOTEL_MANAGMENT
                 labelPrix.Text = selectedItem.SubItems[4].Text;
                 labelMarque.Text = selectedItem.SubItems[1].Text;
                 //        public CarLocation_Class( DateTime dateDebut, DateTime dateFin, bool isdisponible, Car_Class car)
-              
+
                 //public Car_Class(int id, string Nom, string Marque, string Matricule, string Color, float Prix)
 
                 ca = new Car_Class(int.Parse(getCarId.Text), labelNom.Text, labelMarque.Text, labelMatricule.Text, labelCouleur.Text, float.Parse(labelPrix.Text));
-            
+
                 carL = new CarLocation_Class(debutLocation, finLocation, true, ca);
-            btnVallidation_Click(sender, e);
+                btnVallidation_Click(sender, e);
             }
-            
+
         }
 
         private void ListViewChambre_SelectedIndexChanged(object sender, EventArgs e)
@@ -225,7 +225,7 @@ namespace HOTEL_MANAGMENT
                 selectCapacite.Visible = true;
                 getchambreId.Text = ListViewChambre.SelectedItems[0].SubItems[4].Text;
                 selecType.Text = selectedItem.SubItems[0].Text;
-                
+
                 selectPrix.Text = selectedItem.SubItems[2].Text;
                 // reservation.NbrJour * chambre.Prix
                 selectCapacite.Text = selectedItem.SubItems[3].Text;
@@ -244,11 +244,11 @@ namespace HOTEL_MANAGMENT
             if (Repascheckbx.Checked == true)
             {
                 f = new Food_Class(1, 200, true);
-                btnVallidation_Click( sender, e);
+                btnVallidation_Click(sender, e);
 
             }
             else { btnVallidation_Click(sender, e); }
-           
+
 
 
 
@@ -264,7 +264,7 @@ namespace HOTEL_MANAGMENT
 
         private void Nbr_Seances_Box_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int indice = Nbr_Seances_Box.SelectedIndex+1;
+            int indice = Nbr_Seances_Box.SelectedIndex + 1;
             float p = Spa_Classe.getprix(indice);
             //MessageBox.Show("" + indice);
             sp = new Spa_Classe(indice, indice, p);
@@ -276,7 +276,7 @@ namespace HOTEL_MANAGMENT
 
 
 
-       
+
         private void btnVallidation_Click(object sender, EventArgs e)
         {
             prixT = 0;
@@ -293,7 +293,7 @@ namespace HOTEL_MANAGMENT
             if (ca != null)
                 prixT += reservation.NbrJour * ca.Prix;
 
-          
+
             if (Repascheckbx.Checked == true)
             {
                 if (f != null)
@@ -303,7 +303,7 @@ namespace HOTEL_MANAGMENT
 
 
             }
-            
+
 
             if (sp != null)
                 prixT += sp.Prix;
@@ -313,22 +313,71 @@ namespace HOTEL_MANAGMENT
         }
         private void Reserverbtn_Click(object sender, EventArgs e)
         {
-            
+
             if (carL != null)
             {
                 carL.AjouterCarLocationReservation();
             }
-           
-            
+
+
             reservation = new Reservation_Class(Client, chambre, f, sp, carL, DateDebutCarLocation.Value, DateFinCarLocation.Value, prixT, true);
-            
+
             reservation.AjouterReserve();
-            if (reservation!=null)
+            if (reservation != null)
             {
                 Facturebtn.Visible = true;
 
             }
-           
+
+
+        }
+        private void GenerateReservationTxt(string clientName, string roomType, DateTime startDate, DateTime endDate, float totalPrice)
+        {
+            try
+            {
+                // Construire le chemin du fichier
+                string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Facture_Reservation.txt");
+
+                // Contenu de la facture
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("===== Facture de Réservation =====");
+                sb.AppendLine($"Nom du client     : {clientName}");
+                sb.AppendLine($"Type de chambre   : {roomType}");
+                sb.AppendLine($"Date d'arrivée    : {startDate.ToShortDateString()}");
+                sb.AppendLine($"Date de sortie    : {endDate.ToShortDateString()}");
+                sb.AppendLine($"Prix total        : {totalPrice} DH");
+                sb.AppendLine("=================================");
+
+                // Sauvegarder dans un fichier TXT
+                File.WriteAllText(filePath, sb.ToString());
+
+                // Message de confirmation
+                MessageBox.Show($"Facture générée avec succès : {filePath}", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la génération de la facture : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Facturebtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                string clientName = reservation.client_obj.Nom; 
+                string roomType = reservation.chambre_obj.TypeChambre;
+                DateTime startDate = reservation.DateArrive;
+                DateTime endDate = reservation.DateSortie;
+                float totalPrice = reservation.PrixTotal;
+
+                // Générer la facture
+                GenerateReservationTxt(clientName, roomType, startDate, endDate, totalPrice);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de la réservation : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

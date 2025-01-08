@@ -70,5 +70,10 @@ namespace HOTEL_MANAGMENT
         {
             AddControls(new Car());
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            AddControls(new Reservation_liste());
+        }
     }
 }

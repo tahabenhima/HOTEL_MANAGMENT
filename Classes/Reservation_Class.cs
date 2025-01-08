@@ -216,6 +216,46 @@ namespace HOTEL_MANAGMENT.Classes
             
         }
 
+        public static ListView afficherListereservation()
+        {
+            ListView l = new ListView { };
+            cn = new Connection_Classe();
+            SqlConnection cnx = cn.GetConnection();
+            cnx.Open();
+            string query2 = "select * from Reservation";
+            cmd = new SqlCommand(query2, cnx);
+            try
+            {
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+
+                    ListViewItem items = new ListViewItem(reader["id_Client"].ToString());
+                    items.SubItems.Add(reader["id_Chambre"].ToString());
+                    items.SubItems.Add(reader["id_Food"].ToString());
+                    items.SubItems.Add(reader["id_Spa"].ToString());
+                    items.SubItems.Add(reader["id_Car"].ToString());
+                    items.SubItems.Add(reader["DateArrive"].ToString());
+                    items.SubItems.Add(reader["DateSortie"].ToString());
+                    items.SubItems.Add(reader["prixtotal"].ToString());
+                    l.Items.Add(items);
+
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERREUR " + ex);
+            }
+            cnx.Close();
+            return l;
+
+        }
 
     }
 }

@@ -133,9 +133,10 @@
             guna2Button2.Margin = new Padding(3, 4, 3, 4);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(135, 48);
+            guna2Button2.Size = new Size(135, 66);
             guna2Button2.TabIndex = 11;
-            guna2Button2.Text = "Car rental";
+            guna2Button2.Text = "Reservation list";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 

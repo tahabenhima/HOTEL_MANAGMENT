@@ -66,68 +66,72 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(31, 117);
+            label2.Location = new Point(35, 156);
             label2.Name = "label2";
-            label2.Size = new Size(57, 15);
+            label2.Size = new Size(71, 20);
             label2.TabIndex = 2;
             label2.Text = "Matricule";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(31, 52);
+            label3.Location = new Point(35, 69);
             label3.Name = "label3";
-            label3.Size = new Size(34, 15);
+            label3.Size = new Size(42, 20);
             label3.TabIndex = 3;
             label3.Text = "Nom";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(293, 114);
+            label4.Location = new Point(335, 152);
             label4.Name = "label4";
-            label4.Size = new Size(49, 15);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 4;
             label4.Text = "Couleur";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(293, 49);
+            label1.Location = new Point(335, 65);
             label1.Name = "label1";
-            label1.Size = new Size(48, 15);
+            label1.Size = new Size(60, 20);
             label1.TabIndex = 5;
             label1.Text = "Marque";
             // 
             // NomCarBox
             // 
-            NomCarBox.Location = new Point(104, 52);
+            NomCarBox.Location = new Point(119, 69);
+            NomCarBox.Margin = new Padding(3, 4, 3, 4);
             NomCarBox.Name = "NomCarBox";
-            NomCarBox.Size = new Size(125, 23);
+            NomCarBox.Size = new Size(142, 27);
             NomCarBox.TabIndex = 6;
             NomCarBox.TextChanged += NomCarBox_TextChanged;
             // 
             // MatriculeCarBox
             // 
-            MatriculeCarBox.Location = new Point(104, 117);
+            MatriculeCarBox.Location = new Point(119, 156);
+            MatriculeCarBox.Margin = new Padding(3, 4, 3, 4);
             MatriculeCarBox.Name = "MatriculeCarBox";
-            MatriculeCarBox.Size = new Size(125, 23);
+            MatriculeCarBox.Size = new Size(142, 27);
             MatriculeCarBox.TabIndex = 7;
             MatriculeCarBox.TextChanged += MatriculeCarBox_TextChanged;
             // 
             // MarqueCarBox
             // 
-            MarqueCarBox.Location = new Point(382, 49);
+            MarqueCarBox.Location = new Point(437, 65);
+            MarqueCarBox.Margin = new Padding(3, 4, 3, 4);
             MarqueCarBox.Name = "MarqueCarBox";
-            MarqueCarBox.Size = new Size(125, 23);
+            MarqueCarBox.Size = new Size(142, 27);
             MarqueCarBox.TabIndex = 8;
             MarqueCarBox.TextChanged += MarqueCarBox_TextChanged;
             // 
             // ColorCarBox
             // 
-            ColorCarBox.Location = new Point(382, 114);
+            ColorCarBox.Location = new Point(437, 152);
+            ColorCarBox.Margin = new Padding(3, 4, 3, 4);
             ColorCarBox.Name = "ColorCarBox";
-            ColorCarBox.Size = new Size(125, 23);
+            ColorCarBox.Size = new Size(142, 27);
             ColorCarBox.TabIndex = 9;
             ColorCarBox.TextChanged += ColorCarBox_TextChanged;
             // 
@@ -140,11 +144,11 @@
             AddCar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             AddCar.Font = new Font("Segoe UI", 9F);
             AddCar.ForeColor = Color.White;
-            AddCar.Location = new Point(12, 401);
-            AddCar.Margin = new Padding(2);
+            AddCar.Location = new Point(14, 535);
+            AddCar.Margin = new Padding(2, 3, 2, 3);
             AddCar.Name = "AddCar";
             AddCar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            AddCar.Size = new Size(118, 33);
+            AddCar.Size = new Size(135, 44);
             AddCar.TabIndex = 19;
             AddCar.Text = "Ajouter Car";
             AddCar.Click += AddCar_Click;
@@ -158,11 +162,11 @@
             UpdateCar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             UpdateCar.Font = new Font("Segoe UI", 9F);
             UpdateCar.ForeColor = Color.White;
-            UpdateCar.Location = new Point(153, 401);
-            UpdateCar.Margin = new Padding(2);
+            UpdateCar.Location = new Point(175, 535);
+            UpdateCar.Margin = new Padding(2, 3, 2, 3);
             UpdateCar.Name = "UpdateCar";
             UpdateCar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            UpdateCar.Size = new Size(128, 33);
+            UpdateCar.Size = new Size(146, 44);
             UpdateCar.TabIndex = 27;
             UpdateCar.Text = "Modifier Car";
             UpdateCar.Click += UpdateCar_Click;
@@ -176,11 +180,11 @@
             DeleteCar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             DeleteCar.Font = new Font("Segoe UI", 9F);
             DeleteCar.ForeColor = Color.White;
-            DeleteCar.Location = new Point(304, 400);
-            DeleteCar.Margin = new Padding(2);
+            DeleteCar.Location = new Point(347, 533);
+            DeleteCar.Margin = new Padding(2, 3, 2, 3);
             DeleteCar.Name = "DeleteCar";
             DeleteCar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            DeleteCar.Size = new Size(140, 34);
+            DeleteCar.Size = new Size(160, 45);
             DeleteCar.TabIndex = 28;
             DeleteCar.Text = "Supprimer Car";
             DeleteCar.Click += DeleteCar_Click;
@@ -194,11 +198,11 @@
             ReadCar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             ReadCar.Font = new Font("Segoe UI", 9F);
             ReadCar.ForeColor = Color.White;
-            ReadCar.Location = new Point(466, 400);
-            ReadCar.Margin = new Padding(2);
+            ReadCar.Location = new Point(533, 533);
+            ReadCar.Margin = new Padding(2, 3, 2, 3);
             ReadCar.Name = "ReadCar";
             ReadCar.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            ReadCar.Size = new Size(127, 34);
+            ReadCar.Size = new Size(145, 45);
             ReadCar.TabIndex = 29;
             ReadCar.Text = "Afficher Car";
             ReadCar.Click += ReadCar_Click;
@@ -206,9 +210,10 @@
             // ListViewCar
             // 
             ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader2, columnHeader3, columnHeader4, columnHeader5, columnHeader6 });
-            ListViewCar.Location = new Point(13, 251);
+            ListViewCar.Location = new Point(15, 335);
+            ListViewCar.Margin = new Padding(3, 4, 3, 4);
             ListViewCar.Name = "ListViewCar";
-            ListViewCar.Size = new Size(705, 129);
+            ListViewCar.Size = new Size(805, 171);
             ListViewCar.TabIndex = 30;
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
@@ -247,26 +252,27 @@
             // getCarId
             // 
             getCarId.AutoSize = true;
-            getCarId.Location = new Point(217, 76);
+            getCarId.Location = new Point(248, 101);
             getCarId.Name = "getCarId";
-            getCarId.Size = new Size(10, 15);
+            getCarId.Size = new Size(13, 20);
             getCarId.TabIndex = 31;
             getCarId.Text = " ";
             getCarId.Visible = false;
             // 
             // prixCarBox
             // 
-            prixCarBox.Location = new Point(104, 182);
+            prixCarBox.Location = new Point(119, 243);
+            prixCarBox.Margin = new Padding(3, 4, 3, 4);
             prixCarBox.Name = "prixCarBox";
-            prixCarBox.Size = new Size(125, 23);
+            prixCarBox.Size = new Size(142, 27);
             prixCarBox.TabIndex = 33;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(31, 182);
+            label5.Location = new Point(35, 243);
             label5.Name = "label5";
-            label5.Size = new Size(27, 15);
+            label5.Size = new Size(33, 20);
             label5.TabIndex = 32;
             label5.Text = "Prix";
             // 
@@ -284,18 +290,20 @@
             telechargerCSVbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             telechargerCSVbtn.ForeColor = Color.Black;
             telechargerCSVbtn.Image = Properties.Resources._6133884;
-            telechargerCSVbtn.Location = new Point(153, 447);
+            telechargerCSVbtn.Location = new Point(175, 596);
+            telechargerCSVbtn.Margin = new Padding(3, 4, 3, 4);
             telechargerCSVbtn.Name = "telechargerCSVbtn";
             telechargerCSVbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            telechargerCSVbtn.Size = new Size(335, 30);
+            telechargerCSVbtn.Size = new Size(383, 40);
             telechargerCSVbtn.TabIndex = 49;
             telechargerCSVbtn.Text = "Telecharger les données sous form csv";
+            telechargerCSVbtn.Click += telechargerCSVbtn_Click;
             // 
             // Car
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(732, 489);
+            ClientSize = new Size(837, 652);
             Controls.Add(telechargerCSVbtn);
             Controls.Add(prixCarBox);
             Controls.Add(label5);
@@ -314,6 +322,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Car";
             Text = "CRUDCar";
             ResumeLayout(false);

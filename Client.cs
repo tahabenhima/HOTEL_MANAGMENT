@@ -23,7 +23,7 @@ namespace HOTEL_MANAGMENT
             InitializeComponent();
         }
 
-        
+
         private void ReadClient_Click(object sender, EventArgs e)
         {
             listViewClient.Items.Clear();
@@ -56,13 +56,11 @@ namespace HOTEL_MANAGMENT
                 if (success)
                 {
                     MessageBox.Show("Client deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ReadClient_Click(sender, e); 
+                    ReadClient_Click(sender, e);
                 }
             }
         }
 
-
-
-       
+        
     }
 }

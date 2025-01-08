@@ -205,66 +205,64 @@ namespace HOTEL_MANAGMENT
 
         private void telechargerCSVbtn_Click(object sender, EventArgs e)
         {
-            try
+            string queryCh = "SELECT * FROM Chambre";
+            SqlConnection cnx = cn.GetConnection();
+            SqlCommand cmd = new SqlCommand(queryCh, cnx);
+
+            cnx.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            // Pour nommer et choisir le chemin
+            SaveFileDialog saveFileDialog = new SaveFileDialog
             {
+                Filter = "CSV files (*.csv)|*.csv",
+                Title = "Choisissez l'emplacement pour sauvegarder le fichier CSV",
+                FileName = "table_Chambre.csv"
+            };
 
-                string queryCh = "SELECT * FROM Chambre";
-                SqlConnection cnx = cn.GetConnection();
-                cmd = new SqlCommand(queryCh, cnx);
-
-                cnx.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                //pour nomer et choisir path
-
-                SaveFileDialog saveFileDialog = new SaveFileDialog
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Création du fichier CSV
+                string filePath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    Filter = "CSV files (*.csv)|*.csv",
-                    Title = "Choisissez l'emplacement pour sauvegarder le fichier CSV",
-                    FileName = "table_Chambre.csv"
-                };
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //  creation  fichier CSV
-                    string filePath = saveFileDialog.FileName;
-                    using (StreamWriter writer = new StreamWriter(filePath))
+                    // Écrire les en-têtes des colonnes
+                    for (int i = 0; i < reader.FieldCount; i++)
                     {
-                        // Écrire les en-têtes des colonn
+                        writer.Write(reader.GetName(i));
+                        if (i < reader.FieldCount - 1)
+                            writer.Write(",");
+                    }
+                    writer.WriteLine();
+
+                    // Écrire les lignes
+                    while (reader.Read())
+                    {
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            writer.Write(reader.GetName(i));
+                            string value = reader[i].ToString();
+                            // Entourez les valeurs contenant des virgules ou des caractères spéciaux avec des guillemets
+                            if (value.Contains(",") || value.Contains("\n") || value.Contains("\r") || value.Contains("\""))
+                            {
+                                value = "\"" + value.Replace("\"", "\"\"") + "\"";
+                            }
+                            writer.Write(value);
                             if (i < reader.FieldCount - 1)
                                 writer.Write(",");
                         }
                         writer.WriteLine();
-
-                        // Écrire les lignes 
-                        while (reader.Read())
-                        {
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                writer.Write(reader[i].ToString());
-                                if (i < reader.FieldCount - 1)
-                                    writer.Write(",");
-                            }
-                            writer.WriteLine();
-                        }
-
-
-                        MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
-                        cnx.Close();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Exportation annulée par l'utilisateur.");
-                }
 
+                MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
+                cnx.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Erreur : {ex.Message}");
+                MessageBox.Show("Exportation annulée par l'utilisateur.");
+                cnx.Close();
             }
+
         }
     }
 }

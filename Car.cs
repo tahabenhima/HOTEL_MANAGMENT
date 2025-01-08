@@ -31,16 +31,16 @@ namespace HOTEL_MANAGMENT
             if (string.IsNullOrWhiteSpace(NomCarBox.Text) ||
             string.IsNullOrWhiteSpace(MarqueCarBox.Text) ||
             string.IsNullOrWhiteSpace(MatriculeCarBox.Text) ||
-            string.IsNullOrWhiteSpace(ColorCarBox.Text)||
+            string.IsNullOrWhiteSpace(ColorCarBox.Text) ||
             string.IsNullOrWhiteSpace(prixCarBox.Text)
-            
+
             )
             {
                 MessageBox.Show("Veuillez remplir tous les champs !");
                 return;
             }
 
-            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text,int.Parse(prixCarBox.Text));
+            Car_Class Car = new Car_Class(NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text, int.Parse(prixCarBox.Text));
             SqlConnection cnx = cn.GetConnection();
 
             Car.AjouterCar();
@@ -51,7 +51,7 @@ namespace HOTEL_MANAGMENT
 
         private void ReadCar_Click(object sender, EventArgs e)
         {
-             afficher();
+            afficher();
         }
         void afficher()
         {
@@ -82,7 +82,7 @@ namespace HOTEL_MANAGMENT
                 return;
             }
             int a = int.Parse(ListViewCar.SelectedItems[0].SubItems[5].Text);
-           
+
             try
             {
                 Car_Class.SupprimerCar(a);
@@ -104,7 +104,7 @@ namespace HOTEL_MANAGMENT
             if (string.IsNullOrWhiteSpace(NomCarBox.Text) ||
         string.IsNullOrWhiteSpace(MatriculeCarBox.Text) ||
         string.IsNullOrWhiteSpace(MarqueCarBox.Text) ||
-        string.IsNullOrWhiteSpace(ColorCarBox.Text)||
+        string.IsNullOrWhiteSpace(ColorCarBox.Text) ||
         string.IsNullOrWhiteSpace(prixCarBox.Text))
             {
                 MessageBox.Show("Veuillez remplir tous les champs !");
@@ -116,7 +116,7 @@ namespace HOTEL_MANAGMENT
 
             try
             {
-                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text ,ColorCarBox.Text, int.Parse(prixCarBox.Text));
+                Car_Class.Modifier(int.Parse(getCarId.Text), NomCarBox.Text, MarqueCarBox.Text, MatriculeCarBox.Text, ColorCarBox.Text, int.Parse(prixCarBox.Text));
                 vider();
                 ReadCar_Click(sender, e);
 
@@ -223,7 +223,7 @@ namespace HOTEL_MANAGMENT
         //cmd.Parameters.AddWithValue("@Marque", "%" + t + "%");
         private void MarqueCarBox_TextChanged(object sender, EventArgs e)
         {
-            
+
             try
             {
                 ListViewCar.Items.Clear();
@@ -348,6 +348,67 @@ namespace HOTEL_MANAGMENT
 
                 MessageBox.Show("ERREUR d'affichage " + ex);
             }*/
+        }
+
+        private void telechargerCSVbtn_Click(object sender, EventArgs e)
+        {
+            string queryCh = "SELECT * FROM Car";
+            SqlConnection cnx = cn.GetConnection();
+            SqlCommand cmd = new SqlCommand(queryCh, cnx);
+
+            cnx.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            // Pour nommer et choisir le chemin
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "CSV files (*.csv)|*.csv",
+                Title = "Choisissez l'emplacement pour sauvegarder le fichier CSV",
+                FileName = "table_Car.csv"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Création du fichier CSV
+                string filePath = saveFileDialog.FileName;
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    // Écrire les en-têtes des colonnes
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        writer.Write(reader.GetName(i));
+                        if (i < reader.FieldCount - 1)
+                            writer.Write(",");
+                    }
+                    writer.WriteLine();
+
+                    // Écrire les lignes
+                    while (reader.Read())
+                    {
+                        for (int i = 0; i < reader.FieldCount; i++)
+                        {
+                            string value = reader[i].ToString();
+                            // Entourez les valeurs contenant des virgules ou des caractères spéciaux avec des guillemets
+                            if (value.Contains(",") || value.Contains("\n") || value.Contains("\r") || value.Contains("\""))
+                            {
+                                value = "\"" + value.Replace("\"", "\"\"") + "\"";
+                            }
+                            writer.Write(value);
+                            if (i < reader.FieldCount - 1)
+                                writer.Write(",");
+                        }
+                        writer.WriteLine();
+                    }
+                }
+
+                MessageBox.Show($"Les données ont été exportées avec succès vers : {filePath}");
+                cnx.Close();
+            }
+            else
+            {
+                MessageBox.Show("Exportation annulée par l'utilisateur.");
+                cnx.Close();
+            }
         }
     }
 }

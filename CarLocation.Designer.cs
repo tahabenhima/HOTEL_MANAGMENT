@@ -77,9 +77,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(30, 86);
+            label2.Location = new Point(34, 115);
             label2.Name = "label2";
-            label2.Size = new Size(55, 17);
+            label2.Size = new Size(71, 23);
             label2.TabIndex = 1;
             label2.Text = "Date fin";
             // 
@@ -87,9 +87,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(32, 236);
+            label3.Location = new Point(37, 315);
             label3.Name = "label3";
-            label3.Size = new Size(38, 17);
+            label3.Size = new Size(48, 23);
             label3.TabIndex = 2;
             label3.Text = "Nom";
             label3.Visible = false;
@@ -98,9 +98,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(30, 40);
+            label1.Location = new Point(34, 53);
             label1.Name = "label1";
-            label1.Size = new Size(76, 17);
+            label1.Size = new Size(96, 23);
             label1.TabIndex = 3;
             label1.Text = "Date debut";
             // 
@@ -108,9 +108,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(32, 318);
+            label5.Location = new Point(37, 424);
             label5.Name = "label5";
-            label5.Size = new Size(55, 17);
+            label5.Size = new Size(70, 23);
             label5.TabIndex = 5;
             label5.Text = "Couleur";
             label5.Visible = false;
@@ -124,12 +124,13 @@
             DateDebutCarLocation.FillColor = Color.AliceBlue;
             DateDebutCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateDebutCarLocation.Format = DateTimePickerFormat.Long;
-            DateDebutCarLocation.Location = new Point(148, 40);
+            DateDebutCarLocation.Location = new Point(169, 53);
+            DateDebutCarLocation.Margin = new Padding(3, 4, 3, 4);
             DateDebutCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateDebutCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateDebutCarLocation.Name = "DateDebutCarLocation";
             DateDebutCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            DateDebutCarLocation.Size = new Size(139, 27);
+            DateDebutCarLocation.Size = new Size(159, 36);
             DateDebutCarLocation.TabIndex = 6;
             DateDebutCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
             // 
@@ -142,12 +143,13 @@
             DateFinCarLocation.FillColor = Color.AliceBlue;
             DateFinCarLocation.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DateFinCarLocation.Format = DateTimePickerFormat.Long;
-            DateFinCarLocation.Location = new Point(148, 86);
+            DateFinCarLocation.Location = new Point(169, 115);
+            DateFinCarLocation.Margin = new Padding(3, 4, 3, 4);
             DateFinCarLocation.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DateFinCarLocation.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DateFinCarLocation.Name = "DateFinCarLocation";
             DateFinCarLocation.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DateFinCarLocation.Size = new Size(139, 27);
+            DateFinCarLocation.Size = new Size(159, 36);
             DateFinCarLocation.TabIndex = 7;
             DateFinCarLocation.Value = new DateTime(2024, 12, 26, 22, 29, 5, 380);
             // 
@@ -162,10 +164,11 @@
             SearchCarLocationBtn.FillColor = Color.SlateGray;
             SearchCarLocationBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SearchCarLocationBtn.ForeColor = Color.White;
-            SearchCarLocationBtn.Location = new Point(67, 138);
+            SearchCarLocationBtn.Location = new Point(77, 184);
+            SearchCarLocationBtn.Margin = new Padding(3, 4, 3, 4);
             SearchCarLocationBtn.Name = "SearchCarLocationBtn";
             SearchCarLocationBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            SearchCarLocationBtn.Size = new Size(149, 36);
+            SearchCarLocationBtn.Size = new Size(170, 48);
             SearchCarLocationBtn.TabIndex = 11;
             SearchCarLocationBtn.Text = "Chercher";
             SearchCarLocationBtn.Click += SearchCarLocationBtn_Click;
@@ -173,9 +176,10 @@
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader6, columnHeader4, columnHeader5, columnHeader7 });
-            listView1.Location = new Point(320, 40);
+            listView1.Location = new Point(366, 53);
+            listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
-            listView1.Size = new Size(741, 214);
+            listView1.Size = new Size(846, 284);
             listView1.TabIndex = 12;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -220,9 +224,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(32, 277);
+            label4.Location = new Point(37, 369);
             label4.Name = "label4";
-            label4.Size = new Size(55, 17);
+            label4.Size = new Size(70, 23);
             label4.TabIndex = 13;
             label4.Text = "Marque";
             label4.Visible = false;
@@ -238,10 +242,11 @@
             Carbtn.FillColor = Color.SlateGray;
             Carbtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Carbtn.ForeColor = Color.White;
-            Carbtn.Location = new Point(897, 273);
+            Carbtn.Location = new Point(1025, 364);
+            Carbtn.Margin = new Padding(3, 4, 3, 4);
             Carbtn.Name = "Carbtn";
             Carbtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            Carbtn.Size = new Size(149, 36);
+            Carbtn.Size = new Size(170, 48);
             Carbtn.TabIndex = 14;
             Carbtn.Text = "Voiture";
             Carbtn.Click += Carbtn_Click;
@@ -249,9 +254,10 @@
             // ListViewCar
             // 
             ListViewCar.Columns.AddRange(new ColumnHeader[] { Nom, columnHeader8, columnHeader9, columnHeader10, columnHeader11, columnHeader12 });
-            ListViewCar.Location = new Point(320, 40);
+            ListViewCar.Location = new Point(366, 53);
+            ListViewCar.Margin = new Padding(3, 4, 3, 4);
             ListViewCar.Name = "ListViewCar";
-            ListViewCar.Size = new Size(726, 212);
+            ListViewCar.Size = new Size(829, 281);
             ListViewCar.TabIndex = 31;
             ListViewCar.UseCompatibleStateImageBehavior = false;
             ListViewCar.View = View.Details;
@@ -290,9 +296,9 @@
             // getCarId
             // 
             getCarId.AutoSize = true;
-            getCarId.Location = new Point(320, 256);
+            getCarId.Location = new Point(366, 341);
             getCarId.Name = "getCarId";
-            getCarId.Size = new Size(10, 15);
+            getCarId.Size = new Size(13, 20);
             getCarId.TabIndex = 35;
             getCarId.Text = " ";
             getCarId.Visible = false;
@@ -301,9 +307,9 @@
             // 
             labelMarque.AutoSize = true;
             labelMarque.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMarque.Location = new Point(114, 277);
+            labelMarque.Location = new Point(130, 369);
             labelMarque.Name = "labelMarque";
-            labelMarque.Size = new Size(55, 17);
+            labelMarque.Size = new Size(70, 23);
             labelMarque.TabIndex = 38;
             labelMarque.Text = "Marque";
             labelMarque.Visible = false;
@@ -312,9 +318,9 @@
             // 
             labelCouleur.AutoSize = true;
             labelCouleur.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCouleur.Location = new Point(114, 318);
+            labelCouleur.Location = new Point(130, 424);
             labelCouleur.Name = "labelCouleur";
-            labelCouleur.Size = new Size(55, 17);
+            labelCouleur.Size = new Size(70, 23);
             labelCouleur.TabIndex = 37;
             labelCouleur.Text = "Couleur";
             labelCouleur.Visible = false;
@@ -323,9 +329,9 @@
             // 
             labelNom.AutoSize = true;
             labelNom.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNom.Location = new Point(114, 236);
+            labelNom.Location = new Point(130, 315);
             labelNom.Name = "labelNom";
-            labelNom.Size = new Size(38, 17);
+            labelNom.Size = new Size(48, 23);
             labelNom.TabIndex = 36;
             labelNom.Text = "Nom";
             labelNom.Visible = false;
@@ -334,9 +340,9 @@
             // 
             labelMatricule.AutoSize = true;
             labelMatricule.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMatricule.Location = new Point(114, 359);
+            labelMatricule.Location = new Point(130, 479);
             labelMatricule.Name = "labelMatricule";
-            labelMatricule.Size = new Size(64, 17);
+            labelMatricule.Size = new Size(82, 23);
             labelMatricule.TabIndex = 40;
             labelMatricule.Text = "Matricule";
             labelMatricule.Visible = false;
@@ -345,9 +351,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(32, 359);
+            label7.Location = new Point(37, 479);
             label7.Name = "label7";
-            label7.Size = new Size(64, 17);
+            label7.Size = new Size(82, 23);
             label7.TabIndex = 39;
             label7.Text = "Matricule";
             label7.Visible = false;
@@ -356,9 +362,9 @@
             // 
             labelPrix.AutoSize = true;
             labelPrix.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPrix.Location = new Point(112, 395);
+            labelPrix.Location = new Point(128, 527);
             labelPrix.Name = "labelPrix";
-            labelPrix.Size = new Size(31, 17);
+            labelPrix.Size = new Size(39, 23);
             labelPrix.TabIndex = 42;
             labelPrix.Text = "Prix";
             labelPrix.Visible = false;
@@ -367,9 +373,9 @@
             // 
             labelp.AutoSize = true;
             labelp.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelp.Location = new Point(30, 395);
+            labelp.Location = new Point(34, 527);
             labelp.Name = "labelp";
-            labelp.Size = new Size(31, 17);
+            labelp.Size = new Size(39, 23);
             labelp.TabIndex = 41;
             labelp.Text = "Prix";
             labelp.Visible = false;
@@ -388,18 +394,20 @@
             telechargerCSVbtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             telechargerCSVbtn.ForeColor = Color.Black;
             telechargerCSVbtn.Image = Properties.Resources._6133884;
-            telechargerCSVbtn.Location = new Point(384, 359);
+            telechargerCSVbtn.Location = new Point(439, 479);
+            telechargerCSVbtn.Margin = new Padding(3, 4, 3, 4);
             telechargerCSVbtn.Name = "telechargerCSVbtn";
             telechargerCSVbtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            telechargerCSVbtn.Size = new Size(335, 30);
+            telechargerCSVbtn.Size = new Size(383, 40);
             telechargerCSVbtn.TabIndex = 49;
             telechargerCSVbtn.Text = "Telecharger les données sous form csv";
+            telechargerCSVbtn.Click += telechargerCSVbtn_Click;
             // 
             // CarLocation
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1071, 432);
+            ClientSize = new Size(1224, 576);
             Controls.Add(telechargerCSVbtn);
             Controls.Add(labelPrix);
             Controls.Add(labelp);
@@ -421,6 +429,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CarLocation";
             Text = "CarLocation";
             Load += CarLocation_Load;

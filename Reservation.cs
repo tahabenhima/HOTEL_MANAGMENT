@@ -362,10 +362,16 @@ namespace HOTEL_MANAGMENT
 
         private void Facturebtn_Click(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void Facturebtn_Click_1(object sender, EventArgs e)
+        {
             try
             {
-                
-                string clientName = reservation.client_obj.Nom; 
+
+                string clientName = reservation.client_obj.Nom;
                 string roomType = reservation.chambre_obj.TypeChambre;
                 DateTime startDate = reservation.DateArrive;
                 DateTime endDate = reservation.DateSortie;
@@ -378,7 +384,6 @@ namespace HOTEL_MANAGMENT
             {
                 MessageBox.Show($"Erreur lors de la réservation : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

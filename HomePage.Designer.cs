@@ -310,7 +310,8 @@
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button3.Size = new Size(118, 50);
             guna2Button3.TabIndex = 12;
-            guna2Button3.Text = "Reservation list";
+            guna2Button3.Text = "Farctures";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // HomePage
             // 
